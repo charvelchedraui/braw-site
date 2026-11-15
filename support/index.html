@@ -1,27 +1,28 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Support · braw</title><meta name="description" content="Help with braw: invites, your data, and how to reach us.">
+<title>Support · braw</title><meta name="description" content="Help with braw: invites, reporting and blocking, deleting your account, your data, and how to reach us.">
 <link rel="icon" href="../icon.png"><link rel="apple-touch-icon" href="../icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
 <style>:root{--bg:#ecebe7;--card:#f7f6f2;--ink:#1f1f1f;--muted:#5e5b55;--line:#d9d7d0;--accent:#c93f06;--brand:#f65410}
 @media (prefers-color-scheme:dark){:root{--bg:#151514;--card:#1f1e1c;--ink:#f2f0ea;--muted:#aaa69c;--line:#34322e;--accent:#ff8a57;--brand:#ff6a2b}}
 *{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;overflow-wrap:break-word}
 main{max-width:680px;margin:0 auto;padding:28px 16px 64px}
 .top{display:flex;align-items:center;gap:12px;margin-bottom:28px}
 .top img{width:44px;height:44px;border-radius:11px}
-.top a{font:400 34px/1 "Patrick Hand",cursive;color:var(--brand);text-decoration:none}
-h1,h2{font-family:"Patrick Hand",cursive;font-weight:400;line-height:1.1}
-h1{font-size:40px;margin:0 0 6px}h2{font-size:27px;margin:36px 0 6px}h3{font-size:17px;margin:22px 0 4px}
+.top a{font:700 32px/1 ui-rounded,"SF Pro Rounded",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;letter-spacing:-1px;color:var(--brand);text-decoration:none}
+h1,h2{font-family:ui-rounded,"SF Pro Rounded",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;font-weight:700;line-height:1.15;letter-spacing:-.5px}
+h1{font-size:34px;margin:0 0 6px}h2{font-size:24px;margin:36px 0 6px}h3{font-size:17px;margin:22px 0 4px}
 .meta{color:var(--muted);margin:0}
-.lang{display:flex;gap:14px;margin:14px 0 0;padding:0;list-style:none}
+.lang{display:flex;flex-wrap:wrap;gap:14px;margin:14px 0 0;padding:0;list-style:none}
 a{color:var(--accent);text-underline-offset:3px}
 a:focus-visible{outline:3px solid var(--brand);outline-offset:3px}
 section+section{border-top:1.5px solid var(--line);margin-top:44px;padding-top:6px}
 .tldr{background:var(--card);border:1.5px solid var(--line);border-radius:18px;padding:14px 18px;margin:18px 0}
 ul{padding-left:22px}li{margin:4px 0}
-.cta{display:inline-block;background:var(--brand);color:#fff;text-decoration:none;border-radius:999px;padding:12px 22px;font-weight:600;margin-top:8px}
-footer{margin-top:48px;font-size:14px;color:var(--muted)}</style></head><body><main>
+.tbl{overflow-x:auto;margin:12px 0}table{border-collapse:collapse;width:100%;font-size:15px}th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}th{background:var(--card)}
+.cta{display:inline-block;background:var(--brand);color:#fff;text-decoration:none;border-radius:999px;padding:12px 22px;font-weight:600;margin-top:8px;max-width:100%}
+footer{margin-top:48px;font-size:14px;color:var(--muted)}</style>
+</head><body><main>
 <div class="top"><img src="../icon.png" alt=""><a href="../">braw</a></div>
 <h1>Support</h1>
 <ul class="lang"><li><a href="#en">English</a></li><li><a href="#es">Español</a></li></ul>
@@ -29,20 +30,44 @@ footer{margin-top:48px;font-size:14px;color:var(--muted)}</style></head><body><m
 <h2>How can we help?</h2>
 <p>Write to us and a person will answer:</p>
 <p><a class="cta" href="mailto:charvel.chedraui@gmail.com?subject=braw%20support">charvel.chedraui@gmail.com</a></p>
-<h3>I need an invite</h3><p>braw is invite-only. Ask a friend who already uses braw for a code, or join the waitlist from the first screen of the app.</p>
-<h3>Where is my data?</h3><p>What you make lives on your phone. Only what you share with your braws is stored on our server. See <a href="../privacy/">Privacy</a>.</p>
-<h3>I got a new phone</h3><p>Restore your new iPhone from your iCloud backup and braw comes back with your pet, your room and your things.</p>
-<h3>Delete my account</h3><p>Open Settings inside the app and choose delete account, or write to us and we will do it.</p>
-<h3>Report a person or content</h3><p>Write to us with the username and what happened. We review reports within 24 hours.</p>
+<div class="tldr"><strong>If someone is in immediate danger, contact your local emergency services.</strong> braw cannot send help.</div>
+
+<h3>I need an invite</h3><p>braw is invite-only and for people aged 16 and over. Ask a friend who already uses braw for an invite code or link.</p>
+
+<h3>Report a person or content</h3><p>In the app, open the person's profile or the post, plan or comment, and choose <strong>report</strong>. Pick a reason (for example harassment, sexual content, violence, hate, spam or someone under 16). The person is not told who reported them. You can also write to us with their username and what happened. We review reports and act <strong>normally within 24 hours</strong>: content that breaks the rules is removed and abusive accounts are suspended. There is zero tolerance for objectionable content and abusive users.</p>
+
+<h3>Block someone</h3><p>Open the person's profile and choose <strong>block</strong>. You stop being friends and can no longer see or contact each other. They are not notified.</p>
+
+<h3>Delete my account</h3><p>In the app, go to <strong>Settings</strong> and choose <strong>delete account</strong>. Your account and everything it stored on our server are deleted immediately. braw also deletes its backup in your private iCloud Drive. Deleting the app removes what is on your phone. Without the app, see <a href="../delete/">delete your account</a>.</p>
+
+<h3>Where is my data?</h3><p>What you make lives on your phone and, if iCloud is on, in your own private iCloud, which we cannot read. Only what you share with your friends is stored on our server. See the <a href="../privacy/">Privacy Policy</a>.</p>
+
+<h3>I got a new phone</h3><p>Sign in to the same Apple account with iCloud on, open braw and sign in with Apple: your pet, room and things come back from your iCloud, and what you shared comes back from our server.</p>
+
+<h3>Security problems</h3><p>Found a security issue? Write to us; see our <a href="../.well-known/security.txt">security.txt</a>.</p>
+
+<p><a href="../privacy/">Privacy Policy</a> · <a href="../terms/">Terms of Use</a></p>
 </section>
 <section id="es" lang="es">
 <h2>¿Cómo te ayudamos?</h2>
 <p>Escríbenos y te responde una persona:</p>
 <p><a class="cta" href="mailto:charvel.chedraui@gmail.com?subject=soporte%20braw">charvel.chedraui@gmail.com</a></p>
-<h3>Necesito una invitación</h3><p>braw es solo con invitación. Pídele un código a alguien que ya use braw, o entra a la lista de espera desde la primera pantalla de la app.</p>
-<h3>¿Dónde están mis datos?</h3><p>Lo que haces vive en tu teléfono. Solo lo que compartes con tus braws se guarda en nuestro servidor. Mira <a href="../privacy/">Privacidad</a>.</p>
-<h3>Cambié de teléfono</h3><p>Restaura tu iPhone nuevo desde tu respaldo de iCloud y braw vuelve con tu mascota, tu cuarto y tus cosas.</p>
-<h3>Borrar mi cuenta</h3><p>Abre Ajustes dentro de la app y elige borrar cuenta, o escríbenos y lo hacemos.</p>
-<h3>Reportar a una persona o un contenido</h3><p>Escríbenos con el usuario y lo que pasó. Revisamos los reportes en menos de 24 horas.</p>
+<div class="tldr"><strong>Si alguien está en peligro inmediato, llama a los servicios de emergencia de tu zona.</strong> braw no puede enviar ayuda.</div>
+
+<h3>Necesito una invitación</h3><p>braw es solo con invitación y para personas de 16 años o más. Pídele un código o enlace de invitación a un amigo que ya use braw.</p>
+
+<h3>Reportar a una persona o un contenido</h3><p>En la app, abre el perfil de la persona o la publicación, plan o comentario, y elige <strong>reportar</strong>. Elige un motivo (por ejemplo acoso, contenido sexual, violencia, odio, spam o alguien menor de 16). A la persona no se le dice quién la reportó. También puedes escribirnos con su usuario y lo que pasó. Revisamos los reportes y actuamos <strong>normalmente en 24 horas</strong>: el contenido que rompe las reglas se elimina y las cuentas abusivas se suspenden. No hay ninguna tolerancia con el contenido ofensivo ni con los usuarios abusivos.</p>
+
+<h3>Bloquear a alguien</h3><p>Abre el perfil de la persona y elige <strong>bloquear</strong>. Dejan de ser amigos y ya no pueden verse ni escribirse. No se le avisa.</p>
+
+<h3>Borrar mi cuenta</h3><p>En la app, ve a <strong>Ajustes</strong> y elige <strong>eliminar cuenta</strong>. Tu cuenta y todo lo que guardaba en nuestro servidor se borran al instante. braw también borra su respaldo en tu iCloud Drive privado. Borrar la app elimina lo que está en tu teléfono. Sin la app, mira <a href="../delete/#es">borrar tu cuenta</a>.</p>
+
+<h3>¿Dónde están mis datos?</h3><p>Lo que haces vive en tu teléfono y, si iCloud está activado, en tu propio iCloud privado, que no podemos leer. Solo lo que compartes con tus amigos se guarda en nuestro servidor. Mira la <a href="../privacy/#es">Política de privacidad</a>.</p>
+
+<h3>Cambié de teléfono</h3><p>Entra con la misma cuenta de Apple y iCloud activado, abre braw e inicia sesión con Apple: tu mascota, tu cuarto y tus cosas vuelven desde tu iCloud, y lo que compartiste vuelve desde nuestro servidor.</p>
+
+<h3>Problemas de seguridad</h3><p>¿Encontraste un problema de seguridad? Escríbenos; mira nuestro <a href="../.well-known/security.txt">security.txt</a>.</p>
+
+<p><a href="../privacy/#es">Política de privacidad</a> · <a href="../terms/#es">Términos de uso</a></p>
 </section>
-<footer><a href="../">braw</a> · <a href="../privacy/">Privacy · Privacidad</a> · <a href="../support/">Support · Soporte</a></footer></main></body></html>
+<footer><a href="../">braw</a> · <a href="../privacy/">Privacy · Privacidad</a> · <a href="../terms/">Terms · Términos</a> · <a href="../support/">Support · Soporte</a></footer></main></body></html>
