@@ -18,3 +18,25 @@
     dock.classList.toggle('is-on', past && seen.size === 0);
   }, { passive: true });
 })();
+// Selector de idioma: es un <details> con enlaces y funciona sin JavaScript. Esto solo lo cierra con Escape,
+// al tocar fuera o al abrir el otro selector.
+(function () {
+  var menus = [].slice.call(document.querySelectorAll('details.langs'));
+  if (!menus.length) return;
+  menus.forEach(function (d) {
+    d.addEventListener('toggle', function () {
+      if (d.open) menus.forEach(function (o) { if (o !== d) o.open = false; });
+    });
+  });
+  document.addEventListener('click', function (e) {
+    menus.forEach(function (d) { if (d.open && !d.contains(e.target)) d.open = false; });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== 'Escape') return;
+    menus.forEach(function (d) {
+      if (!d.open) return;
+      d.open = false;
+      var s = d.querySelector('summary'); if (s) s.focus();
+    });
+  });
+})();

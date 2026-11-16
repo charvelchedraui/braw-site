@@ -18,8 +18,8 @@ body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 var(--sans);ov
 img{max-width:100%;height:auto}
 a{color:var(--accent);text-underline-offset:3px}
 :focus-visible{outline:3px solid var(--brand);outline-offset:3px;border-radius:6px}
-.skip{position:absolute;left:-9999px;top:8px;background:var(--card);color:var(--ink);padding:8px 14px;border-radius:10px;z-index:10}
-.skip:focus{left:16px}
+.skip{position:absolute;inset-inline-start:-9999px;top:8px;background:var(--card);color:var(--ink);padding:8px 14px;border-radius:10px;z-index:10}
+.skip:focus{inset-inline-start:16px}
 .wrap{max-width:1040px;margin:0 auto;padding:0 16px}
 .narrow{max-width:680px;margin:0 auto;padding:0 16px}
 
@@ -27,8 +27,24 @@ a{color:var(--accent);text-underline-offset:3px}
 .site-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:18px 0}
 .brand{display:inline-flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none;font:400 34px/1 var(--hand)}
 .brand img{width:40px;height:40px;border-radius:10px}
-.lang-link{font-size:15px;color:var(--ink);border:1.5px solid var(--line);border-radius:999px;padding:6px 14px;text-decoration:none;white-space:nowrap}
-.lang-link:hover{border-color:var(--ink)}
+.vh{position:absolute!important;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0}
+
+/* language picker: a <details> menu of plain links (works without JavaScript) */
+details.langs{position:relative;min-width:0;background:none;border:0;border-radius:0;padding:0;margin:0}
+.langs>summary{list-style:none;display:inline-flex;align-items:center;gap:7px;min-height:40px;font-size:15px;font-weight:400;color:var(--ink);border:1.5px solid var(--line);border-radius:999px;padding:6px 14px;cursor:pointer;white-space:nowrap;-webkit-tap-highlight-color:transparent}
+.langs>summary::-webkit-details-marker{display:none}
+.langs>summary::after{content:"";width:7px;height:7px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:translateY(-2px) rotate(45deg);margin-inline-start:1px}
+.langs[open]>summary::after{transform:translateY(2px) rotate(-135deg)}
+.langs>summary:hover,.langs[open]>summary{border-color:var(--ink)}
+.globe-ico{flex:none}
+.langs-list{list-style:none;margin:0;padding:8px;display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--card);border:1.5px solid var(--line);border-radius:18px}
+.langs-list a{display:flex;align-items:center;min-height:38px;padding:6px 10px;border-radius:10px;color:var(--ink);text-decoration:none;font-size:15px;line-height:1.25}
+.langs-list a:hover{background:var(--card2);text-decoration:underline}
+.langs-list a[aria-current="page"]{background:var(--brand);color:#1f1f1f;font-weight:600}
+.langs-head .langs-list{position:absolute;z-index:30;top:calc(100% + 8px);inset-inline-end:0;width:min(360px,calc(100vw - 32px));max-height:min(80vh,600px);overflow:auto;overscroll-behavior:contain;box-shadow:0 14px 40px rgba(0,0,0,.2)}
+details.langs-foot{margin:4px 0 12px}
+.langs-foot .langs-list{margin-top:10px;grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}
+@media (max-width:420px){.langs-head .lang-name{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}.langs-head>summary{padding:6px 12px}}
 
 /* hero */
 .hero{background:var(--brand);color:var(--on-brand);border-radius:28px;padding:32px 22px;display:grid;gap:24px;align-items:center;margin-top:4px}
@@ -40,7 +56,7 @@ a{color:var(--accent);text-underline-offset:3px}
 @media (min-width:820px){.hero{grid-template-columns:1fr 1.05fr;padding:44px 40px}}
 
 /* buttons */
-.store{display:flex;align-items:center;gap:14px;width:100%;max-width:360px;min-height:72px;margin-top:22px;padding:12px 14px 12px 12px;background:#1f1f1f;color:#fff8f0;text-decoration:none;border:2px solid #1f1f1f;border-radius:22px;box-shadow:0 6px 0 rgba(0,0,0,.28);transition:transform .12s ease,box-shadow .12s ease;-webkit-tap-highlight-color:transparent}
+.store{display:flex;align-items:center;gap:14px;width:100%;max-width:360px;min-height:72px;margin-top:22px;padding-block:12px;padding-inline:12px 14px;background:#1f1f1f;color:#fff8f0;text-decoration:none;border:2px solid #1f1f1f;border-radius:22px;box-shadow:0 6px 0 rgba(0,0,0,.28);transition:transform .12s ease,box-shadow .12s ease;-webkit-tap-highlight-color:transparent}
 .store img{width:48px;height:48px;border-radius:12px;flex:none;background:#fff8f0}
 .store .txt{display:flex;flex-direction:column;line-height:1.05;min-width:0;flex:1}
 .store strong{font:400 30px/1 var(--hand);letter-spacing:-.3px}
@@ -55,12 +71,12 @@ a{color:var(--accent);text-underline-offset:3px}
 @media (min-width:820px){.store{width:auto;min-width:300px}}
 .hero .store:focus-visible,.hero a:focus-visible{outline-color:#1f1f1f}
 /* barra fija de descarga (solo teléfono) */
-.dock{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:20;display:flex;align-items:center;gap:10px;padding:8px 8px 8px 10px;background:var(--card);color:var(--ink);border:1.5px solid var(--line);border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,.18);transform:translateY(140%);opacity:0;transition:transform .25s ease,opacity .25s ease;pointer-events:none}
+.dock{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:20;display:flex;align-items:center;gap:10px;padding-block:8px;padding-inline:10px 8px;background:var(--card);color:var(--ink);border:1.5px solid var(--line);border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,.18);transform:translateY(140%);opacity:0;transition:transform .25s ease,opacity .25s ease;pointer-events:none}
 .dock.is-on{transform:none;opacity:1;pointer-events:auto}
 .dock img{width:36px;height:36px;border-radius:9px;flex:none}
 .dock-txt{display:flex;flex-direction:column;line-height:1.1;min-width:0;flex:1}
 .dock-txt strong{font:400 22px/1 var(--hand)}
-.dock-txt small{font-size:12.5px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dock-txt small{font-size:12.5px;line-height:1.2;color:var(--muted)}
 .dock-btn{flex:none;background:var(--brand);color:#1f1f1f;text-decoration:none;font-weight:700;border:1.5px solid #1f1f1f;border-radius:14px;padding:11px 16px;min-height:44px;display:grid;place-items:center}
 @media (min-width:820px){.dock{display:none}}
 .cta{display:inline-block;background:var(--brand);color:var(--on-brand);text-decoration:none;border:1.5px solid #1f1f1f;border-radius:999px;padding:12px 22px;font-weight:600;margin-top:8px;max-width:100%}
@@ -90,8 +106,8 @@ a{color:var(--accent);text-underline-offset:3px}
 .steps strong{display:block;font:400 26px/1.1 var(--hand);font-weight:400;margin-bottom:4px}
 .checks{list-style:none;padding:0;margin:0;display:grid;gap:10px}
 @media (min-width:620px){.checks{grid-template-columns:1fr 1fr}}
-.checks li{background:var(--card);border:1.5px solid var(--line);border-radius:18px;padding:14px 16px 14px 46px;position:relative}
-.checks li::before{content:"";position:absolute;left:16px;top:19px;width:16px;height:9px;border-left:3px solid var(--brand);border-bottom:3px solid var(--brand);transform:rotate(-45deg)}
+.checks li{background:var(--card);border:1.5px solid var(--line);border-radius:18px;padding-block:14px;padding-inline:46px 16px;position:relative}
+.checks li::before{content:"";position:absolute;inset-inline-start:16px;top:19px;width:16px;height:9px;border-left:3px solid var(--brand);border-bottom:3px solid var(--brand);transform:rotate(-45deg)}
 details{background:var(--card);border:1.5px solid var(--line);border-radius:18px;padding:0 18px;margin:0 0 10px}
 summary{cursor:pointer;padding:14px 0;font-weight:600;list-style-position:outside}
 details p{margin:0 0 14px;color:var(--muted)}
@@ -112,10 +128,10 @@ details p{margin:0 0 14px;color:var(--muted)}
 .lang{display:flex;flex-wrap:wrap;gap:14px;margin:14px 0 0;padding:0;list-style:none}
 .doc section+section{border-top:1.5px solid var(--line);margin-top:44px;padding-top:6px}
 .tldr{background:var(--card);border:1.5px solid var(--line);border-radius:18px;padding:14px 18px;margin:18px 0}
-.doc ul,.doc ol{padding-left:22px}.doc li{margin:4px 0}
+.doc ul,.doc ol{padding-inline-start:22px}.doc li{margin:4px 0}
 .tbl{overflow-x:auto;margin:12px 0}
 table{border-collapse:collapse;width:100%;font-size:15px}
-th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:start;vertical-align:top}
 th{background:var(--card)}
 .doc .cta{color:var(--on-brand)}
 
@@ -133,6 +149,27 @@ th{background:var(--card)}
 .small{font-size:14px;margin:18px 0}
 .status{min-height:24px;font-size:14px}
 [hidden]{display:none!important}
+
+/* long words (German, Finnish...) and other scripts: wrap instead of overflowing */
+.hero .tagline,.sec h2,.card h3,.end h2,.steps strong,.show figcaption,.store strong,.dock-txt strong,summary,.checks strong{overflow-wrap:anywhere;-webkit-hyphens:auto;hyphens:auto}
+.store small,.dock-btn{overflow-wrap:anywhere}
+
+/* per-script font stacks: Patrick Hand only covers Latin (and Vietnamese); system fonts only, nothing downloaded */
+:root:lang(ja){--hand:"Patrick Hand","Hiragino Maru Gothic ProN","Hiragino Sans","Yu Gothic UI","Meiryo","Noto Sans JP",sans-serif;--sans:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic UI","Meiryo","Noto Sans JP",sans-serif}
+:root:lang(ko){--hand:"Patrick Hand","Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;--sans:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif}
+:root:lang(zh-Hans){--hand:"Patrick Hand","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",sans-serif;--sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",sans-serif}
+:root:lang(zh-Hant){--hand:"Patrick Hand","PingFang TC","Microsoft JhengHei","Noto Sans TC",sans-serif;--sans:-apple-system,BlinkMacSystemFont,"PingFang TC","Microsoft JhengHei","Noto Sans TC",sans-serif}
+:root:lang(ru),:root:lang(uk){--hand:"Patrick Hand","Comic Sans MS",ui-rounded,"SF Pro Rounded",system-ui,sans-serif}
+:root:lang(ar){--hand:"Patrick Hand","SF Arabic Rounded","Geeza Pro","SF Arabic","Noto Sans Arabic","Segoe UI",Tahoma,sans-serif;--sans:-apple-system,BlinkMacSystemFont,"SF Arabic","Geeza Pro","Noto Sans Arabic","Segoe UI",Tahoma,sans-serif}
+:root:lang(hi){--hand:"Patrick Hand","Kohinoor Devanagari","Devanagari Sangam MN","Nirmala UI","Noto Sans Devanagari",sans-serif;--sans:-apple-system,BlinkMacSystemFont,"Kohinoor Devanagari","Nirmala UI","Noto Sans Devanagari",sans-serif}
+:root:lang(th){--hand:"Patrick Hand","Thonburi","Sukhumvit Set","Leelawadee UI","Noto Sans Thai",sans-serif;--sans:-apple-system,BlinkMacSystemFont,"Thonburi","Leelawadee UI","Noto Sans Thai",sans-serif}
+/* scripts with tall marks or joined letters: more line height, no negative letter spacing */
+:root:is(:lang(ar),:lang(hi),:lang(th)) :is(.tagline,.sec h2,.card h3,.end h2,.steps strong,.show figcaption,.store strong,.dock-txt small){line-height:1.35;letter-spacing:normal}
+:root:is(:lang(ar),:lang(hi),:lang(th)) body{line-height:1.75}
+:root:lang(ko){word-break:keep-all}
+/* CJK glyphs look much bigger than Patrick Hand at the same size: keep the button title on one or two tidy lines */
+:root:is(:lang(ja),:lang(ko),:lang(zh-Hans),:lang(zh-Hant)) .store strong{font-size:24px;letter-spacing:0}
+@media (max-width:359px){:root:is(:lang(ja),:lang(ko),:lang(zh-Hans),:lang(zh-Hant)) .store strong{font-size:21px}}
 
 /* 404 */
 .lost{text-align:center;padding:40px 0}
