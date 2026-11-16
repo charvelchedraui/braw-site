@@ -74,3 +74,5 @@ Norwegian uses `no-no`, Arabic `ar-ar`, Traditional Chinese `zh-tw`. Only the di
 
 GSAP was not used: its "Standard no-charge license" is not one of the licenses the project allows
 (MIT, Apache-2.0, BSD, ISC, MPL-2.0). Scroll-driven motion uses `motion` (useScroll) and CSS `position: sticky` instead.
+
+- 16 nov 2026: los clips de la tira se volvieron a codificar de ida y vuelta (adelante + en reversa) para que el loop no salte.

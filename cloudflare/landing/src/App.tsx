@@ -148,32 +148,77 @@ const STRIP: { kind: 'clip' | 'app'; name: string }[] = [
 /** Real footage and real app screens sliding by. Clips load and play only while the strip is on screen. */
 function Strip({ d }: { d: PageData }) {
   const ref = useRef<HTMLElement>(null);
+  const box = useRef<HTMLDivElement>(null);
   const [on, setOn] = useState(false);
+  const [seen, setSeen] = useState(false); // los videos se cargan una sola vez, la primera vez que la tira aparece
   useEffect(() => {
     const el = ref.current!;
-    const io = new IntersectionObserver(([e]) => setOn(e.isIntersecting && !reducedMotion()), { rootMargin: '120px' });
+    const io = new IntersectionObserver(([e]) => {
+      setOn(e.isIntersecting);
+      if (e.isIntersecting) setSeen(true);
+    }, { rootMargin: '200px' });
     io.observe(el);
     return () => io.disconnect();
   }, []);
+  // reproducir o pausar sin recargar: recargar es lo que hacía parpadear los videos
   useEffect(() => {
     ref.current?.querySelectorAll('video').forEach((v) => {
-      if (on) { v.load(); v.play().catch(() => {}); } else v.pause();
+      if (on && !reducedMotion()) v.play().catch(() => {}); else v.pause();
     });
+  }, [on, seen]);
+  // la tira avanza sola y también se puede arrastrar con el dedo; es infinita porque la fila está duplicada
+  useEffect(() => {
+    const el = box.current;
+    if (!el) return;
+    let held = false, resumeAt = 0, last = 0, raf = 0;
+    // distancia exacta entre una copia de la fila y la siguiente (incluye el espacio entre tarjetas), para que el salto no se note
+    const half = () => { const t = el.querySelectorAll<HTMLElement>('.tile'); return t.length > STRIP.length ? t[STRIP.length].offsetLeft - t[0].offsetLeft : 0; };
+    const wrap = () => {
+      const h = half();
+      if (h <= 0) return;
+      if (el.scrollLeft >= h) el.scrollLeft -= h;
+      else if (el.scrollLeft <= 0) el.scrollLeft += h;
+    };
+    const hold = () => { held = true; };
+    const release = () => { held = false; resumeAt = performance.now() + 1800; };
+    const tick = (t: number) => {
+      const dt = last ? Math.min(64, t - last) : 16;
+      last = t;
+      if (on && !held && t > resumeAt && !reducedMotion()) { el.scrollLeft += dt * 0.045; wrap(); }
+      raf = requestAnimationFrame(tick);
+    };
+    el.addEventListener('pointerdown', hold);
+    el.addEventListener('touchstart', hold, { passive: true });
+    el.addEventListener('wheel', release, { passive: true });
+    window.addEventListener('pointerup', release);
+    el.addEventListener('touchend', release, { passive: true });
+    el.addEventListener('touchcancel', release, { passive: true });
+    el.addEventListener('scroll', wrap, { passive: true });
+    raf = requestAnimationFrame(tick);
+    return () => {
+      cancelAnimationFrame(raf);
+      el.removeEventListener('pointerdown', hold);
+      el.removeEventListener('touchstart', hold);
+      el.removeEventListener('wheel', release);
+      window.removeEventListener('pointerup', release);
+      el.removeEventListener('touchend', release);
+      el.removeEventListener('touchcancel', release);
+      el.removeEventListener('scroll', wrap);
+    };
   }, [on]);
   const row = (copy: number) => STRIP.map((t, i) => (
     <figure className={`tile tile-${t.kind}`} key={`${copy}-${i}`}>
       {t.kind === 'clip' ? (
-        <video muted loop playsInline preload="none" poster={`/media/clips/${t.name}.webp`}>
-          {on ? <source src={`/media/clips/${t.name}.mp4`} type="video/mp4" /> : null}
-        </video>
+        <video muted loop playsInline preload="none" disablePictureInPicture poster={`/media/clips/${t.name}.webp`}
+          src={seen && !reducedMotion() ? `/media/clips/${t.name}.mp4` : undefined} />
       ) : (
-        <img src={`/media/app/${d.shots}/${t.name}.webp`} alt="" width={600} height={1299} loading="lazy" />
+        <img src={`/media/app/${d.shots}/${t.name}.webp`} alt="" width={600} height={1299} loading="lazy" draggable={false} />
       )}
     </figure>
   ));
   return (
     <section className="strip" ref={ref} aria-hidden="true">
-      <div className={`marquee${on ? ' running' : ''}`} dir="ltr">
+      <div className="marquee" ref={box} dir="ltr">
         <div className="marquee-track">{row(0)}{row(1)}</div>
       </div>
     </section>
