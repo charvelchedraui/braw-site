@@ -7,7 +7,7 @@ interface Env {
 
 const APEX = 'braws.app';
 
-const SECURITY_TXT = `Contact: mailto:charvel.chedraui@gmail.com
+const SECURITY_TXT = `Contact: mailto:security@braws.app
 Expires: 2027-11-14T00:00:00.000Z
 Preferred-Languages: es, en
 Canonical: https://braws.app/.well-known/security.txt
