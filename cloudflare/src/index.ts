@@ -52,7 +52,8 @@ function landingFor(tag: string): string | null {
   if (l === 'zh') return rest.includes('hant') || rest.some((p) => p === 'tw' || p === 'hk' || p === 'mo') ? 'zh-Hant' : 'zh-Hans';
   if (l === 'no' || l === 'nn' || l === 'nb') return 'nb';
   if (l === 'en') return rest.some((p) => EN_GB.has(p)) ? 'en-GB' : 'en';
-  if (l === 'pt') return rest.includes('br') ? 'pt' : 'pt-PT';
+  // como el app: pt sin país y pt-BR → Brasil; pt con otro país (PT, AO, MZ…) → Portugal
+  if (l === 'pt') return rest.length === 0 || rest.includes('br') ? 'pt' : 'pt-PT';
   return PRIMARY.get(l) ?? null;
 }
 
