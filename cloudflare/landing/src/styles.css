@@ -236,6 +236,7 @@ details.langs { position: relative; min-width: 0; }
 .wordmark svg { width: 100%; height: auto; overflow: visible; }
 .wordmark text { font-family: var(--hand); font-size: 300px; fill: transparent; stroke: var(--ink); stroke-width: 2; transition: fill .5s, stroke .5s; }
 .wordmark:hover text, .wordmark:focus-visible text { fill: var(--accent); stroke: var(--accent); }
+@media (hover: none) { .wordmark.in text { fill: var(--accent); stroke: var(--accent); transition-duration: .9s; } }
 .foot-row { display: flex; justify-content: space-between; align-items: center; gap: 18px; flex-wrap: wrap; }
 .foot-links { display: flex; gap: 8px 22px; flex-wrap: wrap; }
 .foot-links a { text-decoration: none; }

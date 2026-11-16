@@ -489,10 +489,13 @@ function Final({ d }: { d: PageData }) {
 
 function Footer({ d }: { d: PageData }) {
   const legal = d.s.legalHash || '';
+  // en pantallas táctiles no hay hover: la palabra se pinta sola al llegar al final
+  const mark = useRef<HTMLAnchorElement>(null);
+  useInView(mark, '0px 0px -25% 0px');
   return (
     <footer className="footer">
       <div className="wrap">
-        <a className="wordmark" href={pathOf(d.lang.code)} aria-label={d.s.homeLabel}>
+        <a className="wordmark" ref={mark} href={pathOf(d.lang.code)} aria-label={d.s.homeLabel}>
           <svg viewBox="0 0 1000 300" aria-hidden="true" focusable="false">
             <text x="500" y="240" textAnchor="middle" textLength="960" lengthAdjust="spacingAndGlyphs">braws</text>
           </svg>
