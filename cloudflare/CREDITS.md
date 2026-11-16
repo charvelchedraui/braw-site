@@ -55,7 +55,7 @@ Norwegian uses `no-no`, Arabic `ar-ar`, Traditional Chinese `zh-tw`. Only the di
 - `public/media/pets/*.svg`: the pet (Mochi in four moods) and friends' pets, exported from the app's own pet
   renderer (`braw/src/parts/pets.js`, Paula's art), nothing redrawn.
 - `public/media/app/<en|es|ar>/*.webp`: raw screens of the real app (`braw/index.html`) with the demo account
-  (invite `BRAW-DEMO`), rendered in Docker with Playwright on November 16, 2026. No frames, captions or edits.
+  (invite `BRAW-DEMO`), rendered in Docker with Playwright on November 16, 2026 (recaptured the same day after the avatar-pet fix in braw PR #60). No frames, captions or edits.
   Other languages show the English screens.
 - `public/assets/room.webp`, `public/assets/world.webp`: Paula's art, as on the previous landing.
 - Patrick Hand font: SIL Open Font License, `public/assets/OFL-PatrickHand.txt`.
