@@ -1,0 +1,24 @@
+// braws.app: static site on Cloudflare Workers (static assets + a tiny Worker for headers and redirects).
+// Deploy (after the braws.app zone is active in the Cloudflare account wrangler is logged into):
+//   cd cloudflare && npx wrangler deploy
+// No secrets or account ids live here: wrangler uses the logged-in account.
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "braws-site",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-11-01",
+  "workers_dev": false,
+  "preview_urls": false,
+  "routes": [
+    { "pattern": "braws.app", "custom_domain": true },
+    { "pattern": "www.braws.app", "custom_domain": true }
+  ],
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    // Every request goes through the Worker first so it can redirect www and add security headers.
+    "run_worker_first": true,
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  }
+}

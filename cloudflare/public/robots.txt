@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /invite/
+Sitemap: https://braws.app/sitemap.xml
