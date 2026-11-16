@@ -3,7 +3,7 @@
   const APP_STORE = 'https://apps.apple.com/app/id6833073203';
   const TESTFLIGHT = 'https://testflight.apple.com/join/Yx2byAmn';
   // mientras Apple no aprueba la versión 1.0, el botón principal lleva a TestFlight; al publicarse, cambiar a true
-  const LIVE = false;
+  const LIVE = true;
   const params = new URLSearchParams(location.search);
   const raw = (params.get('code') || '').trim().toUpperCase();
   const valid = /^BRAW-[A-HJ-NP-Z2-9]{4}$/.test(raw);
