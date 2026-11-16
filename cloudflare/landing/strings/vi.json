@@ -11,10 +11,10 @@
   "tagline2": "những người bạn thật sự.",
   "heroText": "Một thú cưng, một room và vài phút mỗi ngày bên những người quan trọng. Không bảng tin, không người lạ, không đếm người theo dõi.",
   "storeLabel": "Tải braws miễn phí trên App Store",
-  "storeTitle": "tải braws",
-  "storeSub": "miễn phí trên App Store",
+  "badgeAlt": "Tải về trên App Store",
   "note": "Miễn phí · iPhone và iPad · chỉ khi được mời · 16+",
   "roomAlt": "Một room ấm cúng vẽ tay với bàn làm việc, cây xanh, kệ sách và một chú mèo cam tròn ở giữa.",
+  "shotAlt": "Màn hình trong ứng dụng braws",
   "whatTitle": "bên trong có gì",
   "whatLead": "braws là một góc nhỏ ấm cúng dành cho bạn và những người bạn thân nhất. Trong ứng dụng, bạn bè của bạn là các braw của bạn.",
   "cards": [
@@ -27,6 +27,8 @@
   ],
   "petAlt": "Mochi, chú mèo mướp cam tròn trịa, thú cưng trong ứng dụng.",
   "petCaption": "chăm sóc thú cưng",
+  "moodTitle": "nó biết khi bạn ghé thăm.",
+  "moods": ["buồn ngủ", "tàm tạm", "vui", "vui hết cỡ"],
   "worldAlt": "Một quả địa cầu nhỏ với thú cưng của bạn bè: một chú chó, một cô thỏ, một con kỳ giông axolotl, một chú gấu, một chú chim cánh cụt và bạn, một chú mèo cam.",
   "worldCaption": "các braw, thế giới của bạn",
   "howTitle": "cách hoạt động",
@@ -59,11 +61,11 @@
   ],
   "endTitle": "thế giới nhỏ của bạn đang chờ.",
   "dockText": "thế giới nhỏ của bạn đang chờ",
-  "dockBtn": "tải về",
   "footNavLabel": "Pháp lý và trợ giúp",
   "footPrivacy": "Quyền riêng tư",
   "footTerms": "Điều khoản",
   "footSupport": "Hỗ trợ",
   "footDelete": "Xóa tài khoản",
-  "footTagline": "braws · làm bằng cả tấm lòng cho những nhóm bạn nhỏ."
+  "footTagline": "braws · làm bằng cả tấm lòng cho những nhóm bạn nhỏ.",
+  "footCredits": "Video từ Mixkit (giấy phép miễn phí), tác giả:"
 }

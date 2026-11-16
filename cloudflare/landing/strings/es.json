@@ -13,10 +13,10 @@
   "tagline2": "tus amigos de verdad.",
   "heroText": "Una mascota, un cuarto y unos minutos al día con la gente que importa. Sin feed, sin desconocidos, sin contar seguidores.",
   "storeLabel": "Descarga braws gratis en el App Store",
-  "storeTitle": "descarga braws",
-  "storeSub": "gratis en el App Store",
+  "badgeAlt": "Descárgalo en el App Store",
   "note": "Gratis · iPhone y iPad · solo con invitación · 16+",
   "roomAlt": "Un cuarto acogedor ilustrado con escritorio, plantas, un librero y un gato naranja redondito en medio.",
+  "shotAlt": "Pantalla de la app braws",
   "whatTitle": "qué hay adentro",
   "whatLead": "braws es un lugar pequeño y acogedor para ti y tus amigos más cercanos. En la app, tus amigos son tus braws.",
   "cards": [
@@ -29,6 +29,8 @@
   ],
   "petAlt": "Mochi, un gato atigrado naranja y redondito, la mascota de la app.",
   "petCaption": "cuida a tu mascota",
+  "moodTitle": "se da cuenta cuando estás.",
+  "moods": ["con sueño", "más o menos", "feliz", "radiante"],
   "worldAlt": "Un pequeño globo con las mascotas de tus amigos: un perro, una conejita, un ajolote, un oso, un pingüino y tú, un gato naranja.",
   "worldCaption": "tus braws, tu mundo",
   "howTitle": "cómo funciona",
@@ -61,11 +63,11 @@
   ],
   "endTitle": "tu pequeño mundo te espera.",
   "dockText": "tu pequeño mundo te espera",
-  "dockBtn": "bajar",
   "footNavLabel": "Legal y ayuda",
   "footPrivacy": "Privacidad",
   "footTerms": "Términos",
   "footSupport": "Soporte",
   "footDelete": "Borrar cuenta",
-  "footTagline": "braws · hecha con cariño para círculos pequeños de amigos."
+  "footTagline": "braws · hecha con cariño para círculos pequeños de amigos.",
+  "footCredits": "Videos de Mixkit (licencia gratuita) por"
 }

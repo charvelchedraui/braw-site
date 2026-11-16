@@ -11,10 +11,10 @@
   "tagline2": "dina riktiga vänner.",
   "heroText": "Ett husdjur, en room och några minuter om dagen med människorna som betyder något. Inget flöde, inga främlingar, inga följarsiffror.",
   "storeLabel": "Hämta braws gratis i App Store",
-  "storeTitle": "hämta braws",
-  "storeSub": "gratis i App Store",
+  "badgeAlt": "Hämta i App Store",
   "note": "Gratis · iPhone och iPad · bara för inbjudna · 16+",
   "roomAlt": "En mysig tecknad room med skrivbord, växter, en bokhylla och en rund orange katt i mitten.",
+  "shotAlt": "Skärm från braws-appen",
   "whatTitle": "vad som finns i den",
   "whatLead": "braws är en liten, mysig plats för dig och dina närmaste vänner. I appen är dina vänner dina braws.",
   "cards": [
@@ -27,6 +27,8 @@
   ],
   "petAlt": "Mochi, en rund orange tigrerad katt, husdjuret i appen.",
   "petCaption": "ta hand om ditt husdjur",
+  "moodTitle": "den märker när du finns där.",
+  "moods": ["sömnig", "sådär", "glad", "i sjunde himlen"],
   "worldAlt": "En liten jordglob med dina vänners husdjur: en hund, en kanin, en axolotl, en björn, en pingvin och du, en orange katt.",
   "worldCaption": "dina braws, din värld",
   "howTitle": "så funkar det",
@@ -59,11 +61,11 @@
   ],
   "endTitle": "din lilla värld väntar.",
   "dockText": "din lilla värld väntar",
-  "dockBtn": "hämta",
   "footNavLabel": "Juridik och hjälp",
   "footPrivacy": "Integritet",
   "footTerms": "Villkor",
   "footSupport": "Support",
   "footDelete": "Radera konto",
-  "footTagline": "braws · gjord med omsorg för små vänkretsar."
+  "footTagline": "braws · gjord med omsorg för små vänkretsar.",
+  "footCredits": "Videoklipp från Mixkit (gratis licens) av"
 }

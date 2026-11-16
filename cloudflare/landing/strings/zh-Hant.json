@@ -11,10 +11,10 @@
   "tagline2": "你真正的朋友。",
   "heroText": "一隻寵物、一個 room，每天花幾分鐘陪陪重要的人。沒有動態消息，沒有陌生人，也沒有粉絲數。",
   "storeLabel": "在 App Store 免費下載 braws",
-  "storeTitle": "下載 braws",
-  "storeSub": "App Store 免費下載",
+  "badgeAlt": "在 App Store 下載",
   "note": "免費 · iPhone 和 iPad · 邀請制 · 16 歲以上",
   "roomAlt": "一個溫馨的手繪 room，有書桌、植物、書架，中間坐著一隻圓滾滾的橘貓。",
+  "shotAlt": "braws App 畫面",
   "whatTitle": "裡面有什麼",
   "whatLead": "braws 是屬於你和最親密朋友的溫暖小角落。在 App 裡，你的朋友就是你的 braws。",
   "cards": [
@@ -27,6 +27,8 @@
   ],
   "petAlt": "麻糬，一隻圓滾滾的橘色虎斑貓，App 裡的寵物。",
   "petCaption": "照顧你的寵物",
+  "moodTitle": "你來了,牠都知道。",
+  "moods": ["睏睏的", "還好", "開心", "超開心"],
   "worldAlt": "一個小地球儀，上面有你朋友們的寵物：一隻狗、一隻兔子、一隻六角恐龍、一隻熊、一隻企鵝，還有你，一隻橘貓。",
   "worldCaption": "你的 braws，你的世界",
   "howTitle": "怎麼玩",
@@ -59,11 +61,11 @@
   ],
   "endTitle": "你的小世界在等你。",
   "dockText": "你的小世界在等你",
-  "dockBtn": "取得",
   "footNavLabel": "法律資訊與說明",
   "footPrivacy": "隱私權",
   "footTerms": "條款",
   "footSupport": "支援",
   "footDelete": "刪除帳號",
-  "footTagline": "braws · 用心為小小的朋友圈打造。"
+  "footTagline": "braws · 用心為小小的朋友圈打造。",
+  "footCredits": "影片片段來自 Mixkit(免費授權),作者:"
 }

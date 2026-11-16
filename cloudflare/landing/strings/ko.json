@@ -11,10 +11,10 @@
   "tagline2": "진짜 친구들.",
   "heroText": "펫 하나, room 하나, 그리고 소중한 사람들과 보내는 하루 몇 분. 피드도, 모르는 사람도, 팔로워 수도 없어요.",
   "storeLabel": "App Store에서 braws 무료로 받기",
-  "storeTitle": "braws 받기",
-  "storeSub": "App Store에서 무료",
+  "badgeAlt": "App Store에서 다운로드",
   "note": "무료 · iPhone과 iPad · 초대 전용 · 16세 이상",
   "roomAlt": "책상, 화분, 책장이 있고 가운데에 동그란 주황색 고양이가 있는 아늑한 room 일러스트.",
+  "shotAlt": "braws 앱 화면",
   "whatTitle": "이런 게 들어 있어요",
   "whatLead": "braws는 나와 가장 가까운 친구들을 위한 작고 아늑한 공간이에요. 앱에서는 친구들을 braw라고 불러요.",
   "cards": [
@@ -27,6 +27,8 @@
   ],
   "petAlt": "앱 속 펫, 동글동글한 주황색 줄무늬 고양이 모치.",
   "petCaption": "펫을 돌봐 주세요",
+  "moodTitle": "네가 와 주면 알아차려요.",
+  "moods": ["졸려요", "그저 그래요", "행복해요", "날아갈 듯해요"],
   "worldAlt": "친구들의 펫이 있는 작은 지구본: 강아지, 토끼, 우파루파, 곰, 펭귄, 그리고 주황색 고양이인 나.",
   "worldCaption": "내 braw들, 내 세상",
   "howTitle": "이렇게 시작해요",
@@ -59,11 +61,11 @@
   ],
   "endTitle": "나의 작은 세상이 기다리고 있어요.",
   "dockText": "나의 작은 세상이 기다려요",
-  "dockBtn": "받기",
   "footNavLabel": "약관 및 도움말",
   "footPrivacy": "개인정보",
   "footTerms": "약관",
   "footSupport": "지원",
   "footDelete": "계정 삭제",
-  "footTagline": "braws · 작은 친구 모임을 위해 정성껏 만들었어요."
+  "footTagline": "braws · 작은 친구 모임을 위해 정성껏 만들었어요.",
+  "footCredits": "영상: Mixkit(무료 라이선스), 제작:"
 }

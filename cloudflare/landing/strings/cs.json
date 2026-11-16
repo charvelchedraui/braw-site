@@ -11,10 +11,10 @@
   "tagline2": "tví skuteční přátelé.",
   "heroText": "Mazlíček, room a pár minut denně s lidmi, na kterých záleží. Žádný feed, žádní cizí lidé, žádné počty sledujících.",
   "storeLabel": "Stáhni si braws zdarma v App Storu",
-  "storeTitle": "stáhni braws",
-  "storeSub": "zdarma v App Storu",
+  "badgeAlt": "Stáhnout v App Store",
   "note": "Zdarma · iPhone a iPad · jen na pozvánku · 16+",
   "roomAlt": "Útulný kreslený room se stolem, rostlinami, knihovnou a kulatou oranžovou kočkou uprostřed.",
+  "shotAlt": "Obrazovka z aplikace braws",
   "whatTitle": "co je uvnitř",
   "whatLead": "braws je malé, útulné místo pro tebe a tvé nejbližší přátele. V aplikaci jsou tví přátelé tví braws.",
   "cards": [
@@ -27,6 +27,8 @@
   ],
   "petAlt": "Mochi, kulatý oranžový mourovatý kocour, mazlíček v aplikaci.",
   "petCaption": "starej se o mazlíčka",
+  "moodTitle": "pozná, když se zastavíš.",
+  "moods": ["ospalý", "ujde to", "šťastný", "v sedmém nebi"],
   "worldAlt": "Malý glóbus s mazlíčky tvých přátel: pes, králíček, axolotl, medvěd, tučňák a ty, oranžová kočka.",
   "worldCaption": "tví braws, tvůj svět",
   "howTitle": "jak to funguje",
@@ -59,11 +61,11 @@
   ],
   "endTitle": "tvůj malý svět čeká.",
   "dockText": "tvůj malý svět čeká",
-  "dockBtn": "stáhnout",
   "footNavLabel": "Právní informace a nápověda",
   "footPrivacy": "Soukromí",
   "footTerms": "Podmínky",
   "footSupport": "Podpora",
   "footDelete": "Smazat účet",
-  "footTagline": "braws · vytvořeno s péčí pro malé party přátel."
+  "footTagline": "braws · vytvořeno s péčí pro malé party přátel.",
+  "footCredits": "Videoklipy z Mixkit (bezplatná licence), autoři:"
 }

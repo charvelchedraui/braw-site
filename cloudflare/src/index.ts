@@ -1,6 +1,7 @@
 // braws.app Worker: www -> apex redirect, security headers on every response,
-// /.well-known/security.txt, "/" -> landing in the visitor's language, and static assets
-// (with public/404.html for unknown paths).
+// /.well-known/security.txt, "/" -> landing in the visitor's language, videos with byte ranges
+// (video-range.ts, Safari needs them) and static assets (with public/404.html for unknown paths).
+import { isVideoPath, videoResponse } from './video-range';
 
 interface Env {
   ASSETS: { fetch(request: Request): Promise<Response> };
@@ -20,6 +21,7 @@ const CSP = [
   "script-src 'self'",
   "style-src 'self'",
   "img-src 'self'",
+  "media-src 'self'",
   "font-src 'self'",
   "connect-src 'self'",
   "object-src 'none'",
@@ -120,6 +122,8 @@ export default {
       const rest = url.pathname.slice('/braw-site'.length) || '/';
       return secure(Response.redirect(`${url.origin}${rest}${url.search}`, 301));
     }
+
+    if (isVideoPath(url.pathname)) return secure(await videoResponse(request, env.ASSETS));
 
     return secure(await env.ASSETS.fetch(request));
   },

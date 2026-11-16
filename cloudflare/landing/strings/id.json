@@ -11,10 +11,10 @@
   "tagline2": "teman sejatimu.",
   "heroText": "Hewan peliharaan, room, dan beberapa menit sehari bersama orang-orang yang berarti. Tanpa feed, tanpa orang asing, tanpa hitungan pengikut.",
   "storeLabel": "Dapatkan braws gratis di App Store",
-  "storeTitle": "unduh braws",
-  "storeSub": "gratis di App Store",
+  "badgeAlt": "Unduh di App Store",
   "note": "Gratis · iPhone dan iPad · khusus undangan · 16+",
   "roomAlt": "Ilustrasi room yang nyaman dengan meja, tanaman, rak buku, dan kucing oranye bulat di tengahnya.",
+  "shotAlt": "Layar dari aplikasi braws",
   "whatTitle": "ada apa di dalamnya",
   "whatLead": "braws adalah tempat kecil yang nyaman untuk kamu dan teman-teman terdekatmu. Di aplikasi, teman-temanmu adalah braws-mu.",
   "cards": [
@@ -27,6 +27,8 @@
   ],
   "petAlt": "Mochi, kucing belang oranye yang bulat, hewan peliharaan di aplikasi.",
   "petCaption": "rawat hewanmu",
+  "moodTitle": "ia tahu saat kamu hadir.",
+  "moods": ["mengantuk", "biasa saja", "senang", "bahagia sekali"],
   "worldAlt": "Bola dunia kecil dengan hewan peliharaan teman-temanmu: anjing, kelinci, aksolotl, beruang, penguin, dan kamu, kucing oranye.",
   "worldCaption": "braws-mu, duniamu",
   "howTitle": "cara kerjanya",
@@ -59,11 +61,11 @@
   ],
   "endTitle": "dunia kecilmu sudah menunggu.",
   "dockText": "dunia kecilmu sudah menunggu",
-  "dockBtn": "unduh",
   "footNavLabel": "Legal dan bantuan",
   "footPrivacy": "Privasi",
   "footTerms": "Ketentuan",
   "footSupport": "Dukungan",
   "footDelete": "Hapus akun",
-  "footTagline": "braws · dibuat dengan sepenuh hati untuk lingkar pertemanan kecil."
+  "footTagline": "braws · dibuat dengan sepenuh hati untuk lingkar pertemanan kecil.",
+  "footCredits": "Klip video dari Mixkit (lisensi gratis) oleh"
 }

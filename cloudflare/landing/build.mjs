@@ -1,79 +1,88 @@
 #!/usr/bin/env node
-// braws.app landing: builds public/<code>/index.html for the 27 languages the app ships,
+// braws.app landing: writes public/<code>/index.html for the 27 languages the app ships,
 // public/index.html (English fallback for "/") and public/sitemap.xml.
-// Plain Node, no packages:  node cloudflare/landing/build.mjs
-// Copy lives in strings/<code>.json; the page structure lives in template.html.
-import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
+//
+// Run through npm (it builds the React bundle first):  cd cloudflare/landing && npm run build
+//   1. vite build             -> public/assets/landing/app.js + app.css (the client bundle)
+//   2. vite build --ssr       -> .ssr/entry-server.js (the same components, for rendering at build time)
+//   3. node build.mjs         -> checks every strings file, renders each page to static HTML
+// The static HTML reads fully without JavaScript; the bundle then hydrates it and adds the motion.
+import { createHash } from 'node:crypto';
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const PUBLIC = join(HERE, '..', 'public');
 const ORIGIN = 'https://braws.app';
-const STORE = 'https://apps.apple.com/app/id6833073203';
 
 // Same codes and native names as the app's language picker (braw/src/i18n/i18n.js LANGUAGES).
 // hreflang/htmlLang: "pt" in the app is Brazilian Portuguese.
+// badge: the localized "Download on the App Store" badge from Apple's marketing tools (CREDITS.md);
+// Apple has no en-GB or Hindi version, so those use the US English one.
 export const LANGUAGES = [
-  { code: 'en', name: 'English (US)', hreflang: 'en', og: 'en_US' },
-  { code: 'en-GB', name: 'English (UK)', hreflang: 'en-GB', og: 'en_GB' },
-  { code: 'es', name: 'Español', hreflang: 'es', og: 'es_MX' },
-  { code: 'pt', name: 'Português (Brasil)', hreflang: 'pt-BR', og: 'pt_BR' },
-  { code: 'pt-PT', name: 'Português (Portugal)', hreflang: 'pt-PT', og: 'pt_PT' },
-  { code: 'fr', name: 'Français', hreflang: 'fr', og: 'fr_FR' },
-  { code: 'de', name: 'Deutsch', hreflang: 'de', og: 'de_DE' },
-  { code: 'it', name: 'Italiano', hreflang: 'it', og: 'it_IT' },
-  { code: 'nl', name: 'Nederlands', hreflang: 'nl', og: 'nl_NL' },
-  { code: 'id', name: 'Bahasa Indonesia', hreflang: 'id', og: 'id_ID' },
-  { code: 'sv', name: 'Svenska', hreflang: 'sv', og: 'sv_SE' },
-  { code: 'da', name: 'Dansk', hreflang: 'da', og: 'da_DK' },
-  { code: 'ja', name: '日本語', hreflang: 'ja', og: 'ja_JP' },
-  { code: 'ko', name: '한국어', hreflang: 'ko', og: 'ko_KR' },
-  { code: 'zh-Hans', name: '简体中文', hreflang: 'zh-Hans', og: 'zh_CN' },
-  { code: 'zh-Hant', name: '繁體中文', hreflang: 'zh-Hant', og: 'zh_TW' },
-  { code: 'ru', name: 'Русский', hreflang: 'ru', og: 'ru_RU' },
-  { code: 'tr', name: 'Türkçe', hreflang: 'tr', og: 'tr_TR' },
-  { code: 'pl', name: 'Polski', hreflang: 'pl', og: 'pl_PL' },
-  { code: 'nb', name: 'Norsk', hreflang: 'nb', og: 'nb_NO' },
-  { code: 'fi', name: 'Suomi', hreflang: 'fi', og: 'fi_FI' },
-  { code: 'vi', name: 'Tiếng Việt', hreflang: 'vi', og: 'vi_VN' },
-  { code: 'ar', name: 'العربية', hreflang: 'ar', og: 'ar_AR', dir: 'rtl' },
-  { code: 'hi', name: 'हिन्दी', hreflang: 'hi', og: 'hi_IN' },
-  { code: 'th', name: 'ไทย', hreflang: 'th', og: 'th_TH' },
-  { code: 'uk', name: 'Українська', hreflang: 'uk', og: 'uk_UA' },
-  { code: 'cs', name: 'Čeština', hreflang: 'cs', og: 'cs_CZ' },
+  { code: 'en', name: 'English (US)', hreflang: 'en', og: 'en_US', badge: 'en-us' },
+  { code: 'en-GB', name: 'English (UK)', hreflang: 'en-GB', og: 'en_GB', badge: 'en-us' },
+  { code: 'es', name: 'Español', hreflang: 'es', og: 'es_MX', badge: 'es-mx' },
+  { code: 'pt', name: 'Português (Brasil)', hreflang: 'pt-BR', og: 'pt_BR', badge: 'pt-br' },
+  { code: 'pt-PT', name: 'Português (Portugal)', hreflang: 'pt-PT', og: 'pt_PT', badge: 'pt-pt' },
+  { code: 'fr', name: 'Français', hreflang: 'fr', og: 'fr_FR', badge: 'fr-fr' },
+  { code: 'de', name: 'Deutsch', hreflang: 'de', og: 'de_DE', badge: 'de-de' },
+  { code: 'it', name: 'Italiano', hreflang: 'it', og: 'it_IT', badge: 'it-it' },
+  { code: 'nl', name: 'Nederlands', hreflang: 'nl', og: 'nl_NL', badge: 'nl-nl' },
+  { code: 'id', name: 'Bahasa Indonesia', hreflang: 'id', og: 'id_ID', badge: 'id-id' },
+  { code: 'sv', name: 'Svenska', hreflang: 'sv', og: 'sv_SE', badge: 'sv-se' },
+  { code: 'da', name: 'Dansk', hreflang: 'da', og: 'da_DK', badge: 'da-dk' },
+  { code: 'ja', name: '日本語', hreflang: 'ja', og: 'ja_JP', badge: 'ja-jp' },
+  { code: 'ko', name: '한국어', hreflang: 'ko', og: 'ko_KR', badge: 'ko-kr' },
+  { code: 'zh-Hans', name: '简体中文', hreflang: 'zh-Hans', og: 'zh_CN', badge: 'zh-cn' },
+  { code: 'zh-Hant', name: '繁體中文', hreflang: 'zh-Hant', og: 'zh_TW', badge: 'zh-tw' },
+  { code: 'ru', name: 'Русский', hreflang: 'ru', og: 'ru_RU', badge: 'ru-ru' },
+  { code: 'tr', name: 'Türkçe', hreflang: 'tr', og: 'tr_TR', badge: 'tr-tr' },
+  { code: 'pl', name: 'Polski', hreflang: 'pl', og: 'pl_PL', badge: 'pl-pl' },
+  { code: 'nb', name: 'Norsk', hreflang: 'nb', og: 'nb_NO', badge: 'no-no' },
+  { code: 'fi', name: 'Suomi', hreflang: 'fi', og: 'fi_FI', badge: 'fi-fi' },
+  { code: 'vi', name: 'Tiếng Việt', hreflang: 'vi', og: 'vi_VN', badge: 'vi-vn' },
+  { code: 'ar', name: 'العربية', hreflang: 'ar', og: 'ar_AR', dir: 'rtl', badge: 'ar-ar' },
+  { code: 'hi', name: 'हिन्दी', hreflang: 'hi', og: 'hi_IN', badge: 'en-us' },
+  { code: 'th', name: 'ไทย', hreflang: 'th', og: 'th_TH', badge: 'th-th' },
+  { code: 'uk', name: 'Українська', hreflang: 'uk', og: 'uk_UA', badge: 'uk-ua' },
+  { code: 'cs', name: 'Čeština', hreflang: 'cs', og: 'cs_CZ', badge: 'cs-cz' },
 ];
+
+// Real app screens were captured for these languages (media/app/<code>/); the others show the English ones.
+const SHOT_LANGS = new Set(['en', 'es', 'ar']);
+// Mixkit contributors of the clips used (see CREDITS.md).
+const CREDITS = ['arvizum', 'mustafab', 'mixkit', 'highwayvideography', 'marcolopez', 'dubassy', 'franklandgrave', 'joshjanssen'];
 
 // Every strings/<code>.json must have exactly this shape (en.json is the reference).
 const LIST_SHAPES = { cards: ['ico', 'title', 'text'], steps: ['title', 'text'], checks: ['b', 'text'], faq: ['q', 'a'] };
-const LIST_LENGTHS = { cards: 6, steps: 3, checks: 6, faq: 8 };
+const LIST_LENGTHS = { cards: 6, steps: 3, checks: 6, faq: 8, moods: 4 };
+const STRING_LISTS = new Set(['moods']);
 const OPTIONAL = new Set(['ids', 'legalHash']);
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const pathOf = (code) => `/${code}/`;
 const urlOf = (code) => `${ORIGIN}${pathOf(code)}`;
 
-// "[[text]]" in a string becomes a link to `href`; everything else is escaped.
-function linked(s, href) {
-  const out = esc(s).replace(/\[\[(.+?)\]\]/g, (_, t) => `<a href="${href}">${t}</a>`);
-  if (/\[\[|\]\]/.test(out)) throw new Error(`unbalanced [[link]] in: ${s}`);
-  return out;
-}
-
 function check(code, s, ref) {
   const errs = [];
   for (const k of Object.keys(ref)) {
     if (OPTIONAL.has(k)) continue;
     if (!(k in s)) { errs.push(`missing "${k}"`); continue; }
-    if (k in LIST_SHAPES) {
+    if (k in LIST_LENGTHS) {
       if (!Array.isArray(s[k]) || s[k].length !== LIST_LENGTHS[k]) { errs.push(`"${k}" must have ${LIST_LENGTHS[k]} items`); continue; }
-      s[k].forEach((item, i) => LIST_SHAPES[k].forEach((f) => { if (typeof item[f] !== 'string' || !item[f].trim()) errs.push(`${k}[${i}].${f} empty`); }));
+      if (STRING_LISTS.has(k)) s[k].forEach((v, i) => { if (typeof v !== 'string' || !v.trim()) errs.push(`${k}[${i}] empty`); });
+      else s[k].forEach((item, i) => LIST_SHAPES[k].forEach((f) => { if (typeof item[f] !== 'string' || !item[f].trim()) errs.push(`${k}[${i}].${f} empty`); }));
     } else if (typeof s[k] !== 'string' || !s[k].trim()) errs.push(`"${k}" empty`);
   }
   for (const k of Object.keys(s)) if (!(k in ref) && !OPTIONAL.has(k)) errs.push(`unknown key "${k}"`);
   if (!/\[\[.+?\]\]/.test(s.safetyLead)) errs.push('safetyLead needs a [[privacy link]]');
-  if (!/\[\[.+?\]\]/.test(s.faq[7]?.a || '')) errs.push('faq[7].a needs a [[delete link]]');
-  for (const v of JSON.stringify(s).match(/https?:\/\/[^"\s]+/g) || []) errs.push(`no URLs in copy: ${v}`);
+  if (!/\[\[.+?\]\]/.test(s.faq?.[7]?.a || '')) errs.push('faq[7].a needs a [[delete link]]');
+  const flat = JSON.stringify(s);
+  for (const v of flat.match(/https?:\/\/[^"\s]+/g) || []) errs.push(`no URLs in copy: ${v}`);
+  if (/<[a-z/!]/i.test(flat)) errs.push('no HTML in copy');
+  if (/testflight/i.test(flat)) errs.push('no TestFlight in copy');
   if (errs.length) throw new Error(`strings/${code}.json:\n  - ${errs.join('\n  - ')}`);
 }
 
@@ -84,56 +93,17 @@ function alternates() {
   ].join('\n');
 }
 
-const GLOBE = '<svg class="globe-ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 12h18M12 3c2.6 2.6 3.9 5.6 3.9 9s-1.3 6.4-3.9 9c-2.6-2.6-3.9-5.6-3.9-9S9.4 5.6 12 3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>';
-
-// A <details> menu of plain links: works without JavaScript; site.js only adds Escape/outside-click closing.
-function langPicker(lang, s, where) {
-  const items = LANGUAGES.map((l) => {
-    const cur = l.code === lang.code ? ' aria-current="page"' : '';
-    const dir = l.dir ? ` dir="${l.dir}"` : '';
-    return `      <li><a href="${pathOf(l.code)}" hreflang="${l.hreflang}" lang="${l.hreflang}"${dir}${cur}>${esc(l.name)}</a></li>`;
-  }).join('\n');
-  return `  <details class="langs langs-${where}">
-    <summary>${GLOBE}<span class="vh">${esc(s.langLabel)}: </span><span class="lang-name" lang="${lang.hreflang}">${esc(lang.name)}</span></summary>
-    <ul class="langs-list" aria-label="${esc(s.langLabel)}">
-${items}
-    </ul>
-  </details>`;
+// The badge's own size (its viewBox), so width/height on the <img> keep Apple's proportions.
+function badgeOf(locale) {
+  const file = join(PUBLIC, 'media', 'badges', `app-store-${locale}.svg`);
+  if (!existsSync(file)) throw new Error(`missing App Store badge ${file}`);
+  const m = /viewBox="0 0 ([\d.]+) ([\d.]+)"/.exec(readFileSync(file, 'utf8'));
+  if (!m) throw new Error(`no viewBox in ${file}`);
+  return { src: `/media/badges/app-store-${locale}.svg`, w: Math.round(Number(m[1]) * 3), h: Math.round(Number(m[2]) * 3) };
 }
 
-function storeButton(s) {
-  return `<a class="store" href="${STORE}" aria-label="${esc(s.storeLabel)}"><img src="/apple-touch-icon.png" alt="" width="44" height="44"><span class="txt"><strong>${esc(s.storeTitle)}</strong><small>${esc(s.storeSub)}</small></span><span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 4v12m0 0-5-5m5 5 5-5M5 20h14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>`;
-}
-
-function render(template, lang, s) {
-  const legalHash = s.legalHash || '';
-  const ids = { what: 'what', how: 'how', safety: 'safety', faq: 'faq', ...(s.ids || {}) };
-  const ctx = {
-    code: lang.code,
-    htmlLang: lang.hreflang,
-    dir: lang.dir || 'ltr',
-    url: urlOf(lang.code),
-    path: pathOf(lang.code),
-    alternates: alternates(),
-    ogLocale: lang.og,
-    ogLocaleAlternates: LANGUAGES.filter((l) => l !== lang).map((l) => `<meta property="og:locale:alternate" content="${l.og}">`).join('\n'),
-    langPickerHead: langPicker(lang, s, 'head'),
-    langPickerFoot: langPicker(lang, s, 'foot'),
-    storeButton: storeButton(s),
-    idWhat: ids.what, idHow: ids.how, idSafety: ids.safety, idFaq: ids.faq,
-    legalHash,
-    safetyLead: linked(s.safetyLead, `/privacy/${legalHash}`),
-    cards: s.cards.map((c) => `    <article class="card"><span class="ico">${esc(c.ico)}</span><h3>${esc(c.title)}</h3><p>${esc(c.text)}</p></article>`).join('\n'),
-    steps: s.steps.map((st) => `    <li><strong>${esc(st.title)}</strong>${esc(st.text)}</li>`).join('\n'),
-    checks: s.checks.map((c) => `    <li><strong>${esc(c.b)}</strong> ${esc(c.text)}</li>`).join('\n'),
-    faq: s.faq.map((f) => `  <details><summary>${esc(f.q)}</summary><p>${linked(f.a, `/delete/${legalHash}`)}</p></details>`).join('\n'),
-  };
-  for (const [k, v] of Object.entries(s)) if (typeof v === 'string' && !(k in ctx)) ctx[k] = esc(v);
-  return template.replace(/\{\{(\w+)\}\}/g, (_, k) => {
-    if (!(k in ctx)) throw new Error(`template uses {{${k}}} but ${lang.code} has no value for it`);
-    return ctx[k];
-  });
-}
+// JSON inside <script type="application/json">: never let it close the tag.
+const jsonForScript = (v) => JSON.stringify(v).replace(/</g, '\\u003c').replace(/>/g, '\\u003e').replace(/&/g, '\\u0026').replace(/\u2028/g, '\\u2028').replace(/\u2029/g, '\\u2029');
 
 function sitemap() {
   const alt = [
@@ -150,23 +120,52 @@ ${[...pages, ...legal].join('\n')}
 `;
 }
 
-function main() {
+async function main() {
   const template = readFileSync(join(HERE, 'template.html'), 'utf8');
   const load = (code) => JSON.parse(readFileSync(join(HERE, 'strings', `${code}.json`), 'utf8'));
   const ref = load('en');
-  const out = [];
-  for (const lang of LANGUAGES) {
-    const s = load(lang.code);
-    check(lang.code, s, ref);
-    const html = render(template, lang, s);
+  // Check every language before writing anything: one bad file stops the whole build.
+  const all = LANGUAGES.map((lang) => { const s = load(lang.code); check(lang.code, s, ref); return [lang, s]; });
+
+  const bundle = join(PUBLIC, 'assets', 'landing');
+  const js = readFileSync(join(bundle, 'app.js'));
+  const css = readFileSync(join(bundle, 'app.css'));
+  const version = createHash('sha256').update(js).update(css).digest('hex').slice(0, 12);
+  const { render } = await import(pathToFileURL(join(HERE, '.ssr', 'entry-server.js')).href);
+  const languages = LANGUAGES.map(({ badge, ...l }) => l);
+
+  for (const [lang, s] of all) {
+    const { badge, ...l } = lang;
+    const data = { lang: l, languages, s, badge: badgeOf(badge), shots: SHOT_LANGS.has(lang.code) ? lang.code : 'en', credits: CREDITS };
+    const ctx = {
+      code: lang.code,
+      htmlLang: lang.hreflang,
+      dir: lang.dir || 'ltr',
+      url: urlOf(lang.code),
+      alternates: alternates(),
+      ogLocale: lang.og,
+      ogLocaleAlternates: LANGUAGES.filter((o) => o !== lang).map((o) => `<meta property="og:locale:alternate" content="${o.og}">`).join('\n'),
+      title: esc(s.title),
+      description: esc(s.description),
+      ogDescription: esc(s.ogDescription),
+      ogImageAlt: esc(s.ogImageAlt),
+      twitterDescription: esc(s.twitterDescription),
+      version,
+      root: render(data),
+      data: jsonForScript(data),
+    };
+    const html = template.replace(/\{\{(\w+)\}\}/g, (_, k) => {
+      if (!(k in ctx)) throw new Error(`template uses {{${k}}} but build.mjs has no value for it`);
+      return ctx[k];
+    });
+    if (/testflight/i.test(html)) throw new Error(`${lang.code}: TestFlight must not appear on the landing`);
     mkdirSync(join(PUBLIC, lang.code), { recursive: true });
     writeFileSync(join(PUBLIC, lang.code, 'index.html'), html);
-    out.push(lang.code);
     // "/" is answered by the Worker with a redirect; this copy is only a fallback if the asset is ever served directly.
     if (lang.code === 'en') writeFileSync(join(PUBLIC, 'index.html'), html);
   }
   writeFileSync(join(PUBLIC, 'sitemap.xml'), sitemap());
-  console.log(`built ${out.length} landing pages (${out.join(', ')}), public/index.html and sitemap.xml`);
+  console.log(`built ${all.length} landing pages, public/index.html and sitemap.xml (bundle ${version}, ${Math.round(js.length / 1024)} KB js, ${Math.round(css.length / 1024)} KB css)`);
 }
 
-main();
+main().catch((e) => { console.error(e.message || e); process.exit(1); });

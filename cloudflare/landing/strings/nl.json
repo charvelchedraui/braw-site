@@ -11,10 +11,10 @@
   "tagline2": "je echte vrienden.",
   "heroText": "Een huisdier, een room en een paar minuten per dag met de mensen die ertoe doen. Geen feed, geen vreemden, geen volgersaantallen.",
   "storeLabel": "Download braws gratis in de App Store",
-  "storeTitle": "download braws",
-  "storeSub": "gratis in de App Store",
+  "badgeAlt": "Download in de App Store",
   "note": "Gratis · iPhone en iPad · alleen op uitnodiging · 16+",
   "roomAlt": "Een gezellige getekende room met een bureau, planten, een boekenkast en een ronde oranje kat in het midden.",
+  "shotAlt": "Scherm uit de braws-app",
   "whatTitle": "wat zit erin",
   "whatLead": "braws is een klein, gezellig plekje voor jou en je beste vrienden. In de app zijn je vrienden je braws.",
   "cards": [
@@ -27,6 +27,8 @@
   ],
   "petAlt": "Mochi, een ronde oranje gestreepte kat, het huisdier in de app.",
   "petCaption": "zorg voor je huisdier",
+  "moodTitle": "het merkt wanneer je er bent.",
+  "moods": ["slaperig", "gaat wel", "blij", "in de wolken"],
   "worldAlt": "Een kleine wereldbol met de huisdieren van je vrienden: een hond, een konijntje, een axolotl, een beer, een pinguïn en jij, een oranje kat.",
   "worldCaption": "jouw braws, jouw wereld",
   "howTitle": "zo werkt het",
@@ -59,11 +61,11 @@
   ],
   "endTitle": "je kleine wereld wacht op je.",
   "dockText": "je kleine wereld wacht op je",
-  "dockBtn": "download",
   "footNavLabel": "Juridisch en hulp",
   "footPrivacy": "Privacy",
   "footTerms": "Voorwaarden",
   "footSupport": "Support",
   "footDelete": "Account verwijderen",
-  "footTagline": "braws · met zorg gemaakt voor kleine vriendengroepen."
+  "footTagline": "braws · met zorg gemaakt voor kleine vriendengroepen.",
+  "footCredits": "Videoclips van Mixkit (gratis licentie) door"
 }

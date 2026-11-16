@@ -11,10 +11,10 @@
   "tagline2": "i tuoi amici veri.",
   "heroText": "Un animale, una room e qualche minuto al giorno con le persone che contano. Niente feed, niente sconosciuti, niente conta dei follower.",
   "storeLabel": "Scarica braws gratis su App Store",
-  "storeTitle": "scarica braws",
-  "storeSub": "gratis su App Store",
+  "badgeAlt": "Scarica su App Store",
   "note": "Gratis · iPhone e iPad · solo su invito · 16+",
   "roomAlt": "Una room accogliente illustrata con una scrivania, piante, una libreria e un gatto arancione tondo al centro.",
+  "shotAlt": "Schermata dell'app braws",
   "whatTitle": "cosa c’è dentro",
   "whatLead": "braws è un posticino accogliente per te e i tuoi amici più stretti. Nell’app, i tuoi amici sono i tuoi braws.",
   "cards": [
@@ -27,6 +27,8 @@
   ],
   "petAlt": "Mochi, un gatto tigrato arancione e tondo, l’animale dell’app.",
   "petCaption": "prenditi cura del tuo animale",
+  "moodTitle": "si accorge quando ci sei.",
+  "moods": ["assonnato", "così così", "felice", "al settimo cielo"],
   "worldAlt": "Un piccolo globo con gli animali dei tuoi amici: un cane, una coniglietta, un axolotl, un orso, un pinguino e tu, un gatto arancione.",
   "worldCaption": "i tuoi braws, il tuo mondo",
   "howTitle": "come funziona",
@@ -59,11 +61,11 @@
   ],
   "endTitle": "il tuo piccolo mondo ti aspetta.",
   "dockText": "il tuo piccolo mondo ti aspetta",
-  "dockBtn": "scarica",
   "footNavLabel": "Note legali e aiuto",
   "footPrivacy": "Privacy",
   "footTerms": "Termini",
   "footSupport": "Assistenza",
   "footDelete": "Elimina account",
-  "footTagline": "braws · fatta con cura per piccole cerchie di amici."
+  "footTagline": "braws · fatta con cura per piccole cerchie di amici.",
+  "footCredits": "Video di Mixkit (licenza gratuita) di"
 }

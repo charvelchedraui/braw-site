@@ -11,10 +11,10 @@
   "tagline2": "你真正的朋友。",
   "heroText": "一只宠物、一个 room，每天花几分钟陪伴重要的人。没有信息流，没有陌生人，也没有粉丝数。",
   "storeLabel": "在 App Store 免费下载 braws",
-  "storeTitle": "下载 braws",
-  "storeSub": "App Store 免费下载",
+  "badgeAlt": "在 App Store 下载",
   "note": "免费 · iPhone 和 iPad · 邀请制 · 16 岁以上",
   "roomAlt": "一个温馨的手绘 room，有书桌、植物、书架，中间坐着一只圆滚滚的橘猫。",
+  "shotAlt": "braws 应用界面",
   "whatTitle": "里面有什么",
   "whatLead": "braws 是属于你和最亲密朋友的温馨小角落。在应用里，你的朋友就是你的 braws。",
   "cards": [
@@ -27,6 +27,8 @@
   ],
   "petAlt": "麻糬，一只圆滚滚的橘色虎斑猫，应用里的宠物。",
   "petCaption": "照顾你的宠物",
+  "moodTitle": "你来了,它都知道。",
+  "moods": ["困困的", "还行", "开心", "超开心"],
   "worldAlt": "一个小地球仪，上面有你朋友们的宠物：一只狗、一只兔子、一只六角恐龙、一只熊、一只企鹅，还有你，一只橘猫。",
   "worldCaption": "你的 braws，你的世界",
   "howTitle": "怎么玩",
@@ -59,11 +61,11 @@
   ],
   "endTitle": "你的小世界在等你。",
   "dockText": "你的小世界在等你",
-  "dockBtn": "获取",
   "footNavLabel": "法律信息与帮助",
   "footPrivacy": "隐私",
   "footTerms": "条款",
   "footSupport": "支持",
   "footDelete": "删除账户",
-  "footTagline": "braws · 用心为小小的朋友圈打造。"
+  "footTagline": "braws · 用心为小小的朋友圈打造。",
+  "footCredits": "视频片段来自 Mixkit(免费许可),作者:"
 }

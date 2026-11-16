@@ -11,10 +11,10 @@
   "tagline2": "dine rigtige venner.",
   "heroText": "Et kæledyr, en room og et par minutter om dagen med de mennesker, der betyder noget. Intet feed, ingen fremmede, ingen følgertal.",
   "storeLabel": "Hent braws gratis i App Store",
-  "storeTitle": "hent braws",
-  "storeSub": "gratis i App Store",
+  "badgeAlt": "Hent i App Store",
   "note": "Gratis · iPhone og iPad · kun på invitation · 16+",
   "roomAlt": "En hyggelig tegnet room med et skrivebord, planter, en bogreol og en rund orange kat i midten.",
+  "shotAlt": "Skærm fra braws-appen",
   "whatTitle": "hvad der er i den",
   "whatLead": "braws er et lille, hyggeligt sted for dig og dine nærmeste venner. I appen er dine venner dine braws.",
   "cards": [
@@ -27,6 +27,8 @@
   ],
   "petAlt": "Mochi, en rund orange stribet kat, kæledyret i appen.",
   "petCaption": "pas på dit kæledyr",
+  "moodTitle": "den mærker, når du er der.",
+  "moods": ["søvnig", "sådan da", "glad", "i syvende himmel"],
   "worldAlt": "En lille globus med dine venners kæledyr: en hund, en kanin, en axolotl, en bjørn, en pingvin og dig, en orange kat.",
   "worldCaption": "dine braws, din verden",
   "howTitle": "sådan virker det",
@@ -59,11 +61,11 @@
   ],
   "endTitle": "din lille verden venter.",
   "dockText": "din lille verden venter",
-  "dockBtn": "hent",
   "footNavLabel": "Jura og hjælp",
   "footPrivacy": "Privatliv",
   "footTerms": "Vilkår",
   "footSupport": "Support",
   "footDelete": "Slet konto",
-  "footTagline": "braws · lavet med omhu til små vennekredse."
+  "footTagline": "braws · lavet med omhu til små vennekredse.",
+  "footCredits": "Videoklip fra Mixkit (gratis licens) af"
 }

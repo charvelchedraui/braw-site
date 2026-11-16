@@ -11,10 +11,10 @@
   "tagline2": "your real friends.",
   "heroText": "A pet, a room and a few minutes a day with the people who matter. No feed, no strangers, no follower counts.",
   "storeLabel": "Get braws, free on the App Store",
-  "storeTitle": "get braws",
-  "storeSub": "free on the App Store",
+  "badgeAlt": "Download on the App Store",
   "note": "Free · iPhone and iPad · invite-only · 16+",
   "roomAlt": "An illustrated cozy room with a desk, plants, a bookshelf and a round orange cat in the middle.",
+  "shotAlt": "Screen from the braws app",
   "whatTitle": "what's inside",
   "whatLead": "braws is a small, cozy place for you and your closest friends. In the app, your friends are your braws.",
   "cards": [
@@ -27,6 +27,8 @@
   ],
   "petAlt": "Mochi, a round orange tabby cat, the pet in the app.",
   "petCaption": "look after your pet",
+  "moodTitle": "it notices when you show up.",
+  "moods": ["sleepy", "so-so", "happy", "over the moon"],
   "worldAlt": "A small globe with your friends' pets pinned on it: a dog, a bunny, an axolotl, a bear, a penguin and you, an orange cat.",
   "worldCaption": "your braws, your world",
   "howTitle": "how it works",
@@ -59,11 +61,11 @@
   ],
   "endTitle": "your little world is waiting.",
   "dockText": "your little world is waiting",
-  "dockBtn": "get it",
   "footNavLabel": "Legal and help",
   "footPrivacy": "Privacy",
   "footTerms": "Terms",
   "footSupport": "Support",
   "footDelete": "Delete account",
-  "footTagline": "braws · made with care for small circles of friends."
+  "footTagline": "braws · made with care for small circles of friends.",
+  "footCredits": "Video clips from Mixkit (free license) by"
 }

@@ -11,10 +11,10 @@
   "tagline2": "gerçek arkadaşların.",
   "heroText": "Bir evcil hayvan, bir room ve önemli insanlarla günde birkaç dakika. Akış yok, yabancılar yok, takipçi sayısı yok.",
   "storeLabel": "braws'u App Store'dan ücretsiz indir",
-  "storeTitle": "braws'u indir",
-  "storeSub": "App Store'da ücretsiz",
+  "badgeAlt": "App Store'dan indirin",
   "note": "Ücretsiz · iPhone ve iPad · sadece davetle · 16+",
   "roomAlt": "Masası, bitkileri, kitaplığı ve ortasında yuvarlak turuncu bir kedisi olan sıcacık, çizim bir room.",
+  "shotAlt": "braws uygulamasından bir ekran",
   "whatTitle": "içinde neler var",
   "whatLead": "braws, senin ve en yakın arkadaşların için küçük, sıcacık bir yer. Uygulamada arkadaşların senin braw'ların.",
   "cards": [
@@ -27,6 +27,8 @@
   ],
   "petAlt": "Mochi, yuvarlak turuncu tekir bir kedi, uygulamadaki evcil hayvan.",
   "petCaption": "evcil hayvanına bak",
+  "moodTitle": "geldiğini fark ediyor.",
+  "moods": ["uykulu", "idare eder", "mutlu", "havalara uçuyor"],
   "worldAlt": "Arkadaşlarının evcil hayvanlarının olduğu küçük bir küre: bir köpek, bir tavşan, bir aksolotl, bir ayı, bir penguen ve sen, turuncu bir kedi.",
   "worldCaption": "braw'ların, dünyan",
   "howTitle": "nasıl çalışır",
@@ -59,11 +61,11 @@
   ],
   "endTitle": "küçük dünyan seni bekliyor.",
   "dockText": "küçük dünyan seni bekliyor",
-  "dockBtn": "indir",
   "footNavLabel": "Yasal bilgiler ve yardım",
   "footPrivacy": "Gizlilik",
   "footTerms": "Koşullar",
   "footSupport": "Destek",
   "footDelete": "Hesabı sil",
-  "footTagline": "braws · küçük arkadaş grupları için özenle yapıldı."
+  "footTagline": "braws · küçük arkadaş grupları için özenle yapıldı.",
+  "footCredits": "Video klipler: Mixkit (ücretsiz lisans), yapanlar:"
 }

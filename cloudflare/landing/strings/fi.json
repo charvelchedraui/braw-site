@@ -11,10 +11,10 @@
   "tagline2": "oikeat kaverisi.",
   "heroText": "Lemmikki, room ja pari minuuttia päivässä niiden ihmisten kanssa, joilla on väliä. Ei feediä, ei tuntemattomia, ei seuraajamääriä.",
   "storeLabel": "Lataa braws ilmaiseksi App Storesta",
-  "storeTitle": "lataa braws",
-  "storeSub": "ilmainen App Storessa",
+  "badgeAlt": "Lataa App Storesta",
   "note": "Ilmainen · iPhone ja iPad · vain kutsutuille · 16+",
   "roomAlt": "Kodikas piirretty room, jossa on kirjoituspöytä, kasveja, kirjahylly ja keskellä pyöreä oranssi kissa.",
+  "shotAlt": "Näkymä braws-sovelluksesta",
   "whatTitle": "mitä sisältä löytyy",
   "whatLead": "braws on pieni ja kodikas paikka sinulle ja läheisimmille kavereillesi. Sovelluksessa kaverisi ovat braw'si.",
   "cards": [
@@ -27,6 +27,8 @@
   ],
   "petAlt": "Mochi, pyöreä oranssi tiikerikissa, sovelluksen lemmikki.",
   "petCaption": "pidä huolta lemmikistäsi",
+  "moodTitle": "se huomaa, kun olet läsnä.",
+  "moods": ["unelias", "ihan ok", "iloinen", "onnensa kukkuloilla"],
   "worldAlt": "Pieni maapallo, jolla on kaveriesi lemmikit: koira, pupu, aksolotli, karhu, pingviini ja sinä, oranssi kissa.",
   "worldCaption": "braw'si, maailmasi",
   "howTitle": "näin se toimii",
@@ -59,11 +61,11 @@
   ],
   "endTitle": "pieni maailmasi odottaa.",
   "dockText": "pieni maailmasi odottaa",
-  "dockBtn": "lataa",
   "footNavLabel": "Oikeudelliset tiedot ja ohjeet",
   "footPrivacy": "Tietosuoja",
   "footTerms": "Käyttöehdot",
   "footSupport": "Tuki",
   "footDelete": "Poista tili",
-  "footTagline": "braws · tehty huolella pienille kaveriporukoille."
+  "footTagline": "braws · tehty huolella pienille kaveriporukoille.",
+  "footCredits": "Videoleikkeet: Mixkit (ilmainen lisenssi), tekijät:"
 }
