@@ -1,6 +1,6 @@
 import { Fragment, useEffect, useRef, useState, type ReactNode } from 'react';
 import { useAnimationFrame, useMotionValue, useMotionValueEvent, useScroll, useSpring, useTransform, useVelocity } from 'motion/react';
-import { STORE, reducedMotion, saveData, splitWords, startSmoothScroll, useInView, useMotionOK, useProgress } from './motion';
+import { GET_ANDROID, GET_IOS, reducedMotion, scrollToId, saveData, splitWords, startSmoothScroll, useInView, useMotionOK, useProgress } from './motion';
 import type { Language, PageData, Strings } from './types';
 
 const pathOf = (code: string) => `/${code}/`;
@@ -13,19 +13,39 @@ function linked(text: string, href: string): ReactNode {
   });
 }
 
-/** The official store badges, unmodified and the same height: App Store always, Google Play once braws is live there. */
-function Badge({ d, size = 'md' }: { d: PageData; size?: 'sm' | 'md' | 'lg' }) {
+/** The final section every download button points to. `download` stays as an alias for older links. */
+const GET = 'get';
+
+/** A simple phone outline, the same for both stores (never Apple or Google logos). */
+function Phone() {
   return (
-    <span className={`stores stores-${size}`}>
-      <a className={`badge badge-${size}`} href={STORE} aria-label={d.s.storeLabel}>
-        <img src={d.badge.src} alt={d.s.badgeAlt} width={d.badge.w} height={d.badge.h} />
-      </a>
-      {d.play && (
-        <a className={`badge badge-play gp-${d.play.pad[2] > 0 ? 'framed' : 'wide'} badge-${size}`} href={d.play.url} aria-label={d.s.playLabel}>
-          <img src={d.play.src} alt={d.s.playAlt} width={d.play.w} height={d.play.h} />
-        </a>
-      )}
-    </span>
+    <svg className="store-ico" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false">
+      <rect x="6" y="2.5" width="12" height="19" rx="2.5" fill="none" stroke="currentColor" strokeWidth="2" />
+      <path d="M10.5 18.5h3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+/** The two identical download buttons (~/landing-blueprint/STORE-BUTTONS.md v3), only in the hero and in #get.
+ *  A store that is not live yet is the same button, not a link, with no extra text. */
+function Stores({ d, where }: { d: PageData; where: 'hero' | 'end' | 'dock' }) {
+  // The floating bar's buttons are the compact version: the platform name instead of the longer call to action.
+  const dock = where === 'dock';
+  const inner = (cta: string, store: string) => <><Phone /><span><strong>{cta}</strong><small>{store}</small></span></>;
+  return (
+    <div className={`stores stores-${where}`}>
+      <a className="store-btn" href={GET_IOS}>{inner(dock ? 'iPhone' : d.s.iosCta, 'App Store')}</a>
+      {d.androidLive
+        ? <a className="store-btn" href={GET_ANDROID}>{inner(dock ? 'Android' : d.s.androidCta, 'Google Play')}</a>
+        : <span className="store-btn is-off" aria-disabled="true">{inner(dock ? 'Android' : d.s.androidCta, 'Google Play')}</span>}
+    </div>
+  );
+}
+
+/** The one download button (header and floating bar): it goes to #get, smoothly. */
+function GetButton({ d, className }: { d: PageData; className: string }) {
+  return (
+    <a className={className} href={`#${GET}`} onClick={(e) => { e.preventDefault(); scrollToId(GET); }}>{d.s.navCta}</a>
   );
 }
 
@@ -83,14 +103,14 @@ function Nav({ d }: { d: PageData }) {
     el.classList.toggle('is-solid', y > 40);
   });
   return (
-    <header className={d.play ? 'nav has-play' : 'nav'} ref={ref}>
+    <header className={d.floatBar ? 'nav has-dock' : 'nav'} ref={ref}>
       <a className="brand" href={pathOf(d.lang.code)} aria-label={d.s.homeLabel}>
         <img src="/icon.png" alt="" width={36} height={36} />
         <span>braws</span>
       </a>
       <div className="nav-end">
         <LangPicker lang={d.lang} languages={d.languages} label={d.s.langLabel} where="head" />
-        <span className="nav-badge"><Badge d={d} size="sm" /></span>
+        <GetButton d={d} className="nav-cta" />
       </div>
     </header>
   );
@@ -139,7 +159,7 @@ function Hero({ d }: { d: PageData }) {
         </h1>
         <p className="hero-tag">{d.s.tagline1} {d.s.tagline2}</p>
         <div className="hero-cta">
-          <Badge d={d} size="lg" />
+          <Stores d={d} where="hero" />
           <p className="hero-note">{d.s.note}</p>
         </div>
       </div>
@@ -514,7 +534,8 @@ function Final({ d }: { d: PageData }) {
     return () => { a(); b(); };
   }, [mx, my]);
   return (
-    <section className="final night" aria-labelledby="end-title">
+    <section className="final night" id={GET} aria-labelledby="end-title">
+      <span id="download" className="anchor-alias" aria-hidden="true" />
       <Velocity words={d.s.cards.map((c) => c.ico)} />
       <div className="wrap final-grid">
         <div>
@@ -530,7 +551,7 @@ function Final({ d }: { d: PageData }) {
             }}
             onPointerLeave={() => { mx.set(0); my.set(0); }}
           >
-            <Badge d={d} size="lg" />
+            <Stores d={d} where="end" />
           </div>
           <p className="final-note">{d.s.note}</p>
         </div>
@@ -546,7 +567,7 @@ function Footer({ d }: { d: PageData }) {
   const mark = useRef<HTMLAnchorElement>(null);
   useInView(mark, '0px 0px -25% 0px');
   return (
-    <footer className="footer">
+    <footer className={d.floatBar ? 'footer has-dock' : 'footer'}>
       <div className="wrap">
         <a className="wordmark" ref={mark} href={pathOf(d.lang.code)} aria-label={d.s.homeLabel}>
           <svg viewBox="0 0 1000 300" aria-hidden="true" focusable="false">
@@ -564,26 +585,27 @@ function Footer({ d }: { d: PageData }) {
         </div>
         <p className="foot-tag">{d.s.footTagline}</p>
         <p className="credits">{d.s.footCredits} <span dir="ltr">{d.credits.join(', ')}</span>.</p>
-        <p className="credits" dir="ltr" lang="en">Apple and the Apple logo are trademarks of Apple Inc.{d.play && ' Google Play and the Google Play logo are trademarks of Google LLC.'}</p>
+        <p className="credits" dir="ltr" lang="en">App Store is a service mark of Apple Inc. Google Play is a trademark of Google LLC.</p>
       </div>
     </footer>
   );
 }
 
-/** The phone's sticky download bar: shows once the hero badge is gone, hides again when the final badge is on screen. */
+/** The floating download bar (STORE-BUTTONS.md 2b): the two store buttons, compact, with the same links as the hero's.
+ *  A bar on phones, a centered pill on tablets and desktop. It shows once the hero buttons are gone and hides again from the moment the
+ *  final buttons reach the screen, so it never covers them or the footer. */
 function Dock({ d }: { d: PageData }) {
   const ref = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const dock = ref.current!;
-    const [hero, end] = ['.hero .badge', '.final .badge'].map((q) => document.querySelector(q));
+    const [hero, end] = ['.stores-hero', '.stores-end'].map((q) => document.querySelector(q));
     if (!hero || !end) return;
     let raf = 0;
     const update = () => {
       raf = 0;
-      const h = hero.getBoundingClientRect();
-      const e = end.getBoundingClientRect();
-      const endOnScreen = e.top < window.innerHeight && e.bottom > 0;
-      dock.classList.toggle('is-on', h.bottom < 0 && !endOnScreen);
+      const on = hero.getBoundingClientRect().bottom < 0 && end.getBoundingClientRect().top > window.innerHeight;
+      dock.classList.toggle('is-on', on);
+      dock.toggleAttribute('inert', !on);
     };
     const onScroll = () => { if (!raf) raf = requestAnimationFrame(update); };
     update();
@@ -592,10 +614,9 @@ function Dock({ d }: { d: PageData }) {
     return () => { window.removeEventListener('scroll', onScroll); window.removeEventListener('resize', onScroll); cancelAnimationFrame(raf); };
   }, []);
   return (
-    <div className={d.play ? 'dock has-play' : 'dock'} ref={ref}>
+    <div className="dock" ref={ref} role="region" aria-label={d.s.navCta}>
       <img src="/apple-touch-icon.png" alt="" width={36} height={36} />
-      <span className="dock-txt"><strong>braws</strong><small>{d.s.dockText}</small></span>
-      <Badge d={d} size="sm" />
+      <Stores d={d} where="dock" />
     </div>
   );
 }
@@ -619,7 +640,7 @@ export default function App({ d }: { d: PageData }) {
         <Final d={d} />
       </main>
       <Footer d={d} />
-      <Dock d={d} />
+      {d.floatBar && <Dock d={d} />}
     </>
   );
 }

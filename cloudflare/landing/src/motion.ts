@@ -2,7 +2,20 @@ import { useEffect, useState, type RefObject } from 'react';
 import { useMotionValueEvent, useScroll } from 'motion/react';
 import Lenis from 'lenis';
 
-export const STORE = 'https://apps.apple.com/app/id6833073203';
+/** Store links go through the Worker's redirects (cloudflare/src/index.ts, ../stores.json). */
+export const GET_IOS = '/get/ios';
+export const GET_ANDROID = '/get/android';
+
+let lenis: Lenis | null = null;
+
+/** Smooth scroll to an element (Lenis when it runs, the browser's own otherwise; instant with reduced motion). */
+export function scrollToId(id: string) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  if (lenis) lenis.scrollTo(el);
+  else el.scrollIntoView({ behavior: reducedMotion() ? 'auto' : 'smooth', block: 'start' });
+  history.replaceState(null, '', `#${id}`);
+}
 
 export function reducedMotion(): boolean {
   return typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -29,8 +42,9 @@ export function useMotionOK(): boolean {
 /** Lenis smooth scroll. Off with reduced motion. */
 export function startSmoothScroll(): () => void {
   if (reducedMotion()) return () => {};
-  const lenis = new Lenis({ autoRaf: true, lerp: 0.11 });
-  return () => lenis.destroy();
+  const l = new Lenis({ autoRaf: true, lerp: 0.11 });
+  lenis = l;
+  return () => { l.destroy(); if (lenis === l) lenis = null; };
 }
 
 type Offset = NonNullable<Parameters<typeof useScroll>[0]>['offset'];

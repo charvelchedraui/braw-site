@@ -18,10 +18,6 @@ export interface Strings {
   tagline1: string;
   tagline2: string;
   heroText: string;
-  storeLabel: string;
-  badgeAlt: string;
-  playLabel: string;
-  playAlt: string;
   noteAndroid: string;
   faqDevicesAndroid: string;
   note: string;
@@ -45,7 +41,11 @@ export interface Strings {
   faqTitle: string;
   faq: Faq[];
   endTitle: string;
-  dockText: string;
+  /** The header button and the floating bar's button (both go to #get). */
+  navCta: string;
+  /** The two store buttons' main line; their second line is the store name. */
+  iosCta: string;
+  androidCta: string;
   footNavLabel: string;
   footPrivacy: string;
   footTerms: string;
@@ -64,10 +64,10 @@ export interface PageData {
   lang: Language;
   languages: Language[];
   s: Strings;
-  /** Localized official App Store badge (Apple marketing tools), unmodified. */
-  badge: { src: string; w: number; h: number };
-  /** Google Play badge and listing, or null while braws is not public on Google Play (PLAY_LIVE in build.mjs). */
-  play: null | { url: string; src: string; w: number; h: number; pad: [number, number, number, number] };
+  /** true once Google Play open testing is public (../stores.json): the Android button becomes a link. */
+  androidLive: boolean;
+  /** Show the floating download bar (FLOAT_BAR in build.mjs). */
+  floatBar: boolean;
   /** Folder of real app screens for this language (en, es or ar; others use en). */
   shots: string;
   /** Mixkit contributors, for the footer credit line. */
