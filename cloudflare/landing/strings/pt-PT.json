@@ -10,8 +10,6 @@
   "tagline1": "um pequeno mundo.",
   "tagline2": "os teus amigos a sério.",
   "heroText": "Um bichinho, uma room e uns minutos por dia com as pessoas que importam. Sem feed, sem desconhecidos, sem contagem de seguidores.",
-  "storeLabel": "Descarrega o braws grátis na App Store",
-  "badgeAlt": "Descarregar na App Store",
   "note": "Grátis · iPhone e iPad · 16+",
   "roomAlt": "Uma room acolhedora ilustrada, com secretária, plantas, uma estante e um gato cor de laranja redondinho ao meio.",
   "shotAlt": "Ecrã da app braws",
@@ -60,7 +58,9 @@
     { "q": "Como elimino a minha conta?", "a": "Na app: definições e depois eliminar conta. É apagada do nosso servidor de imediato. Sem a app? Vê [[eliminar a tua conta]]." }
   ],
   "endTitle": "o teu pequeno mundo está à tua espera.",
-  "dockText": "o teu pequeno mundo espera por ti",
+  "navCta": "Descarregar",
+  "iosCta": "Descarregue no iPhone",
+  "androidCta": "Experimente no Android",
   "footNavLabel": "Informação legal e ajuda",
   "footPrivacy": "Privacidade",
   "footTerms": "Termos",
@@ -68,8 +68,6 @@
   "footDelete": "Eliminar conta",
   "footTagline": "braws · feito com carinho para pequenos grupos de amigos.",
   "footCredits": "Vídeos do Mixkit (licença gratuita) por",
-  "playLabel": "Descarrega o braws grátis no Google Play",
-  "playAlt": "Disponível no Google Play",
   "noteAndroid": "Grátis · iPhone, iPad e Android · 16+",
   "faqDevicesAndroid": "No iPhone, no iPad e em telemóveis Android."
 }

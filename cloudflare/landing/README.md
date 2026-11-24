@@ -8,7 +8,7 @@ The landing page at braws.app exists in the same 27 languages the braws app ship
 | `src/` | The page itself: React 18 + TypeScript (`App.tsx`), the motion helpers (`motion.ts`), the styles (`styles.css`). |
 | `template.html` | The `<head>` (meta, hreflang, og/twitter) and the shell the rendered page goes into. Shared by every language. |
 | `strings/<code>.json` | All the copy for one language: title, meta and og/twitter text, alt texts, aria-labels, cards, moods, steps, safety list, FAQ, dock, footer, skip link. `en.json` is the reference shape. |
-| `build.mjs` | Checks every strings file, renders each language with the same React components (server render at build time) and writes `public/<code>/index.html`, `public/index.html` (English fallback) and `public/sitemap.xml`. Also holds the language list (codes, native names, hreflang, og:locale, App Store badge locale). |
+| `build.mjs` | Checks every strings file, renders each language with the same React components (server render at build time) and writes `public/<code>/index.html`, `public/index.html` (English fallback) and `public/sitemap.xml`. Also holds the language list (codes, native names, hreflang, og:locale) and the store-button switches (`stores.json`, `FLOAT_BAR`). |
 
 How it is built: the page is static HTML that reads fully without JavaScript (language picker, FAQ, every
 section). `public/assets/landing/app.js` then hydrates it and adds the motion: smooth scroll (Lenis), sections
@@ -47,14 +47,29 @@ To add or change a section, edit `src/App.tsx` (and `src/types.ts`), add the key
   works without JavaScript. The bundle only closes it on Escape or an outside tap.
 - Arabic is right-to-left (`dir="rtl"`); the CSS uses logical properties so the layout mirrors.
   Per-script system font stacks live at the end of `src/styles.css` (Patrick Hand only covers Latin).
-- Download buttons are Apple's official badge for that language (`public/media/badges/`), unmodified, and
-  all go to https://apps.apple.com/app/id6833073203. Never TestFlight: the build fails if it appears.
-- Google Play: the official badge sits next to Apple's everywhere (hero, top bar, phone bottom bar, end of page),
-  same height, but only once `PLAY_LIVE` in `build.mjs` is `true`. Turn it on **only when braws is public on Google
-  Play** (https://play.google.com/store/apps/details?id=com.braw.app stops answering 404), then rebuild and deploy.
-  With it on, the note under the badges and the devices answer in the FAQ switch to their Android versions
-  (`noteAndroid`, `faqDevicesAndroid`) and the footer adds Google's trademark line. To look at it before that:
-  `BRAWS_PLAY_PREVIEW=1 npm run build` (never deploy that build), then `npm run build` again.
+## Download buttons (~/landing-blueprint/STORE-BUTTONS.md v3)
+
+- **No official store badges** on the landing (the build fails if `/media/badges/` appears). The badge files stay in
+  `public/media/badges/` but are not used.
+- **Hero and final section (`#get`):** two identical site buttons (phone outline, `iosCta` / `androidCta` in the hand
+  font, the store on a small caps line: "App Store", "Google Play"). Same size and style; stacked full width on phones.
+  `#download` still works as an alias for older links.
+- **Header:** one button (`navCta`) to `#get`, smooth scroll. On phones the floating bar takes over.
+- **Floating bar** (`FLOAT_BAR` in `build.mjs`, on): the same two buttons, compact ("iPhone", "Android"); a centered
+  pill on tablet and desktop, a full-width bar on phones. It appears after the hero buttons scroll away and hides once
+  the final buttons reach the screen, so it never covers them or the footer; safe-area aware; no motion with reduced
+  motion.
+- **Links** only through the Worker's `/get/ios` and `/get/android` (`cloudflare/src/index.ts`). The targets live in
+  `cloudflare/stores.json`, shared by the Worker and `build.mjs` (the build fails on a direct store link). Never
+  TestFlight: the build fails if it appears.
+- **Android is not public yet** (`"androidLive": false`): the Android button is the same button, not a link, with no
+  extra text; `/get/android` redirects to the landing's `#get` (language from `?l=`, else `Accept-Language`).
+  **When Google Play open testing is public** (https://play.google.com/apps/testing/com.braw.app; never the
+  internal-test link): set `"androidLive": true` in `cloudflare/stores.json`, rebuild and deploy. The button becomes a
+  link, and the note and the devices answer in the FAQ switch to their Android versions (`noteAndroid`,
+  `faqDevicesAndroid`). Once braws is in production on Play, change `"android"` to the listing
+  (https://play.google.com/store/apps/details?id=com.braw.app). Preview first with `BRAWS_PLAY_PREVIEW=1 npm run build`
+  (never deploy that build), then `npm run build` again.
 
 If the app adds a language: add it to `LANGUAGES` in `build.mjs`, to `LANDING` in
 `cloudflare/src/index.ts`, write `strings/<code>.json`, rebuild.

@@ -8,7 +8,7 @@
 //   3. node build.mjs         -> checks every strings file, renders each page to static HTML
 // The static HTML reads fully without JavaScript; the bundle then hydrates it and adds the motion.
 import { createHash } from 'node:crypto';
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
@@ -18,57 +18,48 @@ const ORIGIN = 'https://braws.app';
 
 // Same codes and native names as the app's language picker (braw/src/i18n/i18n.js LANGUAGES).
 // hreflang/htmlLang: "pt" in the app is Brazilian Portuguese.
-// badge: the localized "Download on the App Store" badge from Apple's marketing tools (CREDITS.md);
-// Apple has no en-GB or Hindi version, so those use the US English one.
 export const LANGUAGES = [
-  { code: 'en', name: 'English (US)', hreflang: 'en', og: 'en_US', badge: 'en-us' },
-  { code: 'en-GB', name: 'English (UK)', hreflang: 'en-GB', og: 'en_GB', badge: 'en-us' },
-  { code: 'es', name: 'Español', hreflang: 'es', og: 'es_MX', badge: 'es-mx' },
-  { code: 'pt', name: 'Português (Brasil)', hreflang: 'pt-BR', og: 'pt_BR', badge: 'pt-br' },
-  { code: 'pt-PT', name: 'Português (Portugal)', hreflang: 'pt-PT', og: 'pt_PT', badge: 'pt-pt' },
-  { code: 'fr', name: 'Français', hreflang: 'fr', og: 'fr_FR', badge: 'fr-fr' },
-  { code: 'de', name: 'Deutsch', hreflang: 'de', og: 'de_DE', badge: 'de-de' },
-  { code: 'it', name: 'Italiano', hreflang: 'it', og: 'it_IT', badge: 'it-it' },
-  { code: 'nl', name: 'Nederlands', hreflang: 'nl', og: 'nl_NL', badge: 'nl-nl' },
-  { code: 'id', name: 'Bahasa Indonesia', hreflang: 'id', og: 'id_ID', badge: 'id-id' },
-  { code: 'sv', name: 'Svenska', hreflang: 'sv', og: 'sv_SE', badge: 'sv-se' },
-  { code: 'da', name: 'Dansk', hreflang: 'da', og: 'da_DK', badge: 'da-dk' },
-  { code: 'ja', name: '日本語', hreflang: 'ja', og: 'ja_JP', badge: 'ja-jp' },
-  { code: 'ko', name: '한국어', hreflang: 'ko', og: 'ko_KR', badge: 'ko-kr' },
-  { code: 'zh-Hans', name: '简体中文', hreflang: 'zh-Hans', og: 'zh_CN', badge: 'zh-cn' },
-  { code: 'zh-Hant', name: '繁體中文', hreflang: 'zh-Hant', og: 'zh_TW', badge: 'zh-tw' },
-  { code: 'ru', name: 'Русский', hreflang: 'ru', og: 'ru_RU', badge: 'ru-ru' },
-  { code: 'tr', name: 'Türkçe', hreflang: 'tr', og: 'tr_TR', badge: 'tr-tr' },
-  { code: 'pl', name: 'Polski', hreflang: 'pl', og: 'pl_PL', badge: 'pl-pl' },
-  { code: 'nb', name: 'Norsk', hreflang: 'nb', og: 'nb_NO', badge: 'no-no' },
-  { code: 'fi', name: 'Suomi', hreflang: 'fi', og: 'fi_FI', badge: 'fi-fi' },
-  { code: 'vi', name: 'Tiếng Việt', hreflang: 'vi', og: 'vi_VN', badge: 'vi-vn' },
-  { code: 'ar', name: 'العربية', hreflang: 'ar', og: 'ar_AR', dir: 'rtl', badge: 'ar-ar' },
-  { code: 'hi', name: 'हिन्दी', hreflang: 'hi', og: 'hi_IN', badge: 'en-us' },
-  { code: 'th', name: 'ไทย', hreflang: 'th', og: 'th_TH', badge: 'th-th' },
-  { code: 'uk', name: 'Українська', hreflang: 'uk', og: 'uk_UA', badge: 'uk-ua' },
-  { code: 'cs', name: 'Čeština', hreflang: 'cs', og: 'cs_CZ', badge: 'cs-cz' },
+  { code: 'en', name: 'English (US)', hreflang: 'en', og: 'en_US' },
+  { code: 'en-GB', name: 'English (UK)', hreflang: 'en-GB', og: 'en_GB' },
+  { code: 'es', name: 'Español', hreflang: 'es', og: 'es_MX' },
+  { code: 'pt', name: 'Português (Brasil)', hreflang: 'pt-BR', og: 'pt_BR' },
+  { code: 'pt-PT', name: 'Português (Portugal)', hreflang: 'pt-PT', og: 'pt_PT' },
+  { code: 'fr', name: 'Français', hreflang: 'fr', og: 'fr_FR' },
+  { code: 'de', name: 'Deutsch', hreflang: 'de', og: 'de_DE' },
+  { code: 'it', name: 'Italiano', hreflang: 'it', og: 'it_IT' },
+  { code: 'nl', name: 'Nederlands', hreflang: 'nl', og: 'nl_NL' },
+  { code: 'id', name: 'Bahasa Indonesia', hreflang: 'id', og: 'id_ID' },
+  { code: 'sv', name: 'Svenska', hreflang: 'sv', og: 'sv_SE' },
+  { code: 'da', name: 'Dansk', hreflang: 'da', og: 'da_DK' },
+  { code: 'ja', name: '日本語', hreflang: 'ja', og: 'ja_JP' },
+  { code: 'ko', name: '한국어', hreflang: 'ko', og: 'ko_KR' },
+  { code: 'zh-Hans', name: '简体中文', hreflang: 'zh-Hans', og: 'zh_CN' },
+  { code: 'zh-Hant', name: '繁體中文', hreflang: 'zh-Hant', og: 'zh_TW' },
+  { code: 'ru', name: 'Русский', hreflang: 'ru', og: 'ru_RU' },
+  { code: 'tr', name: 'Türkçe', hreflang: 'tr', og: 'tr_TR' },
+  { code: 'pl', name: 'Polski', hreflang: 'pl', og: 'pl_PL' },
+  { code: 'nb', name: 'Norsk', hreflang: 'nb', og: 'nb_NO' },
+  { code: 'fi', name: 'Suomi', hreflang: 'fi', og: 'fi_FI' },
+  { code: 'vi', name: 'Tiếng Việt', hreflang: 'vi', og: 'vi_VN' },
+  { code: 'ar', name: 'العربية', hreflang: 'ar', og: 'ar_AR', dir: 'rtl' },
+  { code: 'hi', name: 'हिन्दी', hreflang: 'hi', og: 'hi_IN' },
+  { code: 'th', name: 'ไทย', hreflang: 'th', og: 'th_TH' },
+  { code: 'uk', name: 'Українська', hreflang: 'uk', og: 'uk_UA' },
+  { code: 'cs', name: 'Čeština', hreflang: 'cs', og: 'cs_CZ' },
 ];
 
-// Google Play. Turn PLAY_LIVE on only once braws is public on Google Play (any public track): until then
-// the page shows the App Store badge alone, as today. With it on, every place with the App Store badge also shows
-// Google's official "Get it on Google Play" badge (unmodified, from ~/store-badges, see CREDITS.md), the note and
-// the devices answer in the FAQ say Android, and the footer carries Google's trademark line.
-// BRAWS_PLAY_PREVIEW=1 builds the Google Play version locally for QA; never deploy such a build before the listing is public.
-const PLAY_LIVE = true || process.env.BRAWS_PLAY_PREVIEW === '1';
-const PLAY_URL = 'https://play.google.com/store/apps/details?id=com.braw.app';
-// Google's file for each page language (media/badges/google-play-<x>.png, 646x250).
-const PLAY_BADGE = { en: 'en', 'en-GB': 'en', es: 'es', pt: 'pt-BR', 'pt-PT': 'pt-PT', fr: 'fr', de: 'de', it: 'it', nl: 'nl', id: 'id', sv: 'sv', da: 'da', ja: 'ja', ko: 'ko', 'zh-Hans': 'zh-CN', 'zh-Hant': 'zh-TW', ru: 'ru', tr: 'tr', pl: 'pl', nb: 'no', fi: 'fi', vi: 'vi', ar: 'ar', hi: 'hi', th: 'th', uk: 'uk', cs: 'cs' };
-
-function playOf(code) {
-  if (!PLAY_LIVE) return null;
-  const src = `/media/badges/google-play-${PLAY_BADGE[code]}.png`;
-  if (!existsSync(join(PUBLIC, src))) throw new Error(`missing Google Play badge ${src}`);
-  // Transparent margin around the black badge in Google's file (top, bottom, left, right, px of 646x250), so the page
-  // can size the badge by its black area, as Google asks, to match Apple's height. Measured from the files.
-  const pad = ['en', 'ar'].includes(PLAY_BADGE[code]) ? [41, 41, 41, 42] : [29, 29, 0, 0];
-  return { url: PLAY_URL, src, w: 646, h: 250, pad };
-}
+// Store buttons (~/landing-blueprint/STORE-BUTTONS.md v3): two identical site-styled buttons (iPhone, Android) in the
+// hero and the final section (#get), one header button and a floating bar that both go to #get. No official badges.
+// Links go through the Worker's /get/ios and /get/android; ../stores.json (shared with the Worker) says which store is
+// live. Set "androidLive": true there only once Google Play open testing is public, rebuild and deploy: until then the
+// Android button is the same button, not a link, with no extra text, and the note and the devices answer in the FAQ
+// keep their iPhone and iPad versions.
+// BRAWS_PLAY_PREVIEW=1 builds the Android-live version locally for QA; never deploy such a build before it is public.
+const STORES = JSON.parse(readFileSync(join(HERE, '..', 'stores.json'), 'utf8'));
+const ANDROID_LIVE = STORES.androidLive === true || process.env.BRAWS_PLAY_PREVIEW === '1';
+// The floating download bar (STORE-BUTTONS.md 2b: the two store buttons, compact; a bar on phones, a centered pill on
+// tablet and desktop). On (Charvel, 24 Nov 2026); false hides it everywhere without touching the rest.
+const FLOAT_BAR = true;
 
 // Real app screens were captured for these languages (media/app/<code>/); the others show the English ones.
 const SHOT_LANGS = new Set(['en', 'es', 'ar']);
@@ -113,15 +104,6 @@ function alternates() {
   ].join('\n');
 }
 
-// The badge's own size (its viewBox), so width/height on the <img> keep Apple's proportions.
-function badgeOf(locale) {
-  const file = join(PUBLIC, 'media', 'badges', `app-store-${locale}.svg`);
-  if (!existsSync(file)) throw new Error(`missing App Store badge ${file}`);
-  const m = /viewBox="0 0 ([\d.]+) ([\d.]+)"/.exec(readFileSync(file, 'utf8'));
-  if (!m) throw new Error(`no viewBox in ${file}`);
-  return { src: `/media/badges/app-store-${locale}.svg`, w: Math.round(Number(m[1]) * 3), h: Math.round(Number(m[2]) * 3) };
-}
-
 // JSON inside <script type="application/json">: never let it close the tag.
 const jsonForScript = (v) => JSON.stringify(v).replace(/</g, '\\u003c').replace(/>/g, '\\u003e').replace(/&/g, '\\u0026').replace(/\u2028/g, '\\u2028').replace(/\u2029/g, '\\u2029');
 
@@ -152,14 +134,13 @@ async function main() {
   const css = readFileSync(join(bundle, 'app.css'));
   const version = createHash('sha256').update(js).update(css).digest('hex').slice(0, 12);
   const { render } = await import(pathToFileURL(join(HERE, '.ssr', 'entry-server.js')).href);
-  const languages = LANGUAGES.map(({ badge, ...l }) => l);
+  const languages = LANGUAGES;
 
   for (const [lang, s] of all) {
-    const { badge, ...l } = lang;
-    const play = playOf(lang.code);
-    // With Google Play live, the note and the devices answer (faq[2]) switch to their Android versions.
-    const copy = play ? { ...s, note: s.noteAndroid, faq: s.faq.map((f, i) => (i === 2 ? { ...f, a: s.faqDevicesAndroid } : f)) } : s;
-    const data = { lang: l, languages, s: copy, badge: badgeOf(badge), play, shots: SHOT_LANGS.has(lang.code) ? lang.code : 'en', credits: CREDITS };
+    const l = lang;
+    // With Android live, the note and the devices answer (faq[2]) switch to their Android versions.
+    const copy = ANDROID_LIVE ? { ...s, note: s.noteAndroid, faq: s.faq.map((f, i) => (i === 2 ? { ...f, a: s.faqDevicesAndroid } : f)) } : s;
+    const data = { lang: l, languages, s: copy, androidLive: ANDROID_LIVE, floatBar: FLOAT_BAR, shots: SHOT_LANGS.has(lang.code) ? lang.code : 'en', credits: CREDITS };
     const ctx = {
       code: lang.code,
       htmlLang: lang.hreflang,
@@ -182,6 +163,8 @@ async function main() {
       return ctx[k];
     });
     if (/testflight/i.test(html)) throw new Error(`${lang.code}: TestFlight must not appear on the landing`);
+    if (/play\.google\.com|apps\.apple\.com\/app/.test(html.replace(/<meta name="apple-itunes-app"[^>]*>/, ''))) throw new Error(`${lang.code}: store links must go through /get/ios and /get/android`);
+    if (/media\/badges\//.test(html)) throw new Error(`${lang.code}: no official store badges on the landing (STORE-BUTTONS.md v3)`);
     mkdirSync(join(PUBLIC, lang.code), { recursive: true });
     writeFileSync(join(PUBLIC, lang.code, 'index.html'), html);
     // "/" is answered by the Worker with a redirect; this copy is only a fallback if the asset is ever served directly.

@@ -1,7 +1,7 @@
 # braws.app credits: footage, badges, art and packages
 
 Everything on the landing page is real: real stock footage under a free license, real braws app screens,
-Paula's own art from the app, and Apple's official badge. No AI-generated people, art, video or device UI.
+Paula's own art from the app. No AI-generated people, art, video or device UI.
 
 ## Footage (hero loop and strip clips)
 
@@ -41,7 +41,7 @@ The phone version is a centered vertical crop of the same cuts.
 
 The videos are served by the Worker with byte ranges (206), which Safari needs: `src/video-range.ts`.
 
-## App Store badge
+## App Store badge (no longer shown on the landing)
 
 `public/media/badges/app-store-<locale>.svg`: Apple's official "Download on the App Store" badge, black, downloaded
 unmodified on November 16, 2026 from Apple's marketing tools
@@ -50,7 +50,7 @@ Apple's App Store marketing guidelines (https://developer.apple.com/app-store/ma
 badges are used where Apple has one; en-GB and Hindi use the US English badge (Apple has no en-gb or hi version).
 Norwegian uses `no-no`, Arabic `ar-ar`, Traditional Chinese `zh-tw`. Only the display height is set in CSS.
 
-## Google Play badge
+## Google Play badge (no longer shown on the landing)
 
 `public/media/badges/google-play-<lang>.png`: Google's official "Get it on Google Play" badge (646x250), unmodified,
 from `~/store-badges` (fetched November 23, 2026 from

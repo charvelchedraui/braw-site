@@ -10,8 +10,6 @@
   "tagline1": "eine kleine Welt.",
   "tagline2": "deine echten Freunde.",
   "heroText": "Ein Haustier, eine Room und ein paar Minuten am Tag mit den Menschen, die zählen. Kein Feed, keine Fremden, keine Followerzahlen.",
-  "storeLabel": "Hol dir braws kostenlos im App Store",
-  "badgeAlt": "Laden im App Store",
   "note": "Kostenlos · iPhone und iPad · ab 16",
   "roomAlt": "Eine gemütliche gezeichnete Room mit Schreibtisch, Pflanzen, Bücherregal und einer runden orangefarbenen Katze in der Mitte.",
   "shotAlt": "Bildschirm aus der braws-App",
@@ -60,7 +58,9 @@
     { "q": "Wie lösche ich meinen Account?", "a": "In der App: Einstellungen, dann Konto löschen. Er wird sofort von unserem Server gelöscht. Keine App mehr? Siehe [[Account löschen]]." }
   ],
   "endTitle": "deine kleine Welt wartet.",
-  "dockText": "deine kleine Welt wartet",
+  "navCta": "Laden",
+  "iosCta": "Für iPhone laden",
+  "androidCta": "Auf Android testen",
   "footNavLabel": "Rechtliches und Hilfe",
   "footPrivacy": "Datenschutz",
   "footTerms": "Nutzungsbedingungen",
@@ -68,8 +68,6 @@
   "footDelete": "Account löschen",
   "footTagline": "braws · mit Liebe gemacht für kleine Freundeskreise.",
   "footCredits": "Videoclips von Mixkit (kostenlose Lizenz) von",
-  "playLabel": "Hol dir braws kostenlos bei Google Play",
-  "playAlt": "Jetzt bei Google Play",
   "noteAndroid": "Kostenlos · iPhone, iPad und Android · ab 16",
   "faqDevicesAndroid": "Auf iPhone, iPad und Android-Handys."
 }

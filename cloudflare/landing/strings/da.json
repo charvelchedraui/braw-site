@@ -10,8 +10,6 @@
   "tagline1": "en lille verden.",
   "tagline2": "dine rigtige venner.",
   "heroText": "Et kæledyr, en room og et par minutter om dagen med de mennesker, der betyder noget. Intet feed, ingen fremmede, ingen følgertal.",
-  "storeLabel": "Hent braws gratis i App Store",
-  "badgeAlt": "Hent i App Store",
   "note": "Gratis · iPhone og iPad · 16+",
   "roomAlt": "En hyggelig tegnet room med et skrivebord, planter, en bogreol og en rund orange kat i midten.",
   "shotAlt": "Skærm fra braws-appen",
@@ -60,7 +58,9 @@
     { "q": "Hvordan sletter jeg min konto?", "a": "I appen: indstillinger og derefter slet konto. Den bliver slettet fra vores server med det samme. Ingen app? Se [[slet din konto]]." }
   ],
   "endTitle": "din lille verden venter.",
-  "dockText": "din lille verden venter",
+  "navCta": "Hent",
+  "iosCta": "Hent til iPhone",
+  "androidCta": "Prøv på Android",
   "footNavLabel": "Jura og hjælp",
   "footPrivacy": "Privatliv",
   "footTerms": "Vilkår",
@@ -68,8 +68,6 @@
   "footDelete": "Slet konto",
   "footTagline": "braws · lavet med omhu til små vennekredse.",
   "footCredits": "Videoklip fra Mixkit (gratis licens) af",
-  "playLabel": "Hent braws gratis på Google Play",
-  "playAlt": "Nu på Google Play",
   "noteAndroid": "Gratis · iPhone, iPad og Android · 16+",
   "faqDevicesAndroid": "iPhone, iPad og Android-telefoner."
 }
