@@ -67,5 +67,9 @@
   "footSupport": "Підтримка",
   "footDelete": "Видалити акаунт",
   "footTagline": "braws · зроблено з турботою для маленьких компаній друзів.",
-  "footCredits": "Відео: Mixkit (безкоштовна ліцензія), автори:"
+  "footCredits": "Відео: Mixkit (безкоштовна ліцензія), автори:",
+  "playLabel": "Завантаж braws безкоштовно в Google Play",
+  "playAlt": "Завантажте з Google Play",
+  "noteAndroid": "Безкоштовно · iPhone, iPad та Android · 16+",
+  "faqDevicesAndroid": "На iPhone, iPad і телефонах з Android."
 }

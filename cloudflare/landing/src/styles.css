@@ -37,12 +37,18 @@ a { color: inherit; text-underline-offset: 3px; }
 .night .body { color: var(--muted-night); }
 .body a { color: inherit; text-decoration-color: var(--accent); text-decoration-thickness: 2px; }
 
-/* App Store badge: Apple's file, unmodified; only its height is set */
+/* Store badges: Apple's and Google's files, unmodified; only their height is set, the same for both
+   (Apple's on-screen minimum is 40 px). Side by side with clear space between them. */
+.stores { display: inline-flex; align-items: center; flex-wrap: wrap; gap: 12px; }
+.stores-sm { gap: 10px; flex-wrap: nowrap; }
 .badge { display: inline-block; border-radius: 9px; line-height: 0; }
 .badge img { width: auto; }
-.badge-sm img { height: 36px; }
-.badge-md img { height: 44px; }
-.badge-lg img { height: 56px; }
+.badge-sm { --bh: 40px; }
+.badge-md { --bh: 44px; }
+.badge-lg { --bh: 56px; }
+.badge img { height: var(--bh); }
+/* Google's file has a transparent margin: the black badge gets Apple's height and the margin overlaps around it */
+.badge-play img { height: calc(var(--bh) * var(--gp-k)); margin: calc(var(--bh) * var(--gp-t) * -1) calc(var(--bh) * var(--gp-r) * -1) calc(var(--bh) * var(--gp-b) * -1) calc(var(--bh) * var(--gp-l) * -1); max-width: none; }
 
 /* nav */
 .nav { position: fixed; inset: 0 0 auto; z-index: 50; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: calc(10px + env(safe-area-inset-top)) var(--pad) 10px; color: var(--cream); transition: transform .4s cubic-bezier(.22,1,.36,1), background-color .3s, color .3s; }
@@ -243,6 +249,7 @@ details.langs { position: relative; min-width: 0; }
 .foot-links a:hover { text-decoration: underline; text-decoration-color: var(--accent); }
 .foot-tag { color: var(--muted); margin: 22px 0 4px; }
 .credits { color: var(--muted); font-size: 13px; margin: 0; max-width: 90ch; }
+.credits + .credits { margin-top: 6px; }
 
 /* phone download bar */
 .dock { display: none; }
@@ -288,9 +295,16 @@ details.langs { position: relative; min-width: 0; }
   .brand { font-size: 26px; }
   .brand img { width: 32px; height: 32px; }
   .nav-badge { display: none; }
+  /* with both badges the phone's top bar keeps them: the icon stands for the name, the globe for the language */
+  .nav.has-play .nav-badge { display: block; }
+  .nav.has-play .brand span, .nav.has-play .lang-name, .nav.has-play .langs-head > summary::after { display: none; }
+  .nav.has-play .langs-head > summary { padding: 0; width: 40px; justify-content: center; }
+  .nav.has-play .nav-end { gap: 8px; }
+  .dock.has-play .dock-txt { display: none; }
+  .dock.has-play .stores { margin-inline-start: auto; }
   .langs > summary { padding: 6px 12px; font-size: 14px; }
   .lang-name { max-width: 11ch; }
-  .badge-lg img { height: 50px; }
+  .badge-lg { --bh: 50px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -325,4 +339,4 @@ details.langs { position: relative; min-width: 0; }
 :is(.h2, .hero-tag, .reveal-line, .final-line, .step h3, .screens-list h3, .checks strong, .faq-list summary, .kicker, .velocity) { overflow-wrap: anywhere; -webkit-hyphens: auto; hyphens: auto; }
 .velocity { overflow-wrap: normal; hyphens: none; }
 /* wide screens have room for whole words: no "ami-gos" in the hero line */
-@media (min-width: 768px) { .hero-tag { -webkit-hyphens: manual; hyphens: manual; } }
+@media (min-width: 768px) { .hero .hero-tag { -webkit-hyphens: manual; hyphens: manual; } }

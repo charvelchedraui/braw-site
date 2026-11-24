@@ -49,6 +49,12 @@ To add or change a section, edit `src/App.tsx` (and `src/types.ts`), add the key
   Per-script system font stacks live at the end of `src/styles.css` (Patrick Hand only covers Latin).
 - Download buttons are Apple's official badge for that language (`public/media/badges/`), unmodified, and
   all go to https://apps.apple.com/app/id6833073203. Never TestFlight: the build fails if it appears.
+- Google Play: the official badge sits next to Apple's everywhere (hero, top bar, phone bottom bar, end of page),
+  same height, but only once `PLAY_LIVE` in `build.mjs` is `true`. Turn it on **only when braws is public on Google
+  Play** (https://play.google.com/store/apps/details?id=com.braw.app stops answering 404), then rebuild and deploy.
+  With it on, the note under the badges and the devices answer in the FAQ switch to their Android versions
+  (`noteAndroid`, `faqDevicesAndroid`) and the footer adds Google's trademark line. To look at it before that:
+  `BRAWS_PLAY_PREVIEW=1 npm run build` (never deploy that build), then `npm run build` again.
 
 If the app adds a language: add it to `LANGUAGES` in `build.mjs`, to `LANDING` in
 `cloudflare/src/index.ts`, write `strings/<code>.json`, rebuild.

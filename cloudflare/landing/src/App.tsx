@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useRef, useState, type ReactNode } from 'react';
+import { Fragment, useEffect, useRef, useState, type CSSProperties, type ReactNode } from 'react';
 import { useAnimationFrame, useMotionValue, useMotionValueEvent, useScroll, useSpring, useTransform, useVelocity } from 'motion/react';
 import { STORE, reducedMotion, saveData, splitWords, startSmoothScroll, useInView, useMotionOK, useProgress } from './motion';
 import type { Language, PageData, Strings } from './types';
@@ -13,11 +13,26 @@ function linked(text: string, href: string): ReactNode {
   });
 }
 
+/** Google's badge is sized by its black area (its file has a transparent margin): CSS gets that margin as fractions of the black height. */
+function playBox(p: NonNullable<PageData['play']>) {
+  const [t, b, l, r] = p.pad;
+  const inner = p.h - t - b;
+  return { '--gp-k': p.h / inner, '--gp-t': t / inner, '--gp-b': b / inner, '--gp-l': l / inner, '--gp-r': r / inner } as CSSProperties;
+}
+
+/** The official store badges, unmodified and the same height: App Store always, Google Play once braws is live there. */
 function Badge({ d, size = 'md' }: { d: PageData; size?: 'sm' | 'md' | 'lg' }) {
   return (
-    <a className={`badge badge-${size}`} href={STORE} aria-label={d.s.storeLabel}>
-      <img src={d.badge.src} alt={d.s.badgeAlt} width={d.badge.w} height={d.badge.h} />
-    </a>
+    <span className={`stores stores-${size}`}>
+      <a className={`badge badge-${size}`} href={STORE} aria-label={d.s.storeLabel}>
+        <img src={d.badge.src} alt={d.s.badgeAlt} width={d.badge.w} height={d.badge.h} />
+      </a>
+      {d.play && (
+        <a className={`badge badge-play badge-${size}`} href={d.play.url} aria-label={d.s.playLabel} style={playBox(d.play)}>
+          <img src={d.play.src} alt={d.s.playAlt} width={d.play.w} height={d.play.h} />
+        </a>
+      )}
+    </span>
   );
 }
 
@@ -75,7 +90,7 @@ function Nav({ d }: { d: PageData }) {
     el.classList.toggle('is-solid', y > 40);
   });
   return (
-    <header className="nav" ref={ref}>
+    <header className={d.play ? 'nav has-play' : 'nav'} ref={ref}>
       <a className="brand" href={pathOf(d.lang.code)} aria-label={d.s.homeLabel}>
         <img src="/icon.png" alt="" width={36} height={36} />
         <span>braws</span>
@@ -556,6 +571,7 @@ function Footer({ d }: { d: PageData }) {
         </div>
         <p className="foot-tag">{d.s.footTagline}</p>
         <p className="credits">{d.s.footCredits} <span dir="ltr">{d.credits.join(', ')}</span>.</p>
+        <p className="credits" dir="ltr" lang="en">Apple and the Apple logo are trademarks of Apple Inc.{d.play && ' Google Play and the Google Play logo are trademarks of Google LLC.'}</p>
       </div>
     </footer>
   );
@@ -583,7 +599,7 @@ function Dock({ d }: { d: PageData }) {
     return () => { window.removeEventListener('scroll', onScroll); window.removeEventListener('resize', onScroll); cancelAnimationFrame(raf); };
   }, []);
   return (
-    <div className="dock" ref={ref}>
+    <div className={d.play ? 'dock has-play' : 'dock'} ref={ref}>
       <img src="/apple-touch-icon.png" alt="" width={36} height={36} />
       <span className="dock-txt"><strong>braws</strong><small>{d.s.dockText}</small></span>
       <Badge d={d} size="sm" />

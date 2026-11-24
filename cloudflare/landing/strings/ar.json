@@ -12,7 +12,7 @@
   "heroText": "حيوان أليف وroom ودقائق قليلة كل يوم مع الناس الذين يهمّونك. بلا خلاصة، بلا غرباء، بلا عدد متابعين.",
   "storeLabel": "احصل على braws مجانًا من App Store",
   "badgeAlt": "تنزيل من App Store",
-  "note": "مجاني · iPhone وiPad · 16+",
+  "note": "مجاني · iPhone وiPad · ⁦16+⁩",
   "roomAlt": "room دافئة مرسومة فيها مكتب ونباتات ومكتبة كتب وقطة برتقالية مستديرة في المنتصف.",
   "shotAlt": "شاشة من تطبيق braws",
   "whatTitle": "ماذا في الداخل",
@@ -67,5 +67,9 @@
   "footSupport": "الدعم",
   "footDelete": "حذف الحساب",
   "footTagline": "braws · صُنع بعناية لدوائر الأصدقاء الصغيرة.",
-  "footCredits": "مقاطع الفيديو من Mixkit (ترخيص مجاني)، تصوير:"
+  "footCredits": "مقاطع الفيديو من Mixkit (ترخيص مجاني)، تصوير:",
+  "playLabel": "احصل على braws مجانًا من Google Play",
+  "playAlt": "احصل عليه من Google Play",
+  "noteAndroid": "مجاني · iPhone وiPad وAndroid · ⁦16+⁩",
+  "faqDevicesAndroid": "على iPhone وiPad وهواتف Android."
 }

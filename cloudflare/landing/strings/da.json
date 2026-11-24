@@ -67,5 +67,9 @@
   "footSupport": "Support",
   "footDelete": "Slet konto",
   "footTagline": "braws · lavet med omhu til små vennekredse.",
-  "footCredits": "Videoklip fra Mixkit (gratis licens) af"
+  "footCredits": "Videoklip fra Mixkit (gratis licens) af",
+  "playLabel": "Hent braws gratis på Google Play",
+  "playAlt": "Nu på Google Play",
+  "noteAndroid": "Gratis · iPhone, iPad og Android · 16+",
+  "faqDevicesAndroid": "iPhone, iPad og Android-telefoner."
 }
