@@ -324,3 +324,5 @@ details.langs { position: relative; min-width: 0; }
 /* long words (German, Finnish...): wrap instead of overflowing */
 :is(.h2, .hero-tag, .reveal-line, .final-line, .step h3, .screens-list h3, .checks strong, .faq-list summary, .kicker, .velocity) { overflow-wrap: anywhere; -webkit-hyphens: auto; hyphens: auto; }
 .velocity { overflow-wrap: normal; hyphens: none; }
+/* wide screens have room for whole words: no "ami-gos" in the hero line */
+@media (min-width: 768px) { .hero-tag { -webkit-hyphens: manual; hyphens: manual; } }

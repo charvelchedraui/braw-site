@@ -1,7 +1,7 @@
 {
   "title": "braws: a little world, your real friends",
-  "description": "braws is a small, invite-only app for close friends: a pet, a room, a stamp a day, a shared world map, a wall and plans. For iPhone and iPad, 16+.",
-  "ogDescription": "A pet, a room and a few minutes a day with the friends who matter. Invite-only, for iPhone and iPad.",
+  "description": "braws is a small app for close friends, with a pet at the center: daily care, a home that grows, a stamp a day, a shared world map, a wall and plans. For iPhone and iPad, 16+.",
+  "ogDescription": "A pet, a room and a few minutes a day with the friends who matter. For iPhone and iPad.",
   "twitterDescription": "A pet, a room and a few minutes a day with the friends who matter.",
   "ogImageAlt": "braws: a little world, your real friends. An illustrated room with an orange cat.",
   "skip": "Skip to content",
@@ -12,14 +12,14 @@
   "heroText": "A pet, a room and a few minutes a day with the people who matter. No feed, no strangers, no follower counts.",
   "storeLabel": "Get braws, free on the App Store",
   "badgeAlt": "Download on the App Store",
-  "note": "Free · iPhone and iPad · invite-only · 16+",
+  "note": "Free · iPhone and iPad · 16+",
   "roomAlt": "An illustrated cosy room with a desk, plants, a bookshelf and a round orange cat in the middle.",
   "shotAlt": "Screen from the braws app",
   "whatTitle": "what's inside",
   "whatLead": "braws is a small, cosy place for you and your closest friends. In the app, your friends are your braws.",
   "cards": [
-    { "ico": "pet", "title": "a pet that needs you", "text": "Pick a little companion and look after it. It reacts to how you're doing and to how much you show up for your friends." },
-    { "ico": "room", "title": "a room all yours", "text": "Decorate an isometric room with furniture, walls and floors. Your braws can drop by and see it." },
+    { "ico": "pet", "title": "a pet that needs you", "text": "Feed it, bathe it and play with it. Every task of the day earns coins and keeps your streak going." },
+    { "ico": "room", "title": "a home that grows", "text": "Decorate your room. Days of care open up a kitchen, a bathroom and more furniture. Your braws can drop by and see it." },
     { "ico": "stamps", "title": "one stamp a day", "text": "A photo, a doodle, a mood or a voice note. Over time it becomes a calendar of your days." },
     { "ico": "world", "title": "a shared world", "text": "See your braws on a little planet. Showing your city is optional and only ever approximate." },
     { "ico": "wall & plans", "title": "the weekly wall", "text": "Share what's going on this week, reply to your braws, and set up a film night, a hike or a coffee." },
@@ -32,11 +32,11 @@
   "worldAlt": "A small globe with your friends' pets pinned on it: a dog, a bunny, an axolotl, a bear, a penguin and you, an orange cat.",
   "worldCaption": "your braws, your world",
   "howTitle": "how it works",
-  "howLead": "braws is invite-only. You can't search for strangers and they can't find you.",
+  "howLead": "There's no people search and no public profiles. You add your braws with your invite link or their exact username.",
   "steps": [
-    { "title": "get an invite", "text": "A friend who already uses braws sends you an invite link or a code." },
-    { "title": "get the app", "text": "Install braws from the App Store, then open the invite link (or type the code)." },
-    { "title": "sign in with Apple", "text": "Pick a username, choose your pet and start your little world together." }
+    { "title": "get the app", "text": "Install braws for free from the App Store." },
+    { "title": "sign in with Apple", "text": "Confirm you're 16 or older, tell us your name and pick your pet." },
+    { "title": "add your braws", "text": "Send them your invite link or add them by username. Once they accept, your little world grows." }
   ],
   "safetyTitle": "safety & privacy",
   "safetyLead": "Small on purpose. Read the full [[privacy policy]].",
@@ -50,7 +50,7 @@
   ],
   "faqTitle": "questions",
   "faq": [
-    { "q": "How do I get an invite?", "a": "Ask a friend who already uses braws. In the app they can create an invite and send you the link. There's no waitlist and no public sign-up." },
+    { "q": "Do I need an invite?", "a": "No. Anyone 16 or older can sign up with Apple. An invite is a quick way to add a friend: whoever signs up with your link becomes your braw straight away." },
     { "q": "Is braws free?", "a": "Yes. braws has no paid features, no in-app purchases and no ads. The coins and items in the app are just for fun and have no money value." },
     { "q": "Which devices does it work on?", "a": "iPhone and iPad. braws isn't on Android yet." },
     { "q": "Who can see what I post?", "a": "Only the friends you accepted. Friends of your friends can see your profile and room, so they can send you a request, but not your posts, stamps or location." },

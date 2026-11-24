@@ -1,7 +1,7 @@
 {
   "title": "braws: un piccolo mondo, i tuoi amici veri",
-  "description": "braws è una piccola app solo su invito per amici stretti: un animale, una room, uno stamp al giorno, una mappa del mondo condivisa, una bacheca e programmi. Per iPhone e iPad, 16+.",
-  "ogDescription": "Un animale, una room e qualche minuto al giorno con gli amici che contano. Solo su invito, per iPhone e iPad.",
+  "description": "braws è una piccola app per amici stretti, con un animale al centro: le cure del giorno, una casa che cresce, uno stamp al giorno, una mappa del mondo condivisa, una bacheca e programmi. Per iPhone e iPad, 16+.",
+  "ogDescription": "Un animale, una room e qualche minuto al giorno con gli amici che contano. Per iPhone e iPad.",
   "twitterDescription": "Un animale, una room e qualche minuto al giorno con gli amici che contano.",
   "ogImageAlt": "braws: un piccolo mondo, i tuoi amici veri. Una room illustrata con un gatto arancione.",
   "skip": "Vai al contenuto",
@@ -12,14 +12,14 @@
   "heroText": "Un animale, una room e qualche minuto al giorno con le persone che contano. Niente feed, niente sconosciuti, niente conta dei follower.",
   "storeLabel": "Scarica braws gratis su App Store",
   "badgeAlt": "Scarica su App Store",
-  "note": "Gratis · iPhone e iPad · solo su invito · 16+",
+  "note": "Gratis · iPhone e iPad · 16+",
   "roomAlt": "Una room accogliente illustrata con una scrivania, piante, una libreria e un gatto arancione tondo al centro.",
   "shotAlt": "Schermata dell'app braws",
   "whatTitle": "cosa c’è dentro",
   "whatLead": "braws è un posticino accogliente per te e i tuoi amici più stretti. Nell’app, i tuoi amici sono i tuoi braws.",
   "cards": [
-    { "ico": "animale", "title": "un animale che ha bisogno di te", "text": "Scegli un piccolo compagno e prenditene cura. Reagisce a come stai e a quanto ci sei per i tuoi amici." },
-    { "ico": "room", "title": "una room tutta tua", "text": "Arreda una room isometrica con mobili, pareti e pavimenti. I tuoi braws possono passare a vederla." },
+    { "ico": "animale", "title": "un animale che ha bisogno di te", "text": "Dagli da mangiare, fagli il bagno e gioca con lui. Ogni attività del giorno ti dà monete e allunga la tua serie." },
+    { "ico": "room", "title": "una casa che cresce", "text": "Arreda la tua room. Con i giorni di cura si aprono la cucina, il bagno e altri mobili. I tuoi braws possono passare a vederla." },
     { "ico": "stamps", "title": "uno stamp al giorno", "text": "Una foto, uno scarabocchio, un umore o un vocale. Col tempo diventa un calendario delle tue giornate." },
     { "ico": "mondo", "title": "un mondo condiviso", "text": "Guarda i tuoi braws su un piccolo pianeta. Mostrare la tua città è facoltativo e sempre approssimativo." },
     { "ico": "bacheca e programmi", "title": "la bacheca della settimana", "text": "Racconta cosa succede questa settimana, rispondi ai tuoi braws e organizzate una serata film, un’escursione o un caffè." },
@@ -32,11 +32,11 @@
   "worldAlt": "Un piccolo globo con gli animali dei tuoi amici: un cane, una coniglietta, un axolotl, un orso, un pinguino e tu, un gatto arancione.",
   "worldCaption": "i tuoi braws, il tuo mondo",
   "howTitle": "come funziona",
-  "howLead": "braws è solo su invito. Non puoi cercare sconosciuti e loro non possono trovarti.",
+  "howLead": "Non c’è una ricerca di persone né profili pubblici. Aggiungi i tuoi braws con il tuo link d’invito o con il loro nome utente esatto.",
   "steps": [
-    { "title": "ricevi un invito", "text": "Un amico che usa già braws ti manda un link o un codice d’invito." },
-    { "title": "scarica l’app", "text": "Installa braws da App Store, poi apri il link (o scrivi il codice)." },
-    { "title": "accedi con Apple", "text": "Scegli un nome utente e il tuo animale, e iniziate insieme il vostro piccolo mondo." }
+    { "title": "scarica l’app", "text": "Installa braws gratis da App Store." },
+    { "title": "accedi con Apple", "text": "Conferma di avere almeno 16 anni, dicci il tuo nome e scegli il tuo animale." },
+    { "title": "aggiungi i tuoi braws", "text": "Mandagli il tuo link d’invito o aggiungili con il nome utente. Quando accettano, il tuo piccolo mondo cresce." }
   ],
   "safetyTitle": "sicurezza e privacy",
   "safetyLead": "Piccola di proposito. Leggi l’[[informativa sulla privacy]] completa (in inglese).",
@@ -50,7 +50,7 @@
   ],
   "faqTitle": "domande",
   "faq": [
-    { "q": "Come ricevo un invito?", "a": "Chiedilo a un amico che usa già braws. Dall’app può creare un invito e mandarti il link. Non c’è lista d’attesa né registrazione aperta." },
+    { "q": "Serve un invito?", "a": "No. Chiunque abbia almeno 16 anni può entrare con Apple. L’invito è un modo veloce per aggiungere un amico: chi entra con il tuo link diventa subito il tuo braw." },
     { "q": "braws è gratis?", "a": "Sì. braws non ha funzioni a pagamento, acquisti in-app né pubblicità. Le monete e gli oggetti dell’app sono solo per divertimento e non valgono soldi." },
     { "q": "Su quali dispositivi funziona?", "a": "Su iPhone e iPad. braws non è ancora su Android." },
     { "q": "Chi vede quello che pubblico?", "a": "Solo gli amici che hai accettato. Gli amici dei tuoi amici possono vedere il tuo profilo e la tua room, per mandarti una richiesta, ma non i tuoi post, i tuoi stamp o la tua posizione." },

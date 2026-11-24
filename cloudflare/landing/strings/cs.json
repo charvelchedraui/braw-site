@@ -1,7 +1,7 @@
 {
   "title": "braws: malý svět, tví skuteční přátelé",
-  "description": "braws je malá aplikace jen na pozvánku pro blízké přátele: mazlíček, room, jeden stamp denně, společná mapa světa, zeď a plány. Pro iPhone a iPad, 16+.",
-  "ogDescription": "Mazlíček, room a pár minut denně s přáteli, na kterých záleží. Jen na pozvánku, pro iPhone a iPad.",
+  "description": "braws je malá aplikace pro blízké přátele, v jejímž středu je mazlíček: denní péče, domov, který roste, jeden stamp denně, společná mapa světa, zeď a plány. Pro iPhone a iPad, 16+.",
+  "ogDescription": "Mazlíček, room a pár minut denně s přáteli, na kterých záleží. Pro iPhone a iPad.",
   "twitterDescription": "Mazlíček, room a pár minut denně s přáteli, na kterých záleží.",
   "ogImageAlt": "braws: malý svět, tví skuteční přátelé. Kreslený room s oranžovou kočkou.",
   "skip": "Přejít na obsah",
@@ -12,14 +12,14 @@
   "heroText": "Mazlíček, room a pár minut denně s lidmi, na kterých záleží. Žádný feed, žádní cizí lidé, žádné počty sledujících.",
   "storeLabel": "Stáhni si braws zdarma v App Storu",
   "badgeAlt": "Stáhnout v App Store",
-  "note": "Zdarma · iPhone a iPad · jen na pozvánku · 16+",
+  "note": "Zdarma · iPhone a iPad · 16+",
   "roomAlt": "Útulný kreslený room se stolem, rostlinami, knihovnou a kulatou oranžovou kočkou uprostřed.",
   "shotAlt": "Obrazovka z aplikace braws",
   "whatTitle": "co je uvnitř",
   "whatLead": "braws je malé, útulné místo pro tebe a tvé nejbližší přátele. V aplikaci jsou tví přátelé tví braws.",
   "cards": [
-    { "ico": "mazlíček", "title": "mazlíček, který tě potřebuje", "text": "Vyber si malého parťáka a starej se o něj. Reaguje na to, jak se máš a jak moc jsi tu pro své přátele." },
-    { "ico": "room", "title": "room jen pro tebe", "text": "Zařiď izometrický room nábytkem, stěnami a podlahami. Tví braws se můžou zastavit a podívat." },
+    { "ico": "mazlíček", "title": "mazlíček, který tě potřebuje", "text": "Nakrm ho, vykoupej a pohraj si s ním. Každý úkol dne přinese mince a udrží tvou sérii." },
+    { "ico": "room", "title": "domov, který roste", "text": "Zařiď si svůj room. Se dny péče se otevře kuchyň, koupelna a další nábytek. Tví braws se můžou zastavit a podívat." },
     { "ico": "stampy", "title": "jeden stamp denně", "text": "Fotka, čmáranice, nálada nebo hlasová zpráva. Časem z toho vznikne kalendář tvých dní." },
     { "ico": "svět", "title": "společný svět", "text": "Podívej se na své braws na malé planetě. Ukázat své město je dobrovolné a vždy jen přibližné." },
     { "ico": "zeď a plány", "title": "zeď týdne", "text": "Napiš, co se tento týden děje, odpovídej svým braws a domluvte si filmový večer, výlet nebo kafe." },
@@ -32,11 +32,11 @@
   "worldAlt": "Malý glóbus s mazlíčky tvých přátel: pes, králíček, axolotl, medvěd, tučňák a ty, oranžová kočka.",
   "worldCaption": "tví braws, tvůj svět",
   "howTitle": "jak to funguje",
-  "howLead": "Do braws se dostaneš jen na pozvánku. Nemůžeš hledat cizí lidi a oni nemůžou najít tebe.",
+  "howLead": "Neexistuje vyhledávání lidí ani veřejné profily. Své braws přidáš odkazem s pozvánkou nebo přes jejich přesné uživatelské jméno.",
   "steps": [
-    { "title": "získej pozvánku", "text": "Kamarád, který už braws používá, ti pošle odkaz s pozvánkou nebo kód." },
-    { "title": "stáhni aplikaci", "text": "Nainstaluj braws z App Storu a pak otevři odkaz (nebo zadej kód)." },
-    { "title": "přihlas se přes Apple", "text": "Vyber si uživatelské jméno a mazlíčka a začněte spolu svůj malý svět." }
+    { "title": "stáhni aplikaci", "text": "Nainstaluj si braws zdarma z App Storu." },
+    { "title": "přihlas se přes Apple", "text": "Potvrď, že je ti 16 nebo víc, napiš nám své jméno a vyber si mazlíčka." },
+    { "title": "přidej své braws", "text": "Pošli jim odkaz s pozvánkou nebo je přidej podle uživatelského jména. Jakmile přijmou, tvůj malý svět roste." }
   ],
   "safetyTitle": "bezpečí a soukromí",
   "safetyLead": "Malá schválně. Přečti si celé [[zásady ochrany soukromí]] (v angličtině).",
@@ -50,7 +50,7 @@
   ],
   "faqTitle": "otázky",
   "faq": [
-    { "q": "Jak získám pozvánku?", "a": "Požádej kamaráda, který už braws používá. V aplikaci může vytvořit pozvánku a poslat ti odkaz. Neexistuje žádný pořadník ani veřejná registrace." },
+    { "q": "Potřebuju pozvánku?", "a": "Ne. Zaregistrovat se přes Apple může každý od 16 let. Pozvánka je rychlý způsob, jak přidat kamaráda: kdo se zaregistruje přes tvůj odkaz, stane se hned tvým braw." },
     { "q": "Je braws zdarma?", "a": "Ano. braws nemá žádné placené funkce, nákupy v aplikaci ani reklamy. Mince a předměty v aplikaci jsou jen pro zábavu a nemají žádnou peněžní hodnotu." },
     { "q": "Na jakých zařízeních funguje?", "a": "Na iPhonu a iPadu. Na Androidu braws zatím není." },
     { "q": "Kdo vidí, co zveřejním?", "a": "Jen přátelé, které jsi přijal. Přátelé tvých přátel vidí tvůj profil a room, aby ti mohli poslat žádost, ale ne tvé příspěvky, stampy ani polohu." },
