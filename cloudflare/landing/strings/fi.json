@@ -10,8 +10,6 @@
   "tagline1": "pieni maailma.",
   "tagline2": "oikeat kaverisi.",
   "heroText": "Lemmikki, room ja pari minuuttia päivässä niiden ihmisten kanssa, joilla on väliä. Ei feediä, ei tuntemattomia, ei seuraajamääriä.",
-  "storeLabel": "Lataa braws ilmaiseksi App Storesta",
-  "badgeAlt": "Lataa App Storesta",
   "note": "Ilmainen · iPhone ja iPad · 16+",
   "roomAlt": "Kodikas piirretty room, jossa on kirjoituspöytä, kasveja, kirjahylly ja keskellä pyöreä oranssi kissa.",
   "shotAlt": "Näkymä braws-sovelluksesta",
@@ -60,7 +58,9 @@
     { "q": "Miten poistan tilini?", "a": "Sovelluksessa: asetukset ja sitten poista tili. Se poistetaan palvelimeltamme heti. Eikö sovellusta ole? Katso [[tilin poistaminen]]." }
   ],
   "endTitle": "pieni maailmasi odottaa.",
-  "dockText": "pieni maailmasi odottaa",
+  "navCta": "Lataa",
+  "iosCta": "Lataa iPhonelle",
+  "androidCta": "Kokeile Androidilla",
   "footNavLabel": "Oikeudelliset tiedot ja ohjeet",
   "footPrivacy": "Tietosuoja",
   "footTerms": "Käyttöehdot",
@@ -68,8 +68,6 @@
   "footDelete": "Poista tili",
   "footTagline": "braws · tehty huolella pienille kaveriporukoille.",
   "footCredits": "Videoleikkeet: Mixkit (ilmainen lisenssi), tekijät:",
-  "playLabel": "Lataa braws ilmaiseksi Google Playsta",
-  "playAlt": "Saatavilla Google Playssa",
   "noteAndroid": "Ilmainen · iPhone, iPad ja Android · 16+",
   "faqDevicesAndroid": "iPhonella, iPadilla ja Android-puhelimilla."
 }

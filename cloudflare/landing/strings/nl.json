@@ -10,8 +10,6 @@
   "tagline1": "een kleine wereld.",
   "tagline2": "je echte vrienden.",
   "heroText": "Een huisdier, een room en een paar minuten per dag met de mensen die ertoe doen. Geen feed, geen vreemden, geen volgersaantallen.",
-  "storeLabel": "Download braws gratis in de App Store",
-  "badgeAlt": "Download in de App Store",
   "note": "Gratis · iPhone en iPad · 16+",
   "roomAlt": "Een gezellige getekende room met een bureau, planten, een boekenkast en een ronde oranje kat in het midden.",
   "shotAlt": "Scherm uit de braws-app",
@@ -60,7 +58,9 @@
     { "q": "Hoe verwijder ik mijn account?", "a": "In de app: instellingen en dan account verwijderen. Het wordt meteen van onze server gewist. Geen app? Zie [[je account verwijderen]]." }
   ],
   "endTitle": "je kleine wereld wacht op je.",
-  "dockText": "je kleine wereld wacht op je",
+  "navCta": "Downloaden",
+  "iosCta": "Download op iPhone",
+  "androidCta": "Probeer op Android",
   "footNavLabel": "Juridisch en hulp",
   "footPrivacy": "Privacy",
   "footTerms": "Voorwaarden",
@@ -68,8 +68,6 @@
   "footDelete": "Account verwijderen",
   "footTagline": "braws · met zorg gemaakt voor kleine vriendengroepen.",
   "footCredits": "Videoclips van Mixkit (gratis licentie) door",
-  "playLabel": "Download braws gratis via Google Play",
-  "playAlt": "Ontdek het op Google Play",
   "noteAndroid": "Gratis · iPhone, iPad en Android · 16+",
   "faqDevicesAndroid": "Op iPhone, iPad en Android-telefoons."
 }

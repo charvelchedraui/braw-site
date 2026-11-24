@@ -10,8 +10,6 @@
   "tagline1": "en liten värld.",
   "tagline2": "dina riktiga vänner.",
   "heroText": "Ett husdjur, en room och några minuter om dagen med människorna som betyder något. Inget flöde, inga främlingar, inga följarsiffror.",
-  "storeLabel": "Hämta braws gratis i App Store",
-  "badgeAlt": "Hämta i App Store",
   "note": "Gratis · iPhone och iPad · 16+",
   "roomAlt": "En mysig tecknad room med skrivbord, växter, en bokhylla och en rund orange katt i mitten.",
   "shotAlt": "Skärm från braws-appen",
@@ -60,7 +58,9 @@
     { "q": "Hur raderar jag mitt konto?", "a": "I appen: inställningar och sedan radera konto. Det raderas från vår server direkt. Ingen app? Se [[radera ditt konto]]." }
   ],
   "endTitle": "din lilla värld väntar.",
-  "dockText": "din lilla värld väntar",
+  "navCta": "Ladda ned",
+  "iosCta": "Ladda ned till iPhone",
+  "androidCta": "Testa på Android",
   "footNavLabel": "Juridik och hjälp",
   "footPrivacy": "Integritet",
   "footTerms": "Villkor",
@@ -68,8 +68,6 @@
   "footDelete": "Radera konto",
   "footTagline": "braws · gjord med omsorg för små vänkretsar.",
   "footCredits": "Videoklipp från Mixkit (gratis licens) av",
-  "playLabel": "Hämta braws gratis på Google Play",
-  "playAlt": "Ladda ned på Google Play",
   "noteAndroid": "Gratis · iPhone, iPad och Android · 16+",
   "faqDevicesAndroid": "iPhone, iPad och Android-telefoner."
 }

@@ -10,8 +10,6 @@
   "tagline1": "một thế giới nhỏ.",
   "tagline2": "những người bạn thật sự.",
   "heroText": "Một thú cưng, một room và vài phút mỗi ngày bên những người quan trọng. Không bảng tin, không người lạ, không đếm người theo dõi.",
-  "storeLabel": "Tải braws miễn phí trên App Store",
-  "badgeAlt": "Tải về trên App Store",
   "note": "Miễn phí · iPhone và iPad · 16+",
   "roomAlt": "Một room ấm cúng vẽ tay với bàn làm việc, cây xanh, kệ sách và một chú mèo cam tròn ở giữa.",
   "shotAlt": "Màn hình trong ứng dụng braws",
@@ -60,7 +58,9 @@
     { "q": "Làm sao để xóa tài khoản?", "a": "Trong ứng dụng: cài đặt, rồi xóa tài khoản. Tài khoản bị xóa khỏi máy chủ của chúng tôi ngay lập tức. Không còn ứng dụng? Xem [[xóa tài khoản]]." }
   ],
   "endTitle": "thế giới nhỏ của bạn đang chờ.",
-  "dockText": "thế giới nhỏ của bạn đang chờ",
+  "navCta": "Tải về",
+  "iosCta": "Tải về iPhone",
+  "androidCta": "Dùng thử trên Android",
   "footNavLabel": "Pháp lý và trợ giúp",
   "footPrivacy": "Quyền riêng tư",
   "footTerms": "Điều khoản",
@@ -68,8 +68,6 @@
   "footDelete": "Xóa tài khoản",
   "footTagline": "braws · làm bằng cả tấm lòng cho những nhóm bạn nhỏ.",
   "footCredits": "Video từ Mixkit (giấy phép miễn phí), tác giả:",
-  "playLabel": "Tải braws miễn phí trên Google Play",
-  "playAlt": "Tải nội dung trên Google Play",
   "noteAndroid": "Miễn phí · iPhone, iPad và Android · 16+",
   "faqDevicesAndroid": "iPhone, iPad và điện thoại Android."
 }

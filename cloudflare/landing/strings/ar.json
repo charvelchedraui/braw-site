@@ -10,8 +10,6 @@
   "tagline1": "عالم صغير.",
   "tagline2": "وأصدقاؤك الحقيقيون.",
   "heroText": "حيوان أليف وroom ودقائق قليلة كل يوم مع الناس الذين يهمّونك. بلا خلاصة، بلا غرباء، بلا عدد متابعين.",
-  "storeLabel": "احصل على braws مجانًا من App Store",
-  "badgeAlt": "تنزيل من App Store",
   "note": "مجاني · iPhone وiPad · ⁦16+⁩",
   "roomAlt": "room دافئة مرسومة فيها مكتب ونباتات ومكتبة كتب وقطة برتقالية مستديرة في المنتصف.",
   "shotAlt": "شاشة من تطبيق braws",
@@ -60,7 +58,9 @@
     { "q": "كيف أحذف حسابي؟", "a": "في التطبيق: الإعدادات، ثم حذف الحساب. يُمحى من خادمنا فورًا. ليس لديك التطبيق؟ راجع [[حذف حسابك]]." }
   ],
   "endTitle": "عالمك الصغير بانتظارك.",
-  "dockText": "عالمك الصغير بانتظارك",
+  "navCta": "تنزيل",
+  "iosCta": "نزّله على iPhone",
+  "androidCta": "جرّبه على Android",
   "footNavLabel": "المعلومات القانونية والمساعدة",
   "footPrivacy": "الخصوصية",
   "footTerms": "الشروط",
@@ -68,8 +68,6 @@
   "footDelete": "حذف الحساب",
   "footTagline": "braws · صُنع بعناية لدوائر الأصدقاء الصغيرة.",
   "footCredits": "مقاطع الفيديو من Mixkit (ترخيص مجاني)، تصوير:",
-  "playLabel": "احصل على braws مجانًا من Google Play",
-  "playAlt": "احصل عليه من Google Play",
   "noteAndroid": "مجاني · iPhone وiPad وAndroid · ⁦16+⁩",
   "faqDevicesAndroid": "على iPhone وiPad وهواتف Android."
 }

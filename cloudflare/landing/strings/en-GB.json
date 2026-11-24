@@ -10,8 +10,6 @@
   "tagline1": "a little world.",
   "tagline2": "your real friends.",
   "heroText": "A pet, a room and a few minutes a day with the people who matter. No feed, no strangers, no follower counts.",
-  "storeLabel": "Get braws, free on the App Store",
-  "badgeAlt": "Download on the App Store",
   "note": "Free · iPhone and iPad · 16+",
   "roomAlt": "An illustrated cosy room with a desk, plants, a bookshelf and a round orange cat in the middle.",
   "shotAlt": "Screen from the braws app",
@@ -60,7 +58,9 @@
     { "q": "How do I delete my account?", "a": "In the app: settings, then delete account. It's erased from our server straight away. No app? See [[delete your account]]." }
   ],
   "endTitle": "your little world is waiting.",
-  "dockText": "your little world is waiting",
+  "navCta": "Download",
+  "iosCta": "Download on iPhone",
+  "androidCta": "Try it on Android",
   "footNavLabel": "Legal and help",
   "footPrivacy": "Privacy",
   "footTerms": "Terms",
@@ -68,8 +68,6 @@
   "footDelete": "Delete account",
   "footTagline": "braws · made with care for small circles of friends.",
   "footCredits": "Video clips from Mixkit (free licence) by",
-  "playLabel": "Get braws, free on Google Play",
-  "playAlt": "Get it on Google Play",
   "noteAndroid": "Free · iPhone, iPad and Android · 16+",
   "faqDevicesAndroid": "iPhone, iPad and Android phones."
 }

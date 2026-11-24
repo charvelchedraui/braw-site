@@ -10,8 +10,6 @@
   "tagline1": "작은 세상.",
   "tagline2": "진짜 친구들.",
   "heroText": "펫 하나, room 하나, 그리고 소중한 사람들과 보내는 하루 몇 분. 피드도, 모르는 사람도, 팔로워 수도 없어요.",
-  "storeLabel": "App Store에서 braws 무료로 받기",
-  "badgeAlt": "App Store에서 다운로드",
   "note": "무료 · iPhone과 iPad · 16세 이상",
   "roomAlt": "책상, 화분, 책장이 있고 가운데에 동그란 주황색 고양이가 있는 아늑한 room 일러스트.",
   "shotAlt": "braws 앱 화면",
@@ -60,7 +58,9 @@
     { "q": "계정은 어떻게 삭제하나요?", "a": "앱에서 설정 → 계정 삭제를 누르세요. 우리 서버에서 바로 지워져요. 앱이 없다면 [[계정 삭제]] 페이지를 보세요." }
   ],
   "endTitle": "나의 작은 세상이 기다리고 있어요.",
-  "dockText": "나의 작은 세상이 기다려요",
+  "navCta": "다운로드",
+  "iosCta": "iPhone에서 다운로드",
+  "androidCta": "Android에서 체험하기",
   "footNavLabel": "약관 및 도움말",
   "footPrivacy": "개인정보",
   "footTerms": "약관",
@@ -68,8 +68,6 @@
   "footDelete": "계정 삭제",
   "footTagline": "braws · 작은 친구 모임을 위해 정성껏 만들었어요.",
   "footCredits": "영상: Mixkit(무료 라이선스), 제작:",
-  "playLabel": "Google Play에서 braws 무료로 받기",
-  "playAlt": "Google Play에서 다운로드",
   "noteAndroid": "무료 · iPhone, iPad, Android · 16세 이상",
   "faqDevicesAndroid": "iPhone, iPad, Android 휴대폰에서요."
 }

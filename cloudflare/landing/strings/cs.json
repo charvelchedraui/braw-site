@@ -10,8 +10,6 @@
   "tagline1": "malý svět.",
   "tagline2": "tví skuteční přátelé.",
   "heroText": "Mazlíček, room a pár minut denně s lidmi, na kterých záleží. Žádný feed, žádní cizí lidé, žádné počty sledujících.",
-  "storeLabel": "Stáhni si braws zdarma v App Storu",
-  "badgeAlt": "Stáhnout v App Store",
   "note": "Zdarma · iPhone a iPad · 16+",
   "roomAlt": "Útulný kreslený room se stolem, rostlinami, knihovnou a kulatou oranžovou kočkou uprostřed.",
   "shotAlt": "Obrazovka z aplikace braws",
@@ -60,7 +58,9 @@
     { "q": "Jak smažu svůj účet?", "a": "V aplikaci: nastavení a pak smazat účet. Z našeho serveru se smaže okamžitě. Nemáš aplikaci? Podívej se na [[smazání účtu]]." }
   ],
   "endTitle": "tvůj malý svět čeká.",
-  "dockText": "tvůj malý svět čeká",
+  "navCta": "Stáhnout",
+  "iosCta": "Stáhnout do iPhonu",
+  "androidCta": "Vyzkoušet na Androidu",
   "footNavLabel": "Právní informace a nápověda",
   "footPrivacy": "Soukromí",
   "footTerms": "Podmínky",
@@ -68,8 +68,6 @@
   "footDelete": "Smazat účet",
   "footTagline": "braws · vytvořeno s péčí pro malé party přátel.",
   "footCredits": "Videoklipy z Mixkit (bezplatná licence), autoři:",
-  "playLabel": "Stáhni si braws zdarma na Google Play",
-  "playAlt": "Nyní na Google Play",
   "noteAndroid": "Zdarma · iPhone, iPad a Android · 16+",
   "faqDevicesAndroid": "Na iPhonu, iPadu a telefonech s Androidem."
 }

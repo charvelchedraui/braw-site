@@ -10,8 +10,6 @@
   "tagline1": "küçük bir dünya.",
   "tagline2": "gerçek arkadaşların.",
   "heroText": "Bir evcil hayvan, bir room ve önemli insanlarla günde birkaç dakika. Akış yok, yabancılar yok, takipçi sayısı yok.",
-  "storeLabel": "braws'u App Store'dan ücretsiz indir",
-  "badgeAlt": "App Store'dan indirin",
   "note": "Ücretsiz · iPhone ve iPad · 16+",
   "roomAlt": "Masası, bitkileri, kitaplığı ve ortasında yuvarlak turuncu bir kedisi olan sıcacık, çizim bir room.",
   "shotAlt": "braws uygulamasından bir ekran",
@@ -60,7 +58,9 @@
     { "q": "Hesabımı nasıl silerim?", "a": "Uygulamada: ayarlar, ardından hesabı sil. Hesap sunucumuzdan hemen silinir. Uygulama yok mu? [[Hesabını sil]] sayfasına bak." }
   ],
   "endTitle": "küçük dünyan seni bekliyor.",
-  "dockText": "küçük dünyan seni bekliyor",
+  "navCta": "İndir",
+  "iosCta": "iPhone'a indir",
+  "androidCta": "Android'de dene",
   "footNavLabel": "Yasal bilgiler ve yardım",
   "footPrivacy": "Gizlilik",
   "footTerms": "Koşullar",
@@ -68,8 +68,6 @@
   "footDelete": "Hesabı sil",
   "footTagline": "braws · küçük arkadaş grupları için özenle yapıldı.",
   "footCredits": "Video klipler: Mixkit (ücretsiz lisans), yapanlar:",
-  "playLabel": "braws'u Google Play'den ücretsiz indir",
-  "playAlt": "Google Play'den alın",
   "noteAndroid": "Ücretsiz · iPhone, iPad ve Android · 16+",
   "faqDevicesAndroid": "iPhone, iPad ve Android telefonlarda."
 }

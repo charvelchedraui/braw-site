@@ -10,8 +10,6 @@
   "tagline1": "小さな世界。",
   "tagline2": "本当の友だち。",
   "heroText": "ペットとroom、そして大切な人たちとの1日数分。フィードも、知らない人も、フォロワー数もなし。",
-  "storeLabel": "App Storeでbrawsを無料ダウンロード",
-  "badgeAlt": "App Storeからダウンロード",
   "note": "無料 · iPhoneとiPad · 16歳以上",
   "roomAlt": "机、植物、本棚があり、まんなかに丸いオレンジのネコがいる、居心地のいいroomのイラスト。",
   "shotAlt": "brawsアプリの画面",
@@ -60,7 +58,9 @@
     { "q": "アカウントを削除するには？", "a": "アプリで、設定 → アカウントを削除。サーバーからすぐに消去されます。アプリがない場合は[[アカウントの削除]]を見てね。" }
   ],
   "endTitle": "あなたの小さな世界が待ってるよ。",
-  "dockText": "あなたの小さな世界が待ってるよ",
+  "navCta": "ダウンロード",
+  "iosCta": "iPhoneでダウンロード",
+  "androidCta": "Androidで試す",
   "footNavLabel": "規約とヘルプ",
   "footPrivacy": "プライバシー",
   "footTerms": "利用規約",
@@ -68,8 +68,6 @@
   "footDelete": "アカウント削除",
   "footTagline": "braws · 小さな友だちの輪のために、心をこめて。",
   "footCredits": "動画:Mixkit(無料ライセンス)制作:",
-  "playLabel": "Google Playでbrawsを無料ダウンロード",
-  "playAlt": "Google Play で手に入れよう",
   "noteAndroid": "無料 · iPhone、iPad、Android · 16歳以上",
   "faqDevicesAndroid": "iPhone、iPad、Androidスマホで使えます。"
 }
