@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useRef, useState, type CSSProperties, type ReactNode } from 'react';
+import { Fragment, useEffect, useRef, useState, type ReactNode } from 'react';
 import { useAnimationFrame, useMotionValue, useMotionValueEvent, useScroll, useSpring, useTransform, useVelocity } from 'motion/react';
 import { STORE, reducedMotion, saveData, splitWords, startSmoothScroll, useInView, useMotionOK, useProgress } from './motion';
 import type { Language, PageData, Strings } from './types';
@@ -13,13 +13,6 @@ function linked(text: string, href: string): ReactNode {
   });
 }
 
-/** Google's badge is sized by its black area (its file has a transparent margin): CSS gets that margin as fractions of the black height. */
-function playBox(p: NonNullable<PageData['play']>) {
-  const [t, b, l, r] = p.pad;
-  const inner = p.h - t - b;
-  return { '--gp-k': p.h / inner, '--gp-t': t / inner, '--gp-b': b / inner, '--gp-l': l / inner, '--gp-r': r / inner } as CSSProperties;
-}
-
 /** The official store badges, unmodified and the same height: App Store always, Google Play once braws is live there. */
 function Badge({ d, size = 'md' }: { d: PageData; size?: 'sm' | 'md' | 'lg' }) {
   return (
@@ -28,7 +21,7 @@ function Badge({ d, size = 'md' }: { d: PageData; size?: 'sm' | 'md' | 'lg' }) {
         <img src={d.badge.src} alt={d.s.badgeAlt} width={d.badge.w} height={d.badge.h} />
       </a>
       {d.play && (
-        <a className={`badge badge-play badge-${size}`} href={d.play.url} aria-label={d.s.playLabel} style={playBox(d.play)}>
+        <a className={`badge badge-play gp-${d.play.pad[2] > 0 ? 'framed' : 'wide'} badge-${size}`} href={d.play.url} aria-label={d.s.playLabel}>
           <img src={d.play.src} alt={d.s.playAlt} width={d.play.w} height={d.play.h} />
         </a>
       )}

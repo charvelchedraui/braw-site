@@ -48,7 +48,11 @@ a { color: inherit; text-underline-offset: 3px; }
 .badge-lg { --bh: 56px; }
 .badge img { height: var(--bh); }
 /* Google's file has a transparent margin: the black badge gets Apple's height and the margin overlaps around it */
-.badge-play img { height: calc(var(--bh) * var(--gp-k)); margin: calc(var(--bh) * var(--gp-t) * -1) calc(var(--bh) * var(--gp-r) * -1) calc(var(--bh) * var(--gp-b) * -1) calc(var(--bh) * var(--gp-l) * -1); max-width: none; }
+.badge-play img { max-width: none; }
+/* braws.app's CSP allows no inline styles, so the two layouts of Google's files are fixed here (measured from the
+   646x250 PNGs): most have a 29 px band above and below (black 192 px tall); en and ar have ~41 px on every side. */
+.gp-wide img { height: calc(var(--bh) * 1.30208); margin: calc(var(--bh) * -0.15104) 0; }
+.gp-framed img { height: calc(var(--bh) * 1.4881); margin: calc(var(--bh) * -0.24405) calc(var(--bh) * -0.25) calc(var(--bh) * -0.24405) calc(var(--bh) * -0.24405); }
 
 /* nav */
 .nav { position: fixed; inset: 0 0 auto; z-index: 50; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: calc(10px + env(safe-area-inset-top)) var(--pad) 10px; color: var(--cream); transition: transform .4s cubic-bezier(.22,1,.36,1), background-color .3s, color .3s; }
