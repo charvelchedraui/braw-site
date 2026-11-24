@@ -52,7 +52,7 @@ Norwegian uses `no-no`, Arabic `ar-ar`, Traditional Chinese `zh-tw`. Only the di
 
 ## braws art and app screens
 
-- `public/media/pets/*.svg`: the pet (Mochi in four moods) and friends' pets, exported from the app's own pet
+- `public/media/pets/*.svg`: the pet (Mochi in its moods), exported from the app's own pet
   renderer (`braw/src/parts/pets.js`, Paula's art), nothing redrawn.
 - `public/media/app/<en|es|ar>/*.webp`: raw screens of the real app (`braw/index.html`) with the demo account
   (invite `BRAW-DEMO`), rendered in Docker with Playwright on November 16, 2026 (recaptured the same day after the avatar-pet fix in braw PR #60). No frames, captions or edits.
