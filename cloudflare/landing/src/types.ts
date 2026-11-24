@@ -52,6 +52,7 @@ export interface Strings {
   footSupport: string;
   footDelete: string;
   footTagline: string;
+  dockText: string;
   footCredits: string;
   ids?: Partial<Record<'what' | 'how' | 'safety' | 'faq', string>>;
   legalHash?: string;

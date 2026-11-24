@@ -40,7 +40,7 @@ a { color: inherit; text-underline-offset: 3px; }
 /* Store buttons (~/landing-blueprint/STORE-BUTTONS.md v3): two identical site buttons, a phone outline, the CTA in the
    hand font and the store on a small caps line. No official badges. Equal width (the grid's columns are 1fr). */
 .stores { display: inline-grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); gap: 12px; }
-.store-btn { display: inline-flex; align-items: center; gap: 12px; min-height: 60px; padding: 8px 22px 8px 16px; background: var(--accent); color: var(--ink); border: 1.5px solid var(--ink); border-radius: 18px; text-decoration: none; text-shadow: none; -webkit-tap-highlight-color: transparent; transition: transform .2s cubic-bezier(.22,1,.36,1), box-shadow .2s cubic-bezier(.22,1,.36,1); }
+.store-btn { display: inline-flex; align-items: center; gap: 12px; min-height: 60px; padding: 8px 22px 8px 16px; background: var(--accent); color: var(--ink); border: 1.5px solid var(--ink); border-radius: 16px; text-decoration: none; text-shadow: none; -webkit-tap-highlight-color: transparent; transition: transform .2s cubic-bezier(.22,1,.36,1), box-shadow .2s cubic-bezier(.22,1,.36,1); }
 .store-btn span { display: flex; flex-direction: column; min-width: 0; }
 .store-btn strong { font: 400 22px/1.05 var(--hand); }
 .store-btn small { font: 600 11.5px/1.35 var(--sans); letter-spacing: .08em; text-transform: uppercase; }
@@ -56,8 +56,8 @@ a.store-btn:active { transform: translateY(1px); box-shadow: none; }
 .brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; font: 400 30px/1 var(--hand); }
 .brand img { width: 36px; height: 36px; border-radius: 9px; }
 .nav-end { display: flex; align-items: center; gap: 10px; min-width: 0; }
-/* the one download button (header, and the floating bar when it is on): the page's pill, filled with the accent */
-.nav-cta { flex: none; display: inline-flex; align-items: center; min-height: 40px; padding: 6px 18px; border: 1.5px solid var(--ink); border-radius: 999px; background: var(--accent); color: var(--ink); font: 600 15px/1.1 var(--sans); text-decoration: none; white-space: nowrap; -webkit-tap-highlight-color: transparent; transition: transform .2s cubic-bezier(.22,1,.36,1); }
+/* the one download button (header and floating bar): same accent, ink border, 16px radius and hand font as the store buttons */
+.nav-cta { flex: none; display: inline-flex; align-items: center; min-height: 40px; padding: 4px 18px; border: 1.5px solid var(--ink); border-radius: 16px; background: var(--accent); color: var(--ink); font: 400 20px/1.1 var(--hand); text-decoration: none; white-space: nowrap; -webkit-tap-highlight-color: transparent; transition: transform .2s cubic-bezier(.22,1,.36,1); }
 .nav-cta:hover { transform: translateY(-1px); }
 .nav-cta:active { transform: translateY(1px); }
 
@@ -254,24 +254,22 @@ details.langs { position: relative; min-width: 0; }
 .credits { color: var(--muted); font-size: 13px; margin: 0; max-width: 90ch; }
 .credits + .credits { margin-top: 6px; }
 
-/* floating download bar (STORE-BUTTONS.md 2b, FLOAT_BAR in build.mjs): the two store buttons, compact, in a centered
-   pill on tablet and desktop and a full-width bar on phones. Hidden until the hero buttons are gone and again from the
-   moment the final buttons reach the screen, so it never covers them or the footer. */
+/* floating download bar (STORE-BUTTONS.md 2b, Save As style): app icon, braws and its tagline, and ONE button to #get.
+   Shown once the hero buttons are gone, hidden (and inert) from the moment the final buttons reach the screen.
+   As low as possible: flush with the bottom edge on phones, 8px above it on tablet and desktop. */
 .dock { display: none; }
-.js .dock { display: flex; position: fixed; z-index: 40; inset-inline: 0; margin-inline: auto; width: max-content; max-width: calc(100vw - 24px); bottom: calc(14px + env(safe-area-inset-bottom)); align-items: center; gap: 10px; padding: 8px; background: var(--cream); color: var(--ink); border: 1.5px solid var(--ink); border-radius: 26px; transform: translateY(calc(100% + 32px + env(safe-area-inset-bottom))); opacity: 0; transition: transform .45s cubic-bezier(.22,1,.36,1), opacity .3s; }
+.js .dock { display: flex; position: fixed; z-index: 40; inset-inline: 0; margin-inline: auto; width: max-content; max-width: calc(100vw - 24px); bottom: 8px; align-items: center; gap: 12px; padding: 8px 8px 8px 10px; background: var(--cream); color: var(--ink); border: 1.5px solid var(--ink); border-radius: 22px; box-shadow: 0 8px 24px rgba(31, 31, 31, .14); transform: translateY(calc(100% + 24px)); opacity: 0; transition: transform .45s cubic-bezier(.22,1,.36,1), opacity .3s; }
 .js .dock.is-on { transform: none; opacity: 1; }
-.dock > img { border-radius: 9px; flex: none; margin-inline-start: 4px; }
-.stores-dock { gap: 8px; }
-.stores-dock .store-btn { min-height: 48px; padding: 6px 16px 6px 12px; gap: 10px; border-radius: 16px; }
-.stores-dock .store-btn strong { font-size: 19px; }
-.stores-dock .store-btn small { font-size: 10.5px; }
-.footer.has-dock { padding-bottom: calc(100px + env(safe-area-inset-bottom)); }
+.dock > img { border-radius: 10px; flex: none; }
+.dock-txt { display: flex; flex-direction: column; min-width: 0; line-height: 1.15; padding-inline-end: 6px; }
+.dock-txt strong { font: 400 22px/1 var(--hand); }
+.dock-txt small { color: var(--muted); font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.dock .dock-cta { min-height: 44px; padding-inline: 20px; }
+.footer.has-dock { padding-bottom: calc(96px + env(safe-area-inset-bottom)); }
 @media (max-width: 767px) {
-  .js .dock { inset-inline: 10px; width: auto; max-width: none; border-radius: 22px; }
-  .dock > img { display: none; }
-  .stores-dock { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); width: 100%; }
-  /* phones: the bar takes over the header button */
-  .nav.has-dock .nav-cta { display: none; }
+  .js .dock { inset-inline: 0; bottom: 0; width: auto; max-width: none; margin: 0; border-width: 1.5px 0 0; border-radius: 20px 20px 0 0; padding: 10px 14px calc(10px + env(safe-area-inset-bottom)); }
+  .js .dock:not(.is-on) { transform: translateY(100%); }
+  .dock-txt { flex: 1; }
   .stores-hero, .stores-end { display: grid; grid-auto-flow: row; width: 100%; }
 }
 
@@ -309,7 +307,7 @@ details.langs { position: relative; min-width: 0; }
   .langs-head .lang-name, .langs-head > summary::after { display: none; }
   .langs-head > summary { padding: 0; width: 40px; justify-content: center; }
   .nav-end { gap: 8px; }
-  .nav-cta { padding: 6px 14px; font-size: 14px; }
+  .nav-cta { padding: 4px 14px; font-size: 18px; }
   .langs > summary { padding: 6px 12px; font-size: 14px; }
   .lang-name { max-width: 11ch; }
 }
