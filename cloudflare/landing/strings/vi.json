@@ -1,7 +1,7 @@
 {
   "title": "braws: một thế giới nhỏ, những người bạn thật sự",
-  "description": "braws là ứng dụng nhỏ chỉ dành cho người được mời, cho những người bạn thân: một thú cưng, một room, mỗi ngày một stamp, bản đồ thế giới chung, một bức tường và kế hoạch. Cho iPhone và iPad, 16+.",
-  "ogDescription": "Một thú cưng, một room và vài phút mỗi ngày bên những người bạn thật sự quan trọng. Chỉ dành cho người được mời, trên iPhone và iPad.",
+  "description": "braws là ứng dụng nhỏ cho những người bạn thân, lấy thú cưng làm trung tâm: chăm sóc mỗi ngày, một ngôi nhà lớn dần, mỗi ngày một stamp, bản đồ thế giới chung, một bức tường và kế hoạch. Cho iPhone và iPad, 16+.",
+  "ogDescription": "Một thú cưng, một room và vài phút mỗi ngày bên những người bạn thật sự quan trọng. Trên iPhone và iPad.",
   "twitterDescription": "Một thú cưng, một room và vài phút mỗi ngày bên những người bạn thật sự quan trọng.",
   "ogImageAlt": "braws: một thế giới nhỏ, những người bạn thật sự. Một room vẽ tay với chú mèo cam.",
   "skip": "Chuyển đến nội dung",
@@ -12,14 +12,14 @@
   "heroText": "Một thú cưng, một room và vài phút mỗi ngày bên những người quan trọng. Không bảng tin, không người lạ, không đếm người theo dõi.",
   "storeLabel": "Tải braws miễn phí trên App Store",
   "badgeAlt": "Tải về trên App Store",
-  "note": "Miễn phí · iPhone và iPad · chỉ khi được mời · 16+",
+  "note": "Miễn phí · iPhone và iPad · 16+",
   "roomAlt": "Một room ấm cúng vẽ tay với bàn làm việc, cây xanh, kệ sách và một chú mèo cam tròn ở giữa.",
   "shotAlt": "Màn hình trong ứng dụng braws",
   "whatTitle": "bên trong có gì",
   "whatLead": "braws là một góc nhỏ ấm cúng dành cho bạn và những người bạn thân nhất. Trong ứng dụng, bạn bè của bạn là các braw của bạn.",
   "cards": [
-    { "ico": "thú cưng", "title": "thú cưng đang cần bạn", "text": "Chọn một người bạn nhỏ và chăm sóc nó. Nó phản ứng theo tâm trạng của bạn và theo việc bạn có hay ở bên bạn bè không." },
-    { "ico": "room", "title": "room của riêng bạn", "text": "Trang trí một room isometric với đồ nội thất, tường và sàn. Các braw có thể ghé qua xem." },
+    { "ico": "thú cưng", "title": "thú cưng đang cần bạn", "text": "Cho nó ăn, tắm cho nó và chơi cùng nó. Mỗi việc trong ngày đều cho bạn xu và giữ chuỗi ngày của bạn." },
+    { "ico": "room", "title": "ngôi nhà lớn dần", "text": "Trang trí room của bạn. Theo những ngày chăm sóc, nhà bếp, phòng tắm và thêm đồ nội thất sẽ mở ra. Các braw có thể ghé qua xem." },
     { "ico": "stamp", "title": "mỗi ngày một stamp", "text": "Một bức ảnh, một nét vẽ, một tâm trạng hay một ghi âm. Lâu dần nó thành cuốn lịch những ngày của bạn." },
     { "ico": "thế giới", "title": "một thế giới chung", "text": "Xem các braw trên một hành tinh nhỏ. Hiển thị thành phố của bạn là tùy chọn và luôn chỉ là gần đúng." },
     { "ico": "tường & kế hoạch", "title": "bức tường tuần này", "text": "Kể chuyện tuần này, trả lời các braw và cùng hẹn một tối xem phim, một chuyến leo núi hay một ly cà phê." },
@@ -32,11 +32,11 @@
   "worldAlt": "Một quả địa cầu nhỏ với thú cưng của bạn bè: một chú chó, một cô thỏ, một con kỳ giông axolotl, một chú gấu, một chú chim cánh cụt và bạn, một chú mèo cam.",
   "worldCaption": "các braw, thế giới của bạn",
   "howTitle": "cách hoạt động",
-  "howLead": "braws chỉ dành cho người được mời. Bạn không thể tìm người lạ, và họ cũng không thể tìm thấy bạn.",
+  "howLead": "Không có tìm kiếm người và không có hồ sơ công khai. Bạn thêm các braw bằng đường dẫn mời của mình hoặc đúng tên người dùng của họ.",
   "steps": [
-    { "title": "nhận lời mời", "text": "Một người bạn đang dùng braws gửi cho bạn đường dẫn mời hoặc một mã." },
-    { "title": "tải ứng dụng", "text": "Cài braws từ App Store, rồi mở đường dẫn mời (hoặc nhập mã)." },
-    { "title": "đăng nhập bằng Apple", "text": "Chọn tên người dùng và thú cưng, rồi cùng nhau bắt đầu thế giới nhỏ." }
+    { "title": "tải ứng dụng", "text": "Cài braws miễn phí từ App Store." },
+    { "title": "đăng nhập bằng Apple", "text": "Xác nhận bạn từ 16 tuổi trở lên, cho biết tên và chọn thú cưng." },
+    { "title": "thêm các braw", "text": "Gửi đường dẫn mời hoặc thêm họ bằng tên người dùng. Khi họ đồng ý, thế giới nhỏ của bạn lớn thêm." }
   ],
   "safetyTitle": "an toàn & quyền riêng tư",
   "safetyLead": "Nhỏ là có chủ ý. Đọc toàn bộ [[chính sách quyền riêng tư]] (bằng tiếng Anh).",
@@ -50,7 +50,7 @@
   ],
   "faqTitle": "câu hỏi",
   "faq": [
-    { "q": "Làm sao để nhận lời mời?", "a": "Hỏi một người bạn đang dùng braws. Trong ứng dụng, họ có thể tạo lời mời và gửi đường dẫn cho bạn. Không có danh sách chờ và không có đăng ký công khai." },
+    { "q": "Tôi có cần lời mời không?", "a": "Không. Ai từ 16 tuổi trở lên cũng có thể đăng ký bằng Apple. Lời mời là cách nhanh để thêm bạn: người đăng ký qua đường dẫn của bạn sẽ trở thành braw của bạn ngay." },
     { "q": "braws có miễn phí không?", "a": "Có. braws không có tính năng trả phí, không mua trong ứng dụng và không quảng cáo. Xu và đồ vật trong ứng dụng chỉ để vui và không có giá trị tiền bạc." },
     { "q": "Dùng được trên thiết bị nào?", "a": "iPhone và iPad. braws chưa có trên Android." },
     { "q": "Ai thấy được những gì tôi đăng?", "a": "Chỉ những người bạn bạn đã chấp nhận. Bạn của bạn bè có thể xem hồ sơ và room của bạn để gửi lời mời kết bạn, nhưng không thấy bài đăng, stamp hay vị trí của bạn." },

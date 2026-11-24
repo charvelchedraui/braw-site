@@ -1,7 +1,7 @@
 {
   "title": "braws: dunia kecil, teman sejatimu",
-  "description": "braws adalah aplikasi kecil khusus undangan untuk teman dekat: hewan peliharaan, room, satu stamp sehari, peta dunia bersama, dinding, dan rencana. Untuk iPhone dan iPad, 16+.",
-  "ogDescription": "Hewan peliharaan, room, dan beberapa menit sehari bersama teman-teman yang berarti. Khusus undangan, untuk iPhone dan iPad.",
+  "description": "braws adalah aplikasi kecil untuk teman dekat, dengan hewan peliharaan sebagai pusatnya: perawatan harian, rumah yang terus tumbuh, satu stamp sehari, peta dunia bersama, dinding, dan rencana. Untuk iPhone dan iPad, 16+.",
+  "ogDescription": "Hewan peliharaan, room, dan beberapa menit sehari bersama teman-teman yang berarti. Untuk iPhone dan iPad.",
   "twitterDescription": "Hewan peliharaan, room, dan beberapa menit sehari bersama teman-teman yang berarti.",
   "ogImageAlt": "braws: dunia kecil, teman sejatimu. Ilustrasi room dengan kucing oranye.",
   "skip": "Langsung ke konten",
@@ -12,14 +12,14 @@
   "heroText": "Hewan peliharaan, room, dan beberapa menit sehari bersama orang-orang yang berarti. Tanpa feed, tanpa orang asing, tanpa hitungan pengikut.",
   "storeLabel": "Dapatkan braws gratis di App Store",
   "badgeAlt": "Unduh di App Store",
-  "note": "Gratis · iPhone dan iPad · khusus undangan · 16+",
+  "note": "Gratis · iPhone dan iPad · 16+",
   "roomAlt": "Ilustrasi room yang nyaman dengan meja, tanaman, rak buku, dan kucing oranye bulat di tengahnya.",
   "shotAlt": "Layar dari aplikasi braws",
   "whatTitle": "ada apa di dalamnya",
   "whatLead": "braws adalah tempat kecil yang nyaman untuk kamu dan teman-teman terdekatmu. Di aplikasi, teman-temanmu adalah braws-mu.",
   "cards": [
-    { "ico": "hewan", "title": "hewan yang butuh kamu", "text": "Pilih teman kecil dan rawat dia. Dia bereaksi terhadap keadaanmu dan seberapa sering kamu hadir untuk teman-temanmu." },
-    { "ico": "room", "title": "room milikmu sendiri", "text": "Hias room isometrik dengan perabot, dinding, dan lantai. braws-mu bisa mampir untuk melihatnya." },
+    { "ico": "hewan", "title": "hewan yang butuh kamu", "text": "Beri makan, mandikan, dan ajak dia bermain. Setiap tugas harian memberimu koin dan menjaga rentetan harianmu." },
+    { "ico": "room", "title": "rumah yang terus tumbuh", "text": "Hias room-mu. Seiring hari-hari perawatan, dapur, kamar mandi, dan lebih banyak perabot terbuka. braws-mu bisa mampir untuk melihatnya." },
     { "ico": "stamps", "title": "satu stamp sehari", "text": "Foto, coretan, suasana hati, atau pesan suara. Lama-lama jadi kalender hari-harimu." },
     { "ico": "dunia", "title": "dunia bersama", "text": "Lihat braws-mu di sebuah planet kecil. Menampilkan kotamu itu opsional dan selalu hanya perkiraan." },
     { "ico": "dinding & rencana", "title": "dinding minggu ini", "text": "Ceritakan apa yang terjadi minggu ini, balas braws-mu, dan atur nonton film bareng, mendaki, atau ngopi." },
@@ -32,11 +32,11 @@
   "worldAlt": "Bola dunia kecil dengan hewan peliharaan teman-temanmu: anjing, kelinci, aksolotl, beruang, penguin, dan kamu, kucing oranye.",
   "worldCaption": "braws-mu, duniamu",
   "howTitle": "cara kerjanya",
-  "howLead": "braws khusus undangan. Kamu tidak bisa mencari orang asing, dan mereka tidak bisa menemukanmu.",
+  "howLead": "Tidak ada pencarian orang dan tidak ada profil publik. Kamu menambahkan braws lewat tautan undanganmu atau nama pengguna mereka yang persis.",
   "steps": [
-    { "title": "dapatkan undangan", "text": "Teman yang sudah memakai braws mengirimimu tautan undangan atau kode." },
-    { "title": "unduh aplikasinya", "text": "Pasang braws dari App Store, lalu buka tautan undangannya (atau ketik kodenya)." },
-    { "title": "masuk dengan Apple", "text": "Pilih nama pengguna dan hewanmu, lalu mulai dunia kecil kalian bersama." }
+    { "title": "unduh aplikasinya", "text": "Pasang braws gratis dari App Store." },
+    { "title": "masuk dengan Apple", "text": "Pastikan kamu berusia 16 tahun ke atas, sebutkan namamu, dan pilih hewanmu." },
+    { "title": "tambahkan braws-mu", "text": "Kirim tautan undanganmu atau tambahkan mereka lewat nama pengguna. Begitu mereka menerima, dunia kecilmu bertambah." }
   ],
   "safetyTitle": "keamanan & privasi",
   "safetyLead": "Kecil dengan sengaja. Baca [[kebijakan privasi]] lengkapnya (dalam bahasa Inggris).",
@@ -50,7 +50,7 @@
   ],
   "faqTitle": "pertanyaan",
   "faq": [
-    { "q": "Bagaimana cara mendapat undangan?", "a": "Minta ke teman yang sudah memakai braws. Di aplikasi, dia bisa membuat undangan dan mengirimimu tautannya. Tidak ada daftar tunggu dan tidak ada pendaftaran terbuka." },
+    { "q": "Apakah aku perlu undangan?", "a": "Tidak. Siapa pun yang berusia 16 tahun ke atas bisa masuk dengan Apple. Undangan adalah cara cepat menambahkan teman: siapa pun yang mendaftar lewat tautanmu langsung menjadi braw-mu." },
     { "q": "Apakah braws gratis?", "a": "Ya. braws tidak punya fitur berbayar, pembelian dalam aplikasi, atau iklan. Koin dan barang di aplikasi hanya untuk seru-seruan dan tidak bernilai uang." },
     { "q": "Bisa dipakai di perangkat apa?", "a": "iPhone dan iPad. braws belum ada di Android." },
     { "q": "Siapa yang bisa melihat postinganku?", "a": "Hanya teman yang kamu terima. Teman dari temanmu bisa melihat profil dan room-mu agar bisa mengirim permintaan, tapi tidak bisa melihat postingan, stamp, atau lokasimu." },

@@ -1,7 +1,7 @@
 {
   "title": "braws: een kleine wereld, je echte vrienden",
-  "description": "braws is een kleine app, alleen op uitnodiging, voor goede vrienden: een huisdier, een room, elke dag een stamp, een gedeelde wereldkaart, een prikbord en plannen. Voor iPhone en iPad, 16+.",
-  "ogDescription": "Een huisdier, een room en een paar minuten per dag met de vrienden die ertoe doen. Alleen op uitnodiging, voor iPhone en iPad.",
+  "description": "braws is een kleine app voor goede vrienden, met een huisdier in het middelpunt: dagelijkse zorg, een huis dat groeit, elke dag een stamp, een gedeelde wereldkaart, een prikbord en plannen. Voor iPhone en iPad, 16+.",
+  "ogDescription": "Een huisdier, een room en een paar minuten per dag met de vrienden die ertoe doen. Voor iPhone en iPad.",
   "twitterDescription": "Een huisdier, een room en een paar minuten per dag met de vrienden die ertoe doen.",
   "ogImageAlt": "braws: een kleine wereld, je echte vrienden. Een getekende room met een oranje kat.",
   "skip": "Naar de inhoud",
@@ -12,14 +12,14 @@
   "heroText": "Een huisdier, een room en een paar minuten per dag met de mensen die ertoe doen. Geen feed, geen vreemden, geen volgersaantallen.",
   "storeLabel": "Download braws gratis in de App Store",
   "badgeAlt": "Download in de App Store",
-  "note": "Gratis · iPhone en iPad · alleen op uitnodiging · 16+",
+  "note": "Gratis · iPhone en iPad · 16+",
   "roomAlt": "Een gezellige getekende room met een bureau, planten, een boekenkast en een ronde oranje kat in het midden.",
   "shotAlt": "Scherm uit de braws-app",
   "whatTitle": "wat zit erin",
   "whatLead": "braws is een klein, gezellig plekje voor jou en je beste vrienden. In de app zijn je vrienden je braws.",
   "cards": [
-    { "ico": "huisdier", "title": "een huisdier dat jou nodig heeft", "text": "Kies een klein maatje en zorg ervoor. Het reageert op hoe het met je gaat en op hoe vaak je er bent voor je vrienden." },
-    { "ico": "room", "title": "een room helemaal van jou", "text": "Richt een isometrische room in met meubels, muren en vloeren. Je braws kunnen langskomen om te kijken." },
+    { "ico": "huisdier", "title": "een huisdier dat jou nodig heeft", "text": "Geef het eten, was het en speel ermee. Elke taak van de dag levert munten op en houdt je reeks gaande." },
+    { "ico": "room", "title": "een huis dat groeit", "text": "Richt je room in. Met de dagen van zorg gaan de keuken, de badkamer en meer meubels open. Je braws kunnen langskomen om te kijken." },
     { "ico": "stamps", "title": "elke dag een stamp", "text": "Een foto, een krabbel, een stemming of een spraakbericht. Na verloop van tijd wordt het een kalender van je dagen." },
     { "ico": "wereld", "title": "een gedeelde wereld", "text": "Zie je braws op een kleine planeet. Je stad laten zien is optioneel en altijd bij benadering." },
     { "ico": "prikbord en plannen", "title": "het prikbord van de week", "text": "Vertel wat er deze week speelt, reageer op je braws en plan een filmavond, een wandeling of een kop koffie." },
@@ -32,11 +32,11 @@
   "worldAlt": "Een kleine wereldbol met de huisdieren van je vrienden: een hond, een konijntje, een axolotl, een beer, een pinguïn en jij, een oranje kat.",
   "worldCaption": "jouw braws, jouw wereld",
   "howTitle": "zo werkt het",
-  "howLead": "braws is alleen op uitnodiging. Je kunt niet naar vreemden zoeken en zij kunnen jou niet vinden.",
+  "howLead": "Er is geen zoekfunctie voor mensen en er zijn geen openbare profielen. Je voegt je braws toe met je uitnodigingslink of hun exacte gebruikersnaam.",
   "steps": [
-    { "title": "krijg een uitnodiging", "text": "Een vriend die braws al gebruikt, stuurt je een uitnodigingslink of een code." },
-    { "title": "download de app", "text": "Installeer braws via de App Store en open daarna de link (of typ de code)." },
-    { "title": "log in met Apple", "text": "Kies een gebruikersnaam en je huisdier, en begin samen aan jullie kleine wereld." }
+    { "title": "download de app", "text": "Installeer braws gratis via de App Store." },
+    { "title": "log in met Apple", "text": "Bevestig dat je 16 of ouder bent, vertel ons je naam en kies je huisdier." },
+    { "title": "voeg je braws toe", "text": "Stuur ze je uitnodigingslink of voeg ze toe via hun gebruikersnaam. Zodra ze accepteren, groeit je kleine wereld." }
   ],
   "safetyTitle": "veiligheid en privacy",
   "safetyLead": "Klein met een reden. Lees het volledige [[privacybeleid]] (in het Engels).",
@@ -50,7 +50,7 @@
   ],
   "faqTitle": "vragen",
   "faq": [
-    { "q": "Hoe krijg ik een uitnodiging?", "a": "Vraag het een vriend die braws al gebruikt. In de app kan die een uitnodiging maken en je de link sturen. Er is geen wachtlijst en geen open registratie." },
+    { "q": "Heb ik een uitnodiging nodig?", "a": "Nee. Iedereen van 16 of ouder kan zich aanmelden met Apple. Een uitnodiging is een snelle manier om een vriend toe te voegen: wie zich met jouw link aanmeldt, is meteen je braw." },
     { "q": "Is braws gratis?", "a": "Ja. braws heeft geen betaalde functies, geen in-app-aankopen en geen advertenties. De munten en spullen in de app zijn alleen voor de lol en hebben geen geldwaarde." },
     { "q": "Op welke apparaten werkt het?", "a": "Op iPhone en iPad. braws is nog niet beschikbaar voor Android." },
     { "q": "Wie ziet wat ik post?", "a": "Alleen de vrienden die je hebt geaccepteerd. Vrienden van je vrienden kunnen je profiel en je room zien, zodat ze je een verzoek kunnen sturen, maar niet je berichten, stamps of locatie." },

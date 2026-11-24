@@ -1,7 +1,7 @@
 {
   "title": "braws: küçük bir dünya, gerçek arkadaşların",
-  "description": "braws, yakın arkadaşlar için sadece davetle girilen küçük bir uygulama: bir evcil hayvan, bir room, günde bir stamp, ortak bir dünya haritası, bir duvar ve planlar. iPhone ve iPad için, 16+.",
-  "ogDescription": "Bir evcil hayvan, bir room ve önem verdiğin arkadaşlarla günde birkaç dakika. Sadece davetle, iPhone ve iPad için.",
+  "description": "braws, yakın arkadaşlar için merkezinde bir evcil hayvan olan küçük bir uygulama: günlük bakım, büyüyen bir ev, günde bir stamp, ortak bir dünya haritası, bir duvar ve planlar. iPhone ve iPad için, 16+.",
+  "ogDescription": "Bir evcil hayvan, bir room ve önem verdiğin arkadaşlarla günde birkaç dakika. iPhone ve iPad için.",
   "twitterDescription": "Bir evcil hayvan, bir room ve önem verdiğin arkadaşlarla günde birkaç dakika.",
   "ogImageAlt": "braws: küçük bir dünya, gerçek arkadaşların. Turuncu bir kedinin olduğu çizim bir room.",
   "skip": "İçeriğe geç",
@@ -12,14 +12,14 @@
   "heroText": "Bir evcil hayvan, bir room ve önemli insanlarla günde birkaç dakika. Akış yok, yabancılar yok, takipçi sayısı yok.",
   "storeLabel": "braws'u App Store'dan ücretsiz indir",
   "badgeAlt": "App Store'dan indirin",
-  "note": "Ücretsiz · iPhone ve iPad · sadece davetle · 16+",
+  "note": "Ücretsiz · iPhone ve iPad · 16+",
   "roomAlt": "Masası, bitkileri, kitaplığı ve ortasında yuvarlak turuncu bir kedisi olan sıcacık, çizim bir room.",
   "shotAlt": "braws uygulamasından bir ekran",
   "whatTitle": "içinde neler var",
   "whatLead": "braws, senin ve en yakın arkadaşların için küçük, sıcacık bir yer. Uygulamada arkadaşların senin braw'ların.",
   "cards": [
-    { "ico": "evcil hayvan", "title": "sana ihtiyacı olan bir evcil hayvan", "text": "Küçük bir dost seç ve ona bak. Nasıl olduğuna ve arkadaşların için ne kadar orada olduğuna tepki verir." },
-    { "ico": "room", "title": "tamamen sana ait bir room", "text": "İzometrik bir room'u mobilyalar, duvarlar ve zeminlerle döşe. braw'ların uğrayıp görebilir." },
+    { "ico": "evcil hayvan", "title": "sana ihtiyacı olan bir evcil hayvan", "text": "Onu besle, yıka ve onunla oyna. Günün her görevi jeton kazandırır ve serini devam ettirir." },
+    { "ico": "room", "title": "büyüyen bir ev", "text": "Kendi room'unu döşe. Bakım günleriyle mutfak, banyo ve daha fazla mobilya açılır. braw'ların uğrayıp görebilir." },
     { "ico": "stamp'ler", "title": "günde bir stamp", "text": "Bir fotoğraf, bir karalama, bir ruh hâli ya da bir sesli not. Zamanla günlerinin takvimine dönüşür." },
     { "ico": "dünya", "title": "ortak bir dünya", "text": "braw'larını küçük bir gezegende gör. Şehrini göstermek isteğe bağlıdır ve her zaman yaklaşıktır." },
     { "ico": "duvar ve planlar", "title": "haftanın duvarı", "text": "Bu hafta neler olduğunu paylaş, braw'larına cevap ver ve bir film gecesi, bir yürüyüş ya da bir kahve planlayın." },
@@ -32,11 +32,11 @@
   "worldAlt": "Arkadaşlarının evcil hayvanlarının olduğu küçük bir küre: bir köpek, bir tavşan, bir aksolotl, bir ayı, bir penguen ve sen, turuncu bir kedi.",
   "worldCaption": "braw'ların, dünyan",
   "howTitle": "nasıl çalışır",
-  "howLead": "braws sadece davetle. Yabancıları arayamazsın, onlar da seni bulamaz.",
+  "howLead": "Kişi araması ve herkese açık profil yok. braw'larını davet bağlantınla ya da tam kullanıcı adlarıyla eklersin.",
   "steps": [
-    { "title": "bir davet al", "text": "braws'u zaten kullanan bir arkadaşın sana bir davet bağlantısı ya da kod gönderir." },
-    { "title": "uygulamayı indir", "text": "braws'u App Store'dan yükle, sonra bağlantıyı aç (ya da kodu yaz)." },
-    { "title": "Apple ile giriş yap", "text": "Bir kullanıcı adı ve evcil hayvanını seç, küçük dünyanızı birlikte başlatın." }
+    { "title": "uygulamayı indir", "text": "braws'u App Store'dan ücretsiz yükle." },
+    { "title": "Apple ile giriş yap", "text": "16 yaşında ya da daha büyük olduğunu onayla, adını söyle ve evcil hayvanını seç." },
+    { "title": "braw'larını ekle", "text": "Onlara davet bağlantını gönder ya da kullanıcı adıyla ekle. Kabul ettiklerinde küçük dünyan büyür." }
   ],
   "safetyTitle": "güvenlik ve gizlilik",
   "safetyLead": "Bilerek küçük. Tüm [[gizlilik politikasını]] oku (İngilizce).",
@@ -50,7 +50,7 @@
   ],
   "faqTitle": "sorular",
   "faq": [
-    { "q": "Nasıl davet alırım?", "a": "braws'u zaten kullanan bir arkadaşından iste. Uygulamada bir davet oluşturup sana bağlantıyı gönderebilir. Bekleme listesi ya da herkese açık kayıt yok." },
+    { "q": "Davet gerekiyor mu?", "a": "Hayır. 16 yaşında ya da daha büyük herkes Apple ile kaydolabilir. Davet, bir arkadaşı eklemenin hızlı yolu: senin bağlantınla kaydolan kişi hemen braw'ın olur." },
     { "q": "braws ücretsiz mi?", "a": "Evet. braws'ta ücretli özellik, uygulama içi satın alma ya da reklam yok. Uygulamadaki paralar ve eşyalar sadece eğlence için ve hiçbir parasal değeri yok." },
     { "q": "Hangi cihazlarda çalışıyor?", "a": "iPhone ve iPad'de. braws henüz Android'de yok." },
     { "q": "Paylaştıklarımı kim görebilir?", "a": "Sadece kabul ettiğin arkadaşlar. Arkadaşlarının arkadaşları sana istek gönderebilmek için profilini ve room'unu görebilir, ama gönderilerini, stamp'lerini ya da konumunu göremez." },

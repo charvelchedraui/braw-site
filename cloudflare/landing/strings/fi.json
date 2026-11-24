@@ -1,7 +1,7 @@
 {
   "title": "braws: pieni maailma, oikeat kaverisi",
-  "description": "braws on pieni, vain kutsutuille tarkoitettu sovellus läheisille kavereille: lemmikki, room, yksi stamp päivässä, yhteinen maailmankartta, seinä ja suunnitelmat. iPhonelle ja iPadille, 16+.",
-  "ogDescription": "Lemmikki, room ja pari minuuttia päivässä niiden kavereiden kanssa, joilla on väliä. Vain kutsutuille, iPhonelle ja iPadille.",
+  "description": "braws on pieni sovellus läheisille kavereille, ja sen keskellä on lemmikki: päivän hoitotehtävät, kasvava koti, yksi stamp päivässä, yhteinen maailmankartta, seinä ja suunnitelmat. iPhonelle ja iPadille, 16+.",
+  "ogDescription": "Lemmikki, room ja pari minuuttia päivässä niiden kavereiden kanssa, joilla on väliä. iPhonelle ja iPadille.",
   "twitterDescription": "Lemmikki, room ja pari minuuttia päivässä niiden kavereiden kanssa, joilla on väliä.",
   "ogImageAlt": "braws: pieni maailma, oikeat kaverisi. Piirretty room ja oranssi kissa.",
   "skip": "Siirry sisältöön",
@@ -12,14 +12,14 @@
   "heroText": "Lemmikki, room ja pari minuuttia päivässä niiden ihmisten kanssa, joilla on väliä. Ei feediä, ei tuntemattomia, ei seuraajamääriä.",
   "storeLabel": "Lataa braws ilmaiseksi App Storesta",
   "badgeAlt": "Lataa App Storesta",
-  "note": "Ilmainen · iPhone ja iPad · vain kutsutuille · 16+",
+  "note": "Ilmainen · iPhone ja iPad · 16+",
   "roomAlt": "Kodikas piirretty room, jossa on kirjoituspöytä, kasveja, kirjahylly ja keskellä pyöreä oranssi kissa.",
   "shotAlt": "Näkymä braws-sovelluksesta",
   "whatTitle": "mitä sisältä löytyy",
   "whatLead": "braws on pieni ja kodikas paikka sinulle ja läheisimmille kavereillesi. Sovelluksessa kaverisi ovat braw'si.",
   "cards": [
-    { "ico": "lemmikki", "title": "lemmikki, joka tarvitsee sinua", "text": "Valitse pieni kaveri ja pidä siitä huolta. Se reagoi siihen, miten voit ja kuinka paljon olet läsnä kavereillesi." },
-    { "ico": "room", "title": "room, joka on vain sinun", "text": "Sisusta isometrinen room huonekaluilla, seinillä ja lattioilla. braw'si voivat poiketa katsomaan sitä." },
+    { "ico": "lemmikki", "title": "lemmikki, joka tarvitsee sinua", "text": "Ruoki, kylvetä ja leiki sen kanssa. Jokainen päivän tehtävä tuo kolikoita ja pitää putkesi käynnissä." },
+    { "ico": "room", "title": "koti, joka kasvaa", "text": "Sisusta roomisi. Hoitopäivien myötä avautuvat keittiö, kylpyhuone ja lisää huonekaluja. braw'si voivat poiketa katsomaan sitä." },
     { "ico": "stampit", "title": "yksi stamp päivässä", "text": "Kuva, piirros, tunnelma tai ääniviesti. Ajan myötä siitä tulee kalenteri päivistäsi." },
     { "ico": "maailma", "title": "yhteinen maailma", "text": "Näe braw'si pienellä planeetalla. Kaupunkisi näyttäminen on vapaaehtoista ja aina vain likimääräistä." },
     { "ico": "seinä ja suunnitelmat", "title": "viikon seinä", "text": "Kerro, mitä tällä viikolla tapahtuu, vastaa braw'illesi ja sopikaa leffailta, retki tai kahvit." },
@@ -32,11 +32,11 @@
   "worldAlt": "Pieni maapallo, jolla on kaveriesi lemmikit: koira, pupu, aksolotli, karhu, pingviini ja sinä, oranssi kissa.",
   "worldCaption": "braw'si, maailmasi",
   "howTitle": "näin se toimii",
-  "howLead": "braws on vain kutsutuille. Et voi etsiä tuntemattomia, eivätkä he voi löytää sinua.",
+  "howLead": "Ihmisiä ei voi hakea, eikä julkisia profiileja ole. Lisäät braw'si kutsulinkilläsi tai heidän tarkalla käyttäjänimellään.",
   "steps": [
-    { "title": "saa kutsu", "text": "Kaveri, joka jo käyttää braws-sovellusta, lähettää sinulle kutsulinkin tai koodin." },
-    { "title": "lataa sovellus", "text": "Asenna braws App Storesta ja avaa sitten linkki (tai kirjoita koodi)." },
-    { "title": "kirjaudu Applella", "text": "Valitse käyttäjänimi ja lemmikki, ja aloittakaa pieni maailmanne yhdessä." }
+    { "title": "lataa sovellus", "text": "Asenna braws ilmaiseksi App Storesta." },
+    { "title": "kirjaudu Applella", "text": "Vahvista, että olet vähintään 16-vuotias, kerro nimesi ja valitse lemmikki." },
+    { "title": "lisää braw'si", "text": "Lähetä heille kutsulinkkisi tai lisää heidät käyttäjänimellä. Kun he hyväksyvät, pieni maailmasi kasvaa." }
   ],
   "safetyTitle": "turvallisuus ja yksityisyys",
   "safetyLead": "Tarkoituksella pieni. Lue koko [[tietosuojakäytäntö]] (englanniksi).",
@@ -50,7 +50,7 @@
   ],
   "faqTitle": "kysymyksiä",
   "faq": [
-    { "q": "Miten saan kutsun?", "a": "Pyydä kaverilta, joka jo käyttää braws-sovellusta. Sovelluksessa hän voi luoda kutsun ja lähettää sinulle linkin. Jonotuslistaa tai avointa rekisteröitymistä ei ole." },
+    { "q": "Tarvitsenko kutsun?", "a": "Et. Kuka tahansa vähintään 16-vuotias voi rekisteröityä Applella. Kutsu on nopea tapa lisätä kaveri: kun joku rekisteröityy linkkisi kautta, hänestä tulee heti braw'si." },
     { "q": "Onko braws ilmainen?", "a": "On. braws-sovelluksessa ei ole maksullisia ominaisuuksia, sovelluksen sisäisiä ostoja eikä mainoksia. Sovelluksen kolikot ja esineet ovat vain huvin vuoksi, eikä niillä ole rahallista arvoa." },
     { "q": "Millä laitteilla se toimii?", "a": "iPhonella ja iPadilla. braws ei ole vielä Androidilla." },
     { "q": "Kuka näkee julkaisuni?", "a": "Vain kaverit, jotka olet hyväksynyt. Kaveriesi kaverit näkevät profiilisi ja roomisi, jotta he voivat lähettää sinulle pyynnön, mutta eivät julkaisujasi, stampejasi tai sijaintiasi." },

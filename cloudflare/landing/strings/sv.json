@@ -1,7 +1,7 @@
 {
   "title": "braws: en liten värld, dina riktiga vänner",
-  "description": "braws är en liten app, bara för inbjudna, för nära vänner: ett husdjur, en room, en stamp om dagen, en delad världskarta, en vägg och planer. För iPhone och iPad, 16+.",
-  "ogDescription": "Ett husdjur, en room och några minuter om dagen med vännerna som betyder något. Bara för inbjudna, för iPhone och iPad.",
+  "description": "braws är en liten app för nära vänner, med ett husdjur i centrum: daglig omsorg, ett hem som växer, en stamp om dagen, en delad världskarta, en vägg och planer. För iPhone och iPad, 16+.",
+  "ogDescription": "Ett husdjur, en room och några minuter om dagen med vännerna som betyder något. För iPhone och iPad.",
   "twitterDescription": "Ett husdjur, en room och några minuter om dagen med vännerna som betyder något.",
   "ogImageAlt": "braws: en liten värld, dina riktiga vänner. En tecknad room med en orange katt.",
   "skip": "Hoppa till innehållet",
@@ -12,14 +12,14 @@
   "heroText": "Ett husdjur, en room och några minuter om dagen med människorna som betyder något. Inget flöde, inga främlingar, inga följarsiffror.",
   "storeLabel": "Hämta braws gratis i App Store",
   "badgeAlt": "Hämta i App Store",
-  "note": "Gratis · iPhone och iPad · bara för inbjudna · 16+",
+  "note": "Gratis · iPhone och iPad · 16+",
   "roomAlt": "En mysig tecknad room med skrivbord, växter, en bokhylla och en rund orange katt i mitten.",
   "shotAlt": "Skärm från braws-appen",
   "whatTitle": "vad som finns i den",
   "whatLead": "braws är en liten, mysig plats för dig och dina närmaste vänner. I appen är dina vänner dina braws.",
   "cards": [
-    { "ico": "husdjur", "title": "ett husdjur som behöver dig", "text": "Välj en liten kompis och ta hand om den. Den reagerar på hur du mår och på hur mycket du finns där för dina vänner." },
-    { "ico": "room", "title": "en room bara för dig", "text": "Inred en isometrisk room med möbler, väggar och golv. Dina braws kan titta förbi och se den." },
+    { "ico": "husdjur", "title": "ett husdjur som behöver dig", "text": "Ge det mat, bada det och lek med det. Varje uppgift under dagen ger mynt och håller din svit vid liv." },
+    { "ico": "room", "title": "ett hem som växer", "text": "Inred din room. Med dagarna av omsorg öppnas kök, badrum och fler möbler. Dina braws kan titta förbi och se det." },
     { "ico": "stamps", "title": "en stamp om dagen", "text": "Ett foto, ett klotter, ett humör eller ett röstmeddelande. Med tiden blir det en kalender över dina dagar." },
     { "ico": "värld", "title": "en delad värld", "text": "Se dina braws på en liten planet. Att visa din stad är frivilligt och alltid ungefärligt." },
     { "ico": "vägg och planer", "title": "veckans vägg", "text": "Berätta vad som händer den här veckan, svara dina braws och planera en filmkväll, en vandring eller en fika." },
@@ -32,11 +32,11 @@
   "worldAlt": "En liten jordglob med dina vänners husdjur: en hund, en kanin, en axolotl, en björn, en pingvin och du, en orange katt.",
   "worldCaption": "dina braws, din värld",
   "howTitle": "så funkar det",
-  "howLead": "braws är bara för inbjudna. Du kan inte söka efter främlingar och de kan inte hitta dig.",
+  "howLead": "Det finns ingen personsökning och inga offentliga profiler. Du lägger till dina braws med din inbjudningslänk eller deras exakta användarnamn.",
   "steps": [
-    { "title": "få en inbjudan", "text": "En vän som redan använder braws skickar en inbjudningslänk eller en kod till dig." },
-    { "title": "hämta appen", "text": "Installera braws från App Store och öppna sedan länken (eller skriv koden)." },
-    { "title": "logga in med Apple", "text": "Välj ett användarnamn och ditt husdjur, och starta er lilla värld tillsammans." }
+    { "title": "hämta appen", "text": "Installera braws gratis från App Store." },
+    { "title": "logga in med Apple", "text": "Bekräfta att du är 16 eller äldre, berätta vad du heter och välj ditt husdjur." },
+    { "title": "lägg till dina braws", "text": "Skicka din inbjudningslänk eller lägg till dem med användarnamn. När de tackar ja växer din lilla värld." }
   ],
   "safetyTitle": "säkerhet och integritet",
   "safetyLead": "Liten med flit. Läs hela [[integritetspolicyn]] (på engelska).",
@@ -50,7 +50,7 @@
   ],
   "faqTitle": "frågor",
   "faq": [
-    { "q": "Hur får jag en inbjudan?", "a": "Fråga en vän som redan använder braws. I appen kan hen skapa en inbjudan och skicka länken till dig. Det finns ingen väntelista och ingen öppen registrering." },
+    { "q": "Behöver jag en inbjudan?", "a": "Nej. Alla som är 16 eller äldre kan registrera sig med Apple. En inbjudan är ett snabbt sätt att lägga till en vän: den som registrerar sig via din länk blir direkt din braw." },
     { "q": "Är braws gratis?", "a": "Ja. braws har inga betalfunktioner, inga köp i appen och ingen reklam. Mynten och sakerna i appen är bara för skojs skull och har inget penningvärde." },
     { "q": "Vilka enheter fungerar det på?", "a": "iPhone och iPad. braws finns inte på Android än." },
     { "q": "Vem ser det jag lägger upp?", "a": "Bara vännerna du har godkänt. Dina vänners vänner kan se din profil och din room så att de kan skicka en förfrågan, men inte dina inlägg, stamps eller din plats." },
