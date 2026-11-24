@@ -20,6 +20,10 @@ export interface Strings {
   heroText: string;
   storeLabel: string;
   badgeAlt: string;
+  playLabel: string;
+  playAlt: string;
+  noteAndroid: string;
+  faqDevicesAndroid: string;
   note: string;
   roomAlt: string;
   shotAlt: string;
@@ -62,6 +66,8 @@ export interface PageData {
   s: Strings;
   /** Localized official App Store badge (Apple marketing tools), unmodified. */
   badge: { src: string; w: number; h: number };
+  /** Google Play badge and listing, or null while braws is not public on Google Play (PLAY_LIVE in build.mjs). */
+  play: null | { url: string; src: string; w: number; h: number; pad: [number, number, number, number] };
   /** Folder of real app screens for this language (en, es or ar; others use en). */
   shots: string;
   /** Mixkit contributors, for the footer credit line. */

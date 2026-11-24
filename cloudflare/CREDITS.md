@@ -50,6 +50,16 @@ Apple's App Store marketing guidelines (https://developer.apple.com/app-store/ma
 badges are used where Apple has one; en-GB and Hindi use the US English badge (Apple has no en-gb or hi version).
 Norwegian uses `no-no`, Arabic `ar-ar`, Traditional Chinese `zh-tw`. Only the display height is set in CSS.
 
+## Google Play badge
+
+`public/media/badges/google-play-<lang>.png`: Google's official "Get it on Google Play" badge (646x250), unmodified,
+from `~/store-badges` (fetched November 23, 2026 from
+https://play.google.com/intl/en_us/badges/static/images/badges/<lang>_badge_web_generic.png), used under the Google
+Play badge guidelines (https://partnermarketinghub.withgoogle.com/brands/google-play/visual-identity/badge-guidelines/).
+Shown only while `PLAY_LIVE` is on in `landing/build.mjs`. The page sizes it by its black area, so it matches the App
+Store badge's height; its transparent margin overlaps, nothing is cropped. Footer line: "Google Play and the Google
+Play logo are trademarks of Google LLC."
+
 ## braws art and app screens
 
 - `public/media/pets/*.svg`: the pet (Mochi in its moods), exported from the app's own pet

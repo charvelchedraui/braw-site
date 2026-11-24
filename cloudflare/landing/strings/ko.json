@@ -67,5 +67,9 @@
   "footSupport": "지원",
   "footDelete": "계정 삭제",
   "footTagline": "braws · 작은 친구 모임을 위해 정성껏 만들었어요.",
-  "footCredits": "영상: Mixkit(무료 라이선스), 제작:"
+  "footCredits": "영상: Mixkit(무료 라이선스), 제작:",
+  "playLabel": "Google Play에서 braws 무료로 받기",
+  "playAlt": "Google Play에서 다운로드",
+  "noteAndroid": "무료 · iPhone, iPad, Android · 16세 이상",
+  "faqDevicesAndroid": "iPhone, iPad, Android 휴대폰에서요."
 }

@@ -50,6 +50,26 @@ export const LANGUAGES = [
   { code: 'cs', name: 'Čeština', hreflang: 'cs', og: 'cs_CZ', badge: 'cs-cz' },
 ];
 
+// Google Play. Turn PLAY_LIVE on only once braws is public on Google Play (any public track): until then
+// the page shows the App Store badge alone, as today. With it on, every place with the App Store badge also shows
+// Google's official "Get it on Google Play" badge (unmodified, from ~/store-badges, see CREDITS.md), the note and
+// the devices answer in the FAQ say Android, and the footer carries Google's trademark line.
+// BRAWS_PLAY_PREVIEW=1 builds the Google Play version locally for QA; never deploy such a build before the listing is public.
+const PLAY_LIVE = false || process.env.BRAWS_PLAY_PREVIEW === '1';
+const PLAY_URL = 'https://play.google.com/store/apps/details?id=com.braw.app';
+// Google's file for each page language (media/badges/google-play-<x>.png, 646x250).
+const PLAY_BADGE = { en: 'en', 'en-GB': 'en', es: 'es', pt: 'pt-BR', 'pt-PT': 'pt-PT', fr: 'fr', de: 'de', it: 'it', nl: 'nl', id: 'id', sv: 'sv', da: 'da', ja: 'ja', ko: 'ko', 'zh-Hans': 'zh-CN', 'zh-Hant': 'zh-TW', ru: 'ru', tr: 'tr', pl: 'pl', nb: 'no', fi: 'fi', vi: 'vi', ar: 'ar', hi: 'hi', th: 'th', uk: 'uk', cs: 'cs' };
+
+function playOf(code) {
+  if (!PLAY_LIVE) return null;
+  const src = `/media/badges/google-play-${PLAY_BADGE[code]}.png`;
+  if (!existsSync(join(PUBLIC, src))) throw new Error(`missing Google Play badge ${src}`);
+  // Transparent margin around the black badge in Google's file (top, bottom, left, right, px of 646x250), so the page
+  // can size the badge by its black area, as Google asks, to match Apple's height. Measured from the files.
+  const pad = ['en', 'ar'].includes(PLAY_BADGE[code]) ? [41, 41, 41, 42] : [29, 29, 0, 0];
+  return { url: PLAY_URL, src, w: 646, h: 250, pad };
+}
+
 // Real app screens were captured for these languages (media/app/<code>/); the others show the English ones.
 const SHOT_LANGS = new Set(['en', 'es', 'ar']);
 // Mixkit contributors of the clips used (see CREDITS.md).
@@ -136,7 +156,10 @@ async function main() {
 
   for (const [lang, s] of all) {
     const { badge, ...l } = lang;
-    const data = { lang: l, languages, s, badge: badgeOf(badge), shots: SHOT_LANGS.has(lang.code) ? lang.code : 'en', credits: CREDITS };
+    const play = playOf(lang.code);
+    // With Google Play live, the note and the devices answer (faq[2]) switch to their Android versions.
+    const copy = play ? { ...s, note: s.noteAndroid, faq: s.faq.map((f, i) => (i === 2 ? { ...f, a: s.faqDevicesAndroid } : f)) } : s;
+    const data = { lang: l, languages, s: copy, badge: badgeOf(badge), play, shots: SHOT_LANGS.has(lang.code) ? lang.code : 'en', credits: CREDITS };
     const ctx = {
       code: lang.code,
       htmlLang: lang.hreflang,

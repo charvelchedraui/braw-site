@@ -67,5 +67,9 @@
   "footSupport": "支持",
   "footDelete": "删除账户",
   "footTagline": "braws · 用心为小小的朋友圈打造。",
-  "footCredits": "视频片段来自 Mixkit(免费许可),作者:"
+  "footCredits": "视频片段来自 Mixkit(免费许可),作者:",
+  "playLabel": "在 Google Play 免费下载 braws",
+  "playAlt": "下载应用，请到 Google Play",
+  "noteAndroid": "免费 · iPhone、iPad 和 Android · 16 岁以上",
+  "faqDevicesAndroid": "iPhone、iPad 和 Android 手机。"
 }

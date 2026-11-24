@@ -67,5 +67,9 @@
   "footSupport": "Assistance",
   "footDelete": "Supprimer le compte",
   "footTagline": "braws · fait avec soin pour les petits cercles d’amis.",
-  "footCredits": "Vidéos Mixkit (licence gratuite) par"
+  "footCredits": "Vidéos Mixkit (licence gratuite) par",
+  "playLabel": "Télécharge braws gratuitement sur Google Play",
+  "playAlt": "Disponible sur Google Play",
+  "noteAndroid": "Gratuit · iPhone, iPad et Android · 16+",
+  "faqDevicesAndroid": "Sur iPhone, iPad et les téléphones Android."
 }

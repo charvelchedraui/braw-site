@@ -67,5 +67,9 @@
   "footSupport": "Destek",
   "footDelete": "Hesabı sil",
   "footTagline": "braws · küçük arkadaş grupları için özenle yapıldı.",
-  "footCredits": "Video klipler: Mixkit (ücretsiz lisans), yapanlar:"
+  "footCredits": "Video klipler: Mixkit (ücretsiz lisans), yapanlar:",
+  "playLabel": "braws'u Google Play'den ücretsiz indir",
+  "playAlt": "Google Play'den alın",
+  "noteAndroid": "Ücretsiz · iPhone, iPad ve Android · 16+",
+  "faqDevicesAndroid": "iPhone, iPad ve Android telefonlarda."
 }

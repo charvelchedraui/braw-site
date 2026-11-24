@@ -67,5 +67,9 @@
   "footSupport": "Tuki",
   "footDelete": "Poista tili",
   "footTagline": "braws · tehty huolella pienille kaveriporukoille.",
-  "footCredits": "Videoleikkeet: Mixkit (ilmainen lisenssi), tekijät:"
+  "footCredits": "Videoleikkeet: Mixkit (ilmainen lisenssi), tekijät:",
+  "playLabel": "Lataa braws ilmaiseksi Google Playsta",
+  "playAlt": "Saatavilla Google Playssa",
+  "noteAndroid": "Ilmainen · iPhone, iPad ja Android · 16+",
+  "faqDevicesAndroid": "iPhonella, iPadilla ja Android-puhelimilla."
 }

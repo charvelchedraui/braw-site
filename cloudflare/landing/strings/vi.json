@@ -67,5 +67,9 @@
   "footSupport": "Hỗ trợ",
   "footDelete": "Xóa tài khoản",
   "footTagline": "braws · làm bằng cả tấm lòng cho những nhóm bạn nhỏ.",
-  "footCredits": "Video từ Mixkit (giấy phép miễn phí), tác giả:"
+  "footCredits": "Video từ Mixkit (giấy phép miễn phí), tác giả:",
+  "playLabel": "Tải braws miễn phí trên Google Play",
+  "playAlt": "Tải nội dung trên Google Play",
+  "noteAndroid": "Miễn phí · iPhone, iPad và Android · 16+",
+  "faqDevicesAndroid": "iPhone, iPad và điện thoại Android."
 }

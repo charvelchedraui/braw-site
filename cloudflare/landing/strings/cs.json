@@ -67,5 +67,9 @@
   "footSupport": "Podpora",
   "footDelete": "Smazat účet",
   "footTagline": "braws · vytvořeno s péčí pro malé party přátel.",
-  "footCredits": "Videoklipy z Mixkit (bezplatná licence), autoři:"
+  "footCredits": "Videoklipy z Mixkit (bezplatná licence), autoři:",
+  "playLabel": "Stáhni si braws zdarma na Google Play",
+  "playAlt": "Nyní na Google Play",
+  "noteAndroid": "Zdarma · iPhone, iPad a Android · 16+",
+  "faqDevicesAndroid": "Na iPhonu, iPadu a telefonech s Androidem."
 }
