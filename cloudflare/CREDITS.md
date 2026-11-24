@@ -36,7 +36,7 @@ The phone version is a centered vertical crop of the same cuts.
 | hero/hero-mobile.mp4 | 720x1280, 14.0 s, H.264 High CRF 28, faststart, no audio | 1.4 MB |
 | hero/hero-mobile.webm | 720x1280, 14.0 s, VP9 CRF 41 | 0.9 MB |
 | hero/hero-poster.webp / .jpg | 1600x900, frame 1 | 24 KB / 48 KB |
-| hero/hero-mobile-poster.webp / .jpg | 720x1280, frame 1 | 14 KB / 29 KB |
+| hero/hero-mobile-poster.webp | 720x1280, frame 1 | 14 KB |
 | clips/*.mp4 + *.webp | 480x600, 2.6 s, H.264 CRF 28, poster = frame 1 | 19 to 159 KB |
 
 The videos are served by the Worker with byte ranges (206), which Safari needs: `src/video-range.ts`.
@@ -53,7 +53,7 @@ Norwegian uses `no-no`, Arabic `ar-ar`, Traditional Chinese `zh-tw`. Only the di
 ## braws art and app screens
 
 - `public/media/pets/*.svg`: the pet (Mochi in its moods), exported from the app's own pet
-  renderer (`braw/src/parts/pets.js`, Paula's art), nothing redrawn.
+  renderer (`braw/src/base.html`, Paula's art), nothing redrawn.
 - `public/media/app/<en|es|ar>/*.webp`: raw screens of the real app (`braw/index.html`) with the demo account
   (invite `BRAW-DEMO`), rendered in Docker with Playwright on November 16, 2026 (recaptured the same day after the avatar-pet fix in braw PR #60). No frames, captions or edits.
   Other languages show the English screens.
