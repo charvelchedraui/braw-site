@@ -1,7 +1,9 @@
 // braws.app Worker: www -> apex redirect, security headers on every response,
-// /.well-known/security.txt, "/" -> landing in the visitor's language, videos with byte ranges
+// /.well-known/security.txt, /get/ios and /get/android (store redirects), "/" -> landing in the visitor's language, videos with byte ranges
 // (video-range.ts, Safari needs them) and static assets (with public/404.html for unknown paths).
 import { isVideoPath, videoResponse } from './video-range';
+// Store links, shared with cloudflare/landing/build.mjs. Google Play goes live by setting "androidLive": true there.
+import STORES from '../stores.json';
 
 interface Env {
   ASSETS: { fetch(request: Request): Promise<Response> };
@@ -79,6 +81,28 @@ function pickLanguage(header: string | null): string {
   return 'en';
 }
 
+// Store redirects used by the header button and the badges on the landing (/get/ios, /get/android).
+// While braws is not public on Google Play, /get/android sends the visitor to the landing's #download section instead
+// (in the language from ?l=, else Accept-Language), never to a listing that does not answer.
+function storeRedirect(request: Request, url: URL): Response | null {
+  const path = url.pathname.replace(/\/+$/, '');
+  if (path === '/get/ios') {
+    return new Response(null, { status: 302, headers: { Location: STORES.ios, 'Cache-Control': 'public, max-age=300' } });
+  }
+  if (path === '/get/android') {
+    if (STORES.androidLive) {
+      return new Response(null, { status: 302, headers: { Location: STORES.android, 'Cache-Control': 'public, max-age=300' } });
+    }
+    const asked = url.searchParams.get('l');
+    const lang = asked && LANDING.includes(asked) ? asked : pickLanguage(request.headers.get('Accept-Language'));
+    return new Response(null, {
+      status: 302,
+      headers: { Location: `${url.origin}/${lang}/#download`, Vary: 'Accept-Language', 'Cache-Control': 'private, max-age=0' },
+    });
+  }
+  return null;
+}
+
 function secure(res: Response): Response {
   const out = new Response(res.body, res);
   for (const [k, v] of Object.entries(SECURITY_HEADERS)) out.headers.set(k, v);
@@ -103,6 +127,9 @@ export default {
         headers: { 'Content-Type': 'text/plain; charset=utf-8', 'Cache-Control': 'public, max-age=86400' },
       }));
     }
+
+    const store = storeRedirect(request, url);
+    if (store) return secure(store);
 
     // "/" exactly: send each visitor to the landing in their language. public/index.html (English) is only a fallback.
     if (url.pathname === '/') {
