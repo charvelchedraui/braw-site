@@ -55,7 +55,7 @@ export const LANGUAGES = [
 // Google's official "Get it on Google Play" badge (unmodified, from ~/store-badges, see CREDITS.md), the note and
 // the devices answer in the FAQ say Android, and the footer carries Google's trademark line.
 // BRAWS_PLAY_PREVIEW=1 builds the Google Play version locally for QA; never deploy such a build before the listing is public.
-const PLAY_LIVE = false || process.env.BRAWS_PLAY_PREVIEW === '1';
+const PLAY_LIVE = true || process.env.BRAWS_PLAY_PREVIEW === '1';
 const PLAY_URL = 'https://play.google.com/store/apps/details?id=com.braw.app';
 // Google's file for each page language (media/badges/google-play-<x>.png, 646x250).
 const PLAY_BADGE = { en: 'en', 'en-GB': 'en', es: 'es', pt: 'pt-BR', 'pt-PT': 'pt-PT', fr: 'fr', de: 'de', it: 'it', nl: 'nl', id: 'id', sv: 'sv', da: 'da', ja: 'ja', ko: 'ko', 'zh-Hans': 'zh-CN', 'zh-Hant': 'zh-TW', ru: 'ru', tr: 'tr', pl: 'pl', nb: 'no', fi: 'fi', vi: 'vi', ar: 'ar', hi: 'hi', th: 'th', uk: 'uk', cs: 'cs' };
