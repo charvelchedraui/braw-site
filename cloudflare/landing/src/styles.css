@@ -261,15 +261,17 @@ details.langs { position: relative; min-width: 0; }
 .js .dock { display: flex; position: fixed; z-index: 40; inset-inline: 0; margin-inline: auto; width: max-content; max-width: calc(100vw - 24px); bottom: 8px; align-items: center; gap: 12px; padding: 8px 8px 8px 10px; background: var(--cream); color: var(--ink); border: 1.5px solid var(--ink); border-radius: 22px; box-shadow: 0 8px 24px rgba(31, 31, 31, .14); transform: translateY(calc(100% + 24px)); opacity: 0; transition: transform .45s cubic-bezier(.22,1,.36,1), opacity .3s; }
 .js .dock.is-on { transform: none; opacity: 1; }
 .dock > img { border-radius: 10px; flex: none; }
-.dock-txt { display: flex; flex-direction: column; min-width: 0; line-height: 1.15; padding-inline-end: 6px; }
-.dock-txt strong { font: 400 22px/1 var(--hand); }
-.dock-txt small { color: var(--muted); font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.dock .dock-cta { min-height: 44px; padding-inline: 20px; }
+/* Charvel, 24 Nov 2026: two compact store buttons (iPhone + Android), same style and links as the hero */
+.stores-dock { gap: 8px; }
+.stores-dock .store-btn { min-height: 48px; padding: 6px 16px 6px 12px; gap: 10px; }
+.stores-dock .store-btn strong { font-size: 19px; }
+.stores-dock .store-btn small { font-size: 10.5px; }
 .footer.has-dock { padding-bottom: calc(96px + env(safe-area-inset-bottom)); }
 @media (max-width: 767px) {
   .js .dock { inset-inline: 0; bottom: 0; width: auto; max-width: none; margin: 0; border-width: 1.5px 0 0; border-radius: 20px 20px 0 0; padding: 10px 14px calc(10px + env(safe-area-inset-bottom)); }
   .js .dock:not(.is-on) { transform: translateY(100%); }
-  .dock-txt { flex: 1; }
+  .dock > img { display: none; }
+  .stores-dock { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); width: 100%; }
   .stores-hero, .stores-end { display: grid; grid-auto-flow: row; width: 100%; }
 }
 

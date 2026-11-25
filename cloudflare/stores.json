@@ -1,5 +1,5 @@
 {
   "ios": "https://apps.apple.com/app/id6833073203",
   "android": "https://play.google.com/apps/testing/com.braw.app",
-  "androidLive": false
+  "androidLive": true
 }
