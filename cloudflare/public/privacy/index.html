@@ -52,6 +52,7 @@
 <li><strong>Optional approximate location:</strong> see section 7.</li>
 <li><strong>Safety records:</strong> reports you send or that are sent about your content, and moderation decisions.</li>
 <li><strong>Technical data:</strong> sign-in sessions; short-lived rate-limit counters, which use a one-way hash of your network (IP) address rather than the address itself; and request logs kept by Cloudflare for a few days for debugging and security.</li>
+<li><strong>Crash reports:</strong> when the app crashes or hits an error, it sends a report to Sentry: the type of error, where in the app's code it happened, and the phone model, system version and app version. Reports do not include your account, name, IP address, email, what you wrote or screenshots, and they are not linked to you.</li>
 </ul>
 <p>We do not store your birth date, precise GPS location, contacts, email, phone number or payment details.</p>
 
@@ -77,7 +78,7 @@
 <h3>9. What braws does not do</h3>
 <ul>
 <li>No push notifications and no emails.</li>
-<li>No advertising, no analytics and no third-party tracking or advertising SDKs.</li>
+<li>No advertising, no analytics and no third-party tracking or advertising SDKs. The only third-party SDK that sends data is Sentry, for the crash reports in section 5.</li>
 <li>No tracking across other companies' apps or websites (we do not use Apple's advertising identifier).</li>
 <li>We never sell your personal data or share it for advertising.</li>
 <li>No profiling or automated decisions that affect you legally.</li>
@@ -88,6 +89,7 @@
 <li><strong>Cloudflare, Inc.</strong> (USA) hosts our server and database and processes requests, including IP addresses, to deliver the service. It acts as our processor.</li>
 <li><strong>Apple</strong> provides Sign in with Apple and, if you use it, iCloud Drive storage under its own privacy policy.</li>
 <li><strong>Google</strong> provides Sign in with Google and, if you use it, Android backup, on Android, under its own privacy policy.</li>
+<li><strong>Functional Software, Inc. (Sentry)</strong> (USA) receives the crash reports described in section 5 so we can fix errors. It acts as our processor.</li>
 </ul>
 <p>We may disclose data if the law requires it, or to protect someone's safety when there is a real risk.</p>
 
@@ -98,6 +100,7 @@
 <li><strong>Sessions:</strong> end after 90 days without use.</li>
 <li><strong>Rate-limit counters:</strong> expire within one day.</li>
 <li><strong>Cloudflare request logs:</strong> kept for a few days (at most about a week).</li>
+<li><strong>Crash reports (Sentry):</strong> deleted after 90 days at most.</li>
 <li><strong>Reports:</strong> kept up to 1 year after they are resolved, then deleted.</li>
 <li><strong>Bans:</strong> if an account is banned for breaking the rules, we keep only a one-way hash of its Apple or Google identifier, so the same person cannot sign up again.</li>
 <li><strong>Backups:</strong> Cloudflare D1 keeps automatic point-in-time backups for up to 30 days. Deleted data disappears from those backups after that period.</li>
@@ -183,6 +186,7 @@
 <li><strong>Ubicación aproximada opcional:</strong> mira la sección 7.</li>
 <li><strong>Registros de seguridad:</strong> los reportes que mandas o que se hacen sobre tu contenido, y las decisiones de moderación.</li>
 <li><strong>Datos técnicos:</strong> sesiones de inicio; contadores de límite de uso de corta duración, que usan un hash irreversible de tu dirección de red (IP) y no la dirección en sí; y registros de solicitudes que Cloudflare guarda unos pocos días para depuración y seguridad.</li>
+<li><strong>Reportes de fallos:</strong> cuando el app se cierra o tiene un error, manda un reporte a Sentry: el tipo de error, en qué parte del código del app pasó, y el modelo del teléfono, la versión del sistema y la del app. Los reportes no incluyen tu cuenta, tu nombre, tu dirección IP, tu correo, lo que escribiste ni capturas de pantalla, y no se vinculan contigo.</li>
 </ul>
 <p>No guardamos tu fecha de nacimiento, tu ubicación GPS precisa, tus contactos, tu correo, tu teléfono ni datos de pago.</p>
 
@@ -208,7 +212,7 @@
 <h3>9. Lo que braws no hace</h3>
 <ul>
 <li>No manda notificaciones push ni correos.</li>
-<li>No tiene publicidad, ni analítica, ni SDK de terceros para rastrear o anunciar.</li>
+<li>No tiene publicidad, ni analítica, ni SDK de terceros para rastrear o anunciar. El único SDK de terceros que manda datos es Sentry, para los reportes de fallos de la sección 5.</li>
 <li>No te rastrea en apps o sitios de otras empresas (no usamos el identificador publicitario de Apple).</li>
 <li>Nunca vendemos tus datos personales ni los compartimos para publicidad.</li>
 <li>No hace perfiles ni decisiones automatizadas con efectos legales sobre ti.</li>
@@ -219,6 +223,7 @@
 <li><strong>Cloudflare, Inc.</strong> (EE. UU.) aloja nuestro servidor y base de datos y procesa las solicitudes, incluidas las direcciones IP, para prestar el servicio. Actúa como nuestro encargado del tratamiento.</li>
 <li><strong>Apple</strong> presta Iniciar sesión con Apple y, si lo usas, el almacenamiento en iCloud Drive, según su propia política de privacidad.</li>
 <li><strong>Google</strong> presta, en Android, Iniciar sesión con Google y, si lo usas, el respaldo de Android, según su propia política de privacidad.</li>
+<li><strong>Functional Software, Inc. (Sentry)</strong> (EE. UU.) recibe los reportes de fallos descritos en la sección 5 para que podamos corregir errores. Actúa como nuestro encargado del tratamiento.</li>
 </ul>
 <p>Podemos revelar datos si la ley lo exige, o para proteger la seguridad de alguien cuando hay un riesgo real.</p>
 
@@ -229,6 +234,7 @@
 <li><strong>Sesiones:</strong> terminan tras 90 días sin uso.</li>
 <li><strong>Contadores de límite de uso:</strong> caducan en un día como máximo.</li>
 <li><strong>Registros de solicitudes de Cloudflare:</strong> se guardan unos pocos días (como mucho una semana aproximadamente).</li>
+<li><strong>Reportes de fallos (Sentry):</strong> se borran como mucho a los 90 días.</li>
 <li><strong>Reportes:</strong> se guardan hasta 1 año después de resolverse y luego se borran.</li>
 <li><strong>Suspensiones definitivas:</strong> si una cuenta se suspende por romper las reglas, guardamos solo un hash irreversible de su identificador de Apple o de Google, para que la misma persona no pueda registrarse otra vez.</li>
 <li><strong>Respaldos:</strong> Cloudflare D1 guarda respaldos automáticos de punto en el tiempo hasta por 30 días. Los datos borrados desaparecen de esos respaldos pasado ese plazo.</li>
