@@ -614,7 +614,8 @@ function Dock({ d }: { d: PageData }) {
   return (
     <div className="dock" ref={ref} role="region" aria-label={d.s.navCta}>
       <img src="/apple-touch-icon.png" alt="" width={40} height={40} />
-      <Stores d={d} where="dock" />
+      <span className="dock-txt"><strong>braws</strong><small>{d.s.dockText}</small></span>
+      <GetButton d={d} className="nav-cta dock-cta" />
     </div>
   );
 }
