@@ -583,9 +583,7 @@ function Footer({ d }: { d: PageData }) {
           </nav>
           <LangPicker lang={d.lang} languages={d.languages} label={d.s.langLabel} where="foot" />
         </div>
-        <p className="foot-tag">{d.s.footTagline}</p>
-        <p className="credits">{d.s.footCredits} <span dir="ltr">{d.credits.join(', ')}</span>.</p>
-        <p className="credits" dir="ltr" lang="en">App Store is a service mark of Apple Inc. Google Play is a trademark of Google LLC.</p>
+        <p className="copyright"><span dir="ltr">© 2026 braws.</span> {d.s.footRights}</p>
       </div>
     </footer>
   );

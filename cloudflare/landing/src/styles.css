@@ -250,9 +250,7 @@ details.langs { position: relative; min-width: 0; }
 .foot-links { display: flex; gap: 8px 22px; flex-wrap: wrap; }
 .foot-links a { text-decoration: none; }
 .foot-links a:hover { text-decoration: underline; text-decoration-color: var(--accent); }
-.foot-tag { color: var(--muted); margin: 22px 0 4px; }
-.credits { color: var(--muted); font-size: 13px; margin: 0; max-width: 90ch; }
-.credits + .credits { margin-top: 6px; }
+.copyright { color: var(--muted); font-size: 13px; margin: 22px 0 0; }
 
 /* floating download bar (STORE-BUTTONS.md 2b, Save As style): app icon, braws and its tagline, and ONE button to #get.
    Shown once the hero buttons are gone, hidden (and inert) from the moment the final buttons reach the screen.

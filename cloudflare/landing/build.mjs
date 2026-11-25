@@ -63,8 +63,6 @@ const FLOAT_BAR = true;
 
 // Real app screens were captured for these languages (media/app/<code>/); the others show the English ones.
 const SHOT_LANGS = new Set(['en', 'es', 'ar']);
-// Mixkit contributors of the clips used (see CREDITS.md).
-const CREDITS = ['arvizum', 'mustafab', 'mixkit', 'highwayvideography', 'marcolopez', 'dubassy', 'franklandgrave', 'joshjanssen'];
 
 // Every strings/<code>.json must have exactly this shape (en.json is the reference).
 const LIST_SHAPES = { cards: ['ico', 'title', 'text'], steps: ['title', 'text'], checks: ['b', 'text'], faq: ['q', 'a'] };
@@ -140,7 +138,7 @@ async function main() {
     const l = lang;
     // With Android live, the note and the devices answer (faq[2]) switch to their Android versions.
     const copy = ANDROID_LIVE ? { ...s, note: s.noteAndroid, faq: s.faq.map((f, i) => (i === 2 ? { ...f, a: s.faqDevicesAndroid } : f)) } : s;
-    const data = { lang: l, languages, s: copy, androidLive: ANDROID_LIVE, floatBar: FLOAT_BAR, shots: SHOT_LANGS.has(lang.code) ? lang.code : 'en', credits: CREDITS };
+    const data = { lang: l, languages, s: copy, androidLive: ANDROID_LIVE, floatBar: FLOAT_BAR, shots: SHOT_LANGS.has(lang.code) ? lang.code : 'en' };
     const ctx = {
       code: lang.code,
       htmlLang: lang.hreflang,

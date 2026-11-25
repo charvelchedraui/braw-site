@@ -51,9 +51,8 @@ export interface Strings {
   footTerms: string;
   footSupport: string;
   footDelete: string;
-  footTagline: string;
   dockText: string;
-  footCredits: string;
+  footRights: string;
   ids?: Partial<Record<'what' | 'how' | 'safety' | 'faq', string>>;
   legalHash?: string;
 }
@@ -71,6 +70,4 @@ export interface PageData {
   floatBar: boolean;
   /** Folder of real app screens for this language (en, es or ar; others use en). */
   shots: string;
-  /** Mixkit contributors, for the footer credit line. */
-  credits: string[];
 }
