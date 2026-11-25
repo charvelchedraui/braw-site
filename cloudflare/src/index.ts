@@ -1,5 +1,5 @@
 // braws.app Worker: www -> apex redirect, security headers on every response,
-// /.well-known/security.txt, /get/ios and /get/android (store redirects), "/" -> landing in the visitor's language, videos with byte ranges
+// /.well-known/security.txt, /get/ios and /get/android (store redirects), /lang/<code> (remember the language picked), "/" -> landing in the visitor's language, videos with byte ranges
 // (video-range.ts, Safari needs them) and static assets (with public/404.html for unknown paths).
 import { isVideoPath, videoResponse } from './video-range';
 // Store links, shared with cloudflare/landing/build.mjs. Android goes live (Play open testing, later the listing) by setting "androidLive": true there.
@@ -59,6 +59,15 @@ function landingFor(tag: string): string | null {
   // como el app: pt sin país y pt-BR → Brasil; pt con otro país (PT, AO, MZ…) → Portugal
   if (l === 'pt') return rest.length === 0 || rest.includes('br') ? 'pt' : 'pt-PT';
   return PRIMARY.get(l) ?? null;
+}
+
+// The language a visitor picked in the menu (LANGUAGES.md rule 3): a first-party cookie, strictly necessary, no tracking.
+const LANG_COOKIE = 'braws_lang';
+const langCookie = (code: string) => `${LANG_COOKIE}=${code}; Max-Age=31536000; Path=/; SameSite=Lax; Secure`;
+function cookieLanguage(header: string | null): string | null {
+  const m = new RegExp(`(?:^|;\\s*)${LANG_COOKIE}=([^;]*)`).exec(header ?? '');
+  const v = m ? m[1].trim() : '';
+  return LANDING.includes(v) ? v : null;
 }
 
 // Best landing language for an Accept-Language header (q-values respected), default English.
@@ -132,13 +141,23 @@ export default {
     if (store) return secure(store);
 
     // "/" exactly: send each visitor to the landing in their language. public/index.html (English) is only a fallback.
+    // The language menu links to /lang/<code>: remember the choice, then open that page (works without JavaScript).
+    const pick = /^\/lang\/([A-Za-z-]{2,7})\/?$/.exec(url.pathname);
+    if (pick) {
+      const code = LANDING.find((c) => c.toLowerCase() === pick[1].toLowerCase());
+      const headers = new Headers({ Location: `${url.origin}/${code ?? ''}${code ? '/' : ''}`, 'Cache-Control': 'private, max-age=0' });
+      if (code) headers.append('Set-Cookie', langCookie(code));
+      return secure(new Response(null, { status: 302, headers }));
+    }
+
     if (url.pathname === '/') {
-      const lang = pickLanguage(request.headers.get('Accept-Language'));
+      // a language the visitor picked before wins, then the browser's languages, then English
+      const lang = cookieLanguage(request.headers.get('Cookie')) ?? pickLanguage(request.headers.get('Accept-Language'));
       return secure(new Response(null, {
         status: 302,
         headers: {
           Location: `${url.origin}/${lang}/${url.search}`,
-          Vary: 'Accept-Language',
+          Vary: 'Accept-Language, Cookie',
           'Cache-Control': 'private, max-age=0',
         },
       }));

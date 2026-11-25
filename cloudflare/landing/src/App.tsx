@@ -59,6 +59,12 @@ function Globe() {
 }
 
 /** A <details> menu of plain links: works without JavaScript. With it, Escape and an outside tap close it. */
+/** LANGUAGES.md rule 3: an explicit pick is remembered (braws_lang, 1 year, first party, strictly necessary) so "/" opens
+ *  that language next time. The link goes through /lang/<code>, where the Worker sets the same cookie without JavaScript. */
+function rememberLanguage(code: string) {
+  document.cookie = `braws_lang=${code}; Max-Age=31536000; Path=/; SameSite=Lax; Secure`;
+}
+
 function LangPicker({ lang, languages, label, where }: { lang: Language; languages: Language[]; label: string; where: 'head' | 'foot' }) {
   const ref = useRef<HTMLDetailsElement>(null);
   useEffect(() => {
@@ -83,7 +89,7 @@ function LangPicker({ lang, languages, label, where }: { lang: Language; languag
       <ul className="langs-list" aria-label={label}>
         {languages.map((l) => (
           <li key={l.code}>
-            <a href={pathOf(l.code)} hrefLang={l.hreflang} lang={l.hreflang} dir={l.dir} aria-current={l.code === lang.code ? 'page' : undefined}>{l.name}</a>
+            <a href={`/lang/${l.code}`} onClick={() => rememberLanguage(l.code)} hrefLang={l.hreflang} lang={l.hreflang} dir={l.dir} aria-current={l.code === lang.code ? 'page' : undefined}>{l.name}</a>
           </li>
         ))}
       </ul>
